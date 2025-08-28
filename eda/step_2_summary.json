@@ -1,0 +1,207 @@
+{
+  "total_targets": 37,
+  "valid_targets": 37,
+  "primary_target": "target",
+  "primary_target_stats": {
+    "mean": 0.5000267624855042,
+    "std": 0.2231752872467041,
+    "min": 0.0,
+    "max": 1.0,
+    "unique_values": 5
+  },
+  "missing_analysis": {
+    "target": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_agnes_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_agnes_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_alpha_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_alpha_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_bravo_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_bravo_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_caroline_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_caroline_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_charlie_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_charlie_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_claudia_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_claudia_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_cyrusd_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_cyrusd_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_delta_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_delta_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_echo_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_echo_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_jeremy_20": {
+      "missing_count": "13397",
+      "missing_percentage": 0.4878253048680574,
+      "available_count": "2732873"
+    },
+    "target_jeremy_60": {
+      "missing_count": "35467",
+      "missing_percentage": 1.2914607813507049,
+      "available_count": "2710803"
+    },
+    "target_ralph_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_ralph_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_rowan_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_rowan_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_sam_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_sam_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_teager2b_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_teager2b_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_tyler_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_tyler_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_victor_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_victor_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_waldo_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_waldo_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_xerxes_20": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    },
+    "target_xerxes_60": {
+      "missing_count": "0",
+      "missing_percentage": 0.0,
+      "available_count": "2746270"
+    }
+  },
+  "era_stability": {
+    "mean_range": [
+      0.49924537539482117,
+      0.5010681748390198
+    ],
+    "mean_std": 0.0002842455287463963,
+    "bias_test_pvalue": 0.009635592432430786
+  }
+}

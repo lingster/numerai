@@ -1,0 +1,38 @@
+{
+  "dataset_shape": [
+    2746270,
+    2415
+  ],
+  "memory_usage_mb": 7123.808288574219,
+  "era_count": 574,
+  "era_range": [
+    "0001",
+    "0574"
+  ],
+  "data_types_available": [
+    "train"
+  ],
+  "target_count": 37,
+  "feature_count": 2376,
+  "key_targets_available": [
+    "target"
+  ],
+  "missing_values": "48864",
+  "feature_set_analysis": {
+    "feature_sets": {
+      "total_features": 17,
+      "available_features": 0,
+      "missing_features": 17
+    },
+    "targets": {
+      "total_features": 37,
+      "available_features": 37,
+      "missing_features": 0
+    }
+  },
+  "data_types": {
+    "int8": 2376,
+    "float32": 37,
+    "object": 2
+  }
+}

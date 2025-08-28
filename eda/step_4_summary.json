@@ -1,0 +1,81 @@
+{
+  "era_analysis": {
+    "total_eras": 574,
+    "target_bias_test": {
+      "t_statistic": 2.597364760710456,
+      "p_value": 0.009635592432430786,
+      "significant_bias": true
+    },
+    "era_consistency": {
+      "sample_size_mean": 4784.442508710801,
+      "sample_size_std": 752.6795781073135,
+      "sample_size_range": [
+        "2316",
+        "6009"
+      ],
+      "target_std_mean": "0.22319025",
+      "target_std_std": "0.00035722333"
+    },
+    "temporal_shift_test": {
+      "early_mean": 0.5000662803649902,
+      "late_mean": 0.5000147819519043,
+      "p_value": 0.07429192485996265,
+      "significant_shift": false
+    }
+  },
+  "feature_stability": {
+    "analyzed_features": 50,
+    "significant_drift_count": 10,
+    "sample_analysis": {
+      "feature_rugged_incomplete_hotspur": {
+        "mean_stability": 0.00018146850737876965,
+        "std_stability": 0.00012031055024199854,
+        "mean_range": [
+          1.9991364421416236,
+          2.0
+        ],
+        "overall_mean": 1.999914793519938
+      },
+      "feature_baculine_panoplied_aerobiology": {
+        "mean_stability": 0.00018146850737876965,
+        "std_stability": 0.00012031055024196316,
+        "mean_range": [
+          1.9991364421416236,
+          2.0
+        ],
+        "overall_mean": 1.999914793519938
+      },
+      "feature_sprawled_arborescent_menuisier": {
+        "mean_stability": 0.00015156439845846108,
+        "std_stability": 0.536978311661795,
+        "mean_range": [
+          1.999490575649516,
+          2.0
+        ],
+        "overall_mean": 1.9999279022091783
+      },
+      "feature_accountable_uninhabitable_reunion": {
+        "mean_stability": 0.00015536618160255026,
+        "std_stability": 0.4486255855772852,
+        "mean_range": [
+          1.9994886218358476,
+          2.0
+        ],
+        "overall_mean": 1.999924989167125
+      },
+      "feature_spinning_orthorhombic_manner": {
+        "mean_stability": 0.00015156439845846108,
+        "std_stability": 0.536978311661795,
+        "mean_range": [
+          1.999490575649516,
+          2.0
+        ],
+        "overall_mean": 1.9999279022091783
+      }
+    }
+  },
+  "regime_analysis": {
+    "window_size": 20,
+    "potential_changes": 136
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "sample_info": {
+    "total_features": 2376,
+    "analyzed_features": 50,
+    "sample_size": 100000
+  },
+  "correlation_summary": {
+    "mean": 0.0004341603838837976,
+    "std": 0.0035760500983825364,
+    "max": 0.008528117673564824,
+    "min": -0.00840026796259598,
+    "range": 0.016928385636160802
+  },
+  "significance": {
+    "critical_correlation": 0.0061981571869851315,
+    "significant_count": 6,
+    "significant_percentage": 12.0
+  },
+  "top_features": {
+    "most_positive": {
+      "feature_predestinate_unsurpassed_batten": 0.008528117673564824,
+      "feature_dialectal_homely_cambodia": 0.007802182820684078,
+      "feature_fitful_tunable_personation": 0.0068365162912519435,
+      "feature_vegetarian_punishing_lentigo": 0.006298856838759575,
+      "feature_voiceful_ingrain_sequestration": 0.005299400864239474
+    },
+    "most_negative": {
+      "feature_plebeian_aesculapian_loquacity": -0.00840026796259598,
+      "feature_multifaced_royal_grippe": -0.006612571058912533,
+      "feature_asphyxiating_gabbroitic_long": -0.004492468377098214,
+      "feature_topazine_undesigning_infundibulum": -0.004123193037080766,
+      "feature_undyed_pavonine_xylem": -0.004119308798777209
+    },
+    "most_important": {
+      "feature_predestinate_unsurpassed_batten": 0.008528117673564824,
+      "feature_plebeian_aesculapian_loquacity": 0.00840026796259598,
+      "feature_dialectal_homely_cambodia": 0.007802182820684078,
+      "feature_fitful_tunable_personation": 0.0068365162912519435,
+      "feature_multifaced_royal_grippe": 0.006612571058912533
+    }
+  },
+  "era_stability": {
+    "analyzed_eras": 0,
+    "mean_stability": null
+  }
+}

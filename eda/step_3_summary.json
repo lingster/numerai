@@ -1,0 +1,121 @@
+{
+  "total_features": 2376,
+  "analyzed_features": 100,
+  "feature_analysis_sample": {
+    "feature_oared_shyer_frisker": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.999914793519938,
+      "std": 1.4143590279980982,
+      "unique_values": 5,
+      "missing_values": 0
+    },
+    "feature_perverted_orientated_victimizer": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.999914793519938,
+      "std": 1.414359027998098,
+      "unique_values": 5,
+      "missing_values": 0
+    },
+    "feature_primate_ungulate_jingal": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.999924989167125,
+      "std": 1.3731263194344752,
+      "unique_values": 5,
+      "missing_values": 0
+    },
+    "feature_untoned_positivistic_sycamore": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.9999279022091783,
+      "std": 1.3206782779066744,
+      "unique_values": 5,
+      "missing_values": 0
+    },
+    "feature_absorbing_pluviometrical_technocrat": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.9999279022091783,
+      "std": 1.3206782779066744,
+      "unique_values": 5,
+      "missing_values": 0
+    },
+    "feature_witting_unprovoked_sholokhov": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.999924989167125,
+      "std": 1.3659060141246304,
+      "unique_values": 5,
+      "missing_values": 0
+    },
+    "feature_mildewy_unkind_spree": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.999914793519938,
+      "std": 1.4143590279980969,
+      "unique_values": 5,
+      "missing_values": 0
+    },
+    "feature_compositional_administrable_hemorrhage": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.9999279022091783,
+      "std": 1.3206782779066746,
+      "unique_values": 5,
+      "missing_values": 0
+    },
+    "feature_denotative_colly_deciding": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.9999198913435314,
+      "std": 1.396803283481125,
+      "unique_values": 5,
+      "missing_values": 0
+    },
+    "feature_somatological_slightest_misbehaviour": {
+      "dtype": "int8",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 1.999914793519938,
+      "std": 1.4143590279980975,
+      "unique_values": 5,
+      "missing_values": 0
+    }
+  },
+  "centering_analysis": {
+    "mean_zero_features": 0,
+    "std_one_features": 4,
+    "constant_features": 0
+  },
+  "distribution_analysis": {
+    "skewness_mean": 0.0003682951787523717,
+    "skewness_std": 0.0031829686483788168,
+    "kurtosis_mean": -1.175359270515203,
+    "kurtosis_std": 0.24278242816119727,
+    "highly_skewed_count": 0
+  },
+  "feature_types": {
+    "discrete_features": 50,
+    "continuous_features": 0
+  },
+  "correlation_analysis": {
+    "high_corr_pairs": 2,
+    "sample_size": 30
+  },
+  "variance_analysis": {
+    "variance_mean": 1.8874621932901934,
+    "variance_std": 0.18594197734925438,
+    "low_variance_count": 0
+  }
+}

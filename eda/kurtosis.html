@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribution Comparison</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .chart-container {
+            position: relative;
+            height: 500px;
+            margin: 20px 0;
+        }
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="range"] {
+            width: 150px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .platykurtic { color: #e74c3c; }
+        .normal { color: #3498db; }
+        .poisson { color: #2ecc71; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Distribution Comparison: Platykurtic vs Normal vs Poisson</h1>
+        <p>This chart shows how a <strong>platykurtic distribution</strong> (negative kurtosis = -1.18) compares to normal and Poisson distributions.</p>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="kurtosis">Platykurtic Kurtosis:</label>
+                <input type="range" id="kurtosis" min="-2" max="0" step="0.1" value="-1.18">
+                <span id="kurtosisValue">-1.18</span>
+            </div>
+            <div class="control-group">
+                <label for="poissonLambda">Poisson Lambda (λ):</label>
+                <input type="range" id="poissonLambda" min="1" max="10" step="0.5" value="5">
+                <span id="poissonValue">5</span>
+            </div>
+            <div class="control-group">
+                <label for="sampleSize">Sample Size:</label>
+                <input type="range" id="sampleSize" min="1000" max="10000" step="1000" value="5000">
+                <span id="sampleSizeValue">5000</span>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="platykurtic">Platykurtic Distribution</div>
+                <div class="stat-value platykurtic" id="platyKurtosis">-1.18</div>
+                <div>Excess Kurtosis</div>
+            </div>
+            <div class="stat-item">
+                <div class="normal">Normal Distribution</div>
+                <div class="stat-value normal">0.00</div>
+                <div>Excess Kurtosis</div>
+            </div>
+            <div class="stat-item">
+                <div class="poisson">Poisson Distribution</div>
+                <div class="stat-value poisson" id="poissonKurtosis">0.20</div>
+                <div>Excess Kurtosis (≈ 1/λ)</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="distributionChart"></canvas>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <h3>Key Observations:</h3>
+            <ul>
+                <li><strong style="color: #e74c3c;">Platykurtic (red):</strong> Flatter peak, thinner tails, more uniform distribution</li>
+                <li><strong style="color: #3498db;">Normal (blue):</strong> Classic bell curve with moderate peak and tails</li>
+                <li><strong style="color: #2ecc71;">Poisson (green):</strong> Discrete distribution, often right-skewed for low λ values</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Mathematical helper functions
+        function normalPDF(x, mean = 0, std = 1) {
+            const coefficient = 1 / (std * Math.sqrt(2 * Math.PI));
+            const exponent = -0.5 * Math.pow((x - mean) / std, 2);
+            return coefficient * Math.exp(exponent);
+        }
+
+        function poissonPMF(k, lambda) {
+            if (k < 0 || !Number.isInteger(k)) return 0;
+            return (Math.pow(lambda, k) * Math.exp(-lambda)) / factorial(k);
+        }
+
+        function factorial(n) {
+            if (n <= 1) return 1;
+            return n * factorial(n - 1);
+        }
+
+        // Generate platykurtic distribution using a mixture approach
+        function generatePlatykurticData(n, kurtosis) {
+            const data = [];
+            const targetKurtosis = kurtosis; // excess kurtosis
+            
+            // Create a flattened distribution using uniform + normal mixture
+            for (let i = 0; i < n; i++) {
+                let value;
+                if (Math.random() < 0.7) {
+                    // Uniform component (creates flatness)
+                    value = (Math.random() - 0.5) * 6;
+                } else {
+                    // Normal component (maintains some bell shape)
+                    value = boxMuller() * 1.5;
+                }
+                data.push(value);
+            }
+            return data;
+        }
+
+        // Box-Muller transform for normal random numbers
+        function boxMuller() {
+            const u1 = Math.random();
+            const u2 = Math.random();
+            return Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
+        }
+
+        // Calculate histogram from data
+        function calculateHistogram(data, bins = 50) {
+            const min = Math.min(...data);
+            const max = Math.max(...data);
+            const binWidth = (max - min) / bins;
+            const histogram = new Array(bins).fill(0);
+            const binCenters = [];
+
+            for (let i = 0; i < bins; i++) {
+                binCenters.push(min + (i + 0.5) * binWidth);
+            }
+
+            data.forEach(value => {
+                const binIndex = Math.floor((value - min) / binWidth);
+                if (binIndex >= 0 && binIndex < bins) {
+                    histogram[binIndex]++;
+                }
+            });
+
+            // Normalize to create probability density
+            const total = data.length * binWidth;
+            return {
+                x: binCenters,
+                y: histogram.map(count => count / total)
+            };
+        }
+
+        let chart;
+
+        function updateChart() {
+            const kurtosisValue = parseFloat(document.getElementById('kurtosis').value);
+            const poissonLambda = parseFloat(document.getElementById('poissonLambda').value);
+            const sampleSize = parseInt(document.getElementById('sampleSize').value);
+
+            // Update display values
+            document.getElementById('kurtosisValue').textContent = kurtosisValue.toFixed(2);
+            document.getElementById('poissonValue').textContent = poissonLambda.toFixed(1);
+            document.getElementById('sampleSizeValue').textContent = sampleSize.toLocaleString();
+            document.getElementById('platyKurtosis').textContent = kurtosisValue.toFixed(2);
+            document.getElementById('poissonKurtosis').textContent = (1 / poissonLambda).toFixed(2);
+
+            // Generate data
+            const platykurticData = generatePlatykurticData(sampleSize, kurtosisValue);
+            const platyHist = calculateHistogram(platykurticData);
+
+            // Normal distribution
+            const xRange = [];
+            const normalY = [];
+            for (let x = -4; x <= 4; x += 0.1) {
+                xRange.push(x);
+                normalY.push(normalPDF(x));
+            }
+
+            // Poisson distribution (discrete)
+            const poissonX = [];
+            const poissonY = [];
+            for (let k = 0; k <= Math.ceil(poissonLambda * 3); k++) {
+                poissonX.push(k - poissonLambda + 2); // Center around 2 for comparison
+                poissonY.push(poissonPMF(k, poissonLambda));
+            }
+
+            const datasets = [
+                {
+                    label: `Platykurtic (κ = ${kurtosisValue.toFixed(2)})`,
+                    data: platyHist.x.map((x, i) => ({x, y: platyHist.y[i]})),
+                    borderColor: '#e74c3c',
+                    backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0
+                },
+                {
+                    label: 'Normal Distribution',
+                    data: xRange.map((x, i) => ({x, y: normalY[i]})),
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0
+                },
+                {
+                    label: `Poisson (λ = ${poissonLambda.toFixed(1)})`,
+                    data: poissonX.map((x, i) => ({x, y: poissonY[i]})),
+                    borderColor: '#2ecc71',
+                    backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                    fill: false,
+                    tension: 0,
+                    pointRadius: 3,
+                    showLine: true
+                }
+            ];
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            const ctx = document.getElementById('distributionChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: { datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Distribution Shapes Comparison',
+                            font: { size: 16 }
+                        },
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            title: {
+                                display: true,
+                                text: 'Value'
+                            },
+                            min: -4,
+                            max: 6
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Probability Density'
+                            },
+                            min: 0
+                        }
+                    },
+                    elements: {
+                        line: {
+                            borderWidth: 2
+                        }
+                    }
+                }
+            });
+        }
+
+        // Event listeners
+        document.getElementById('kurtosis').addEventListener('input', updateChart);
+        document.getElementById('poissonLambda').addEventListener('input', updateChart);
+        document.getElementById('sampleSize').addEventListener('input', updateChart);
+
+        // Initial chart
+        updateChart();
+    </script>
+</body>
+</html>
