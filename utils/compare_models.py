@@ -37,7 +37,6 @@ Examples:
     python compare_models.py get-models
 """
 
-import requests
 import json
 import pandas as pd
 from typing import Dict, List, Optional, Annotated
@@ -48,50 +47,10 @@ from datetime import datetime
 import typer
 from enum import Enum
 from tabulate import tabulate
-import re
+
+from numerai_client import NumeraiGraphQLClient, Tournament, get_user_models
 
 
-class NumeraiGraphQLClient:
-    """Client for querying the Numerai GraphQL API"""
-
-    def __init__(self, base_url: str = "https://api-tournament.numer.ai/",
-                 public_id: Optional[str] = None, secret_key: Optional[str] = None):
-        self.base_url = base_url
-        self.session = requests.Session()
-        self.session.headers.update({"Content-Type": "application/json"})
-
-        # Add authentication if provided
-        if public_id and secret_key:
-            self._add_auth_header(public_id, secret_key)
-
-    def _add_auth_header(self, public_id: str, secret_key: str) -> None:
-        """Add authentication header using public_id and secret_key"""
-        # Numerai uses Token auth with public_id$secret_key format
-        self.session.headers.update({"Authorization": f"Token {public_id}${secret_key}"})
-
-    def query(self, query: str, variables: Optional[Dict] = None) -> Dict:
-        """Execute a GraphQL query"""
-        payload = {"query": query}
-        if variables:
-            payload["variables"] = variables
-
-        try:
-            response = self.session.post(self.base_url, json=payload)
-            response.raise_for_status()
-            result = response.json()
-
-            if "errors" in result:
-                print(f"GraphQL errors: {result['errors']}", file=sys.stderr)
-                return {}
-
-            return result.get("data", {})
-
-        except requests.RequestException as e:
-            print(f"Request error: {e}", file=sys.stderr)
-            return {}
-        except json.JSONDecodeError as e:
-            print(f"JSON decode error: {e}", file=sys.stderr)
-            return {}
 
 
 def get_model_performance(client: NumeraiGraphQLClient, model_id: str,
@@ -160,44 +119,6 @@ def get_model_info(client: NumeraiGraphQLClient, model_id: str) -> Dict:
     return result.get("model", {})
 
 
-def get_user_models(client: NumeraiGraphQLClient) -> Dict[str, str]:
-    """Get all models for the authenticated user"""
-
-    query = """
-    query GetUserModels {
-        account {
-            models {
-                id
-                name
-                tournament
-            }
-        }
-    }
-    """
-
-    result = client.query(query)
-
-    if not result or "account" not in result or not result["account"]:
-        print("Error: Could not fetch user models. Check your authentication.", file=sys.stderr)
-        return {}
-
-    models = result["account"].get("models", [])
-
-    # Create mapping of model name to UUID
-    model_mapping = {}
-    for model in models:
-        model_id = model.get("id")
-        model_name = model.get("name")
-        tournament = model.get("tournament")
-
-        if model_id and model_name:
-            # Include tournament info in the key for clarity if there are multiple tournaments
-            key = f"{model_name}"
-            if tournament:
-                key = f"{model_name}_t{tournament}"
-            model_mapping[key] = model_id
-
-    return model_mapping
 
 
 def is_valid_uuid(uuid_string: str) -> bool:
@@ -221,11 +142,27 @@ def resolve_model_identifier(client: NumeraiGraphQLClient, model_identifier: str
 
     # It's a model name, so fetch user models and look it up
     typer.echo(f"Looking up UUID for model name: {model_identifier}", err=True)
-    user_models = get_user_models(client)
+    user_models_list = get_user_models(client)
 
-    if not user_models:
+    if not user_models_list:
         typer.echo("Error: Could not fetch user models for name lookup.", err=True)
         raise typer.Exit(1)
+
+    # Create mapping from model names to UUIDs for lookup
+    user_models = {}
+    for model in user_models_list:
+        model_id = model.get("id")
+        model_name = model.get("name")
+        tournament = model.get("tournament")
+
+        if model_id and model_name:
+            # Include tournament info in the key for clarity
+            key = f"{model_name}"
+            if tournament:
+                key = f"{model_name}_t{tournament}"
+            user_models[key] = model_id
+            # Also add without tournament suffix for convenience
+            user_models[model_name] = model_id
 
     # Look for exact match first
     if model_identifier in user_models:
@@ -459,50 +396,49 @@ def compare(
         typer.echo("\nGet your API keys from: https://numer.ai/account", err=True)
         raise typer.Exit(1)
 
-    client = NumeraiGraphQLClient(public_id=api_public_id, secret_key=api_secret_key)
+    with NumeraiGraphQLClient(public_id=api_public_id, secret_key=api_secret_key) as client:
+        # Resolve model identifiers to UUIDs
+        typer.echo("Resolving model identifiers...")
+        model_a_uuid = resolve_model_identifier(client, model_a)
+        model_b_uuid = resolve_model_identifier(client, model_b)
 
-    # Resolve model identifiers to UUIDs
-    typer.echo("Resolving model identifiers...")
-    model_a_uuid = resolve_model_identifier(client, model_a)
-    model_b_uuid = resolve_model_identifier(client, model_b)
+        typer.echo("Fetching model information...")
 
-    typer.echo("Fetching model information...")
+        # Try to get model info, but continue even if it fails due to permissions
+        model_a_info = get_model_info(client, model_a_uuid)
+        model_b_info = get_model_info(client, model_b_uuid)
 
-    # Try to get model info, but continue even if it fails due to permissions
-    model_a_info = get_model_info(client, model_a_uuid)
-    model_b_info = get_model_info(client, model_b_uuid)
+        # Use model IDs as names if we can't get the actual names
+        model_a_name = f"{model_a_info.get('name', 'Model A')} ({model_a_info.get('username', 'Unknown')})" if model_a_info else f"Model A ({model_a_uuid[:8]}...)"
+        model_b_name = f"{model_b_info.get('name', 'Model B')} ({model_b_info.get('username', 'Unknown')})" if model_b_info else f"Model B ({model_b_uuid[:8]}...)"
 
-    # Use model IDs as names if we can't get the actual names
-    model_a_name = f"{model_a_info.get('name', 'Model A')} ({model_a_info.get('username', 'Unknown')})" if model_a_info else f"Model A ({model_a_uuid[:8]}...)"
-    model_b_name = f"{model_b_info.get('name', 'Model B')} ({model_b_info.get('username', 'Unknown')})" if model_b_info else f"Model B ({model_b_uuid[:8]}...)"
+        typer.echo("Comparing models:")
+        typer.echo(f"  Model A: {model_a_name}")
+        typer.echo(f"  Model B: {model_b_name}")
+        typer.echo(f"  Metrics: v2_corr20, canon_mmc")
+        typer.echo(f"  Rounds: {rounds}")
+        typer.echo()
 
-    typer.echo("Comparing models:")
-    typer.echo(f"  Model A: {model_a_name}")
-    typer.echo(f"  Model B: {model_b_name}")
-    typer.echo(f"  Metrics: v2_corr20, canon_mmc")
-    typer.echo(f"  Rounds: {rounds}")
-    typer.echo()
+        # Get performance data
+        typer.echo("Fetching performance data...")
+        model_a_data = get_model_performance(client, model_a_uuid, tournament, rounds)
+        model_b_data = get_model_performance(client, model_b_uuid, tournament, rounds)
 
-    # Get performance data
-    typer.echo("Fetching performance data...")
-    model_a_data = get_model_performance(client, model_a_uuid, tournament, rounds)
-    model_b_data = get_model_performance(client, model_b_uuid, tournament, rounds)
+        if not model_a_data or not model_b_data:
+            typer.echo("Error: Could not fetch performance data for one or both models.", err=True)
+            raise typer.Exit(1)
 
-    if not model_a_data or not model_b_data:
-        typer.echo("Error: Could not fetch performance data for one or both models.", err=True)
-        raise typer.Exit(1)
+        # Compare models
+        comparison_df = compare_models(model_a_data, model_b_data, model_a_name, model_b_name)
 
-    # Compare models
-    comparison_df = compare_models(model_a_data, model_b_data, model_a_name, model_b_name)
+        if comparison_df.empty:
+            typer.echo("No overlapping rounds found between the two models.")
+            raise typer.Exit(0)
 
-    if comparison_df.empty:
-        typer.echo("No overlapping rounds found between the two models.")
-        raise typer.Exit(0)
-
-    # Get round dates
-    typer.echo("Fetching round dates...")
-    round_numbers = comparison_df["Round"].tolist()
-    round_dates = get_round_dates(client, tournament, round_numbers)
+        # Get round dates
+        typer.echo("Fetching round dates...")
+        round_numbers = comparison_df["Round"].tolist()
+        round_dates = get_round_dates(client, tournament, round_numbers)
 
     # Format and display results
     typer.echo("\nModel Comparison Results:")
@@ -651,15 +587,28 @@ def get_models(
         typer.echo("\nGet your API keys from: https://numer.ai/account", err=True)
         raise typer.Exit(1)
 
-    client = NumeraiGraphQLClient(public_id=api_public_id, secret_key=api_secret_key)
+    with NumeraiGraphQLClient(public_id=api_public_id, secret_key=api_secret_key) as client:
+        typer.echo("Fetching user models...", err=True)
 
-    typer.echo("Fetching user models...", err=True)
+        models_list = get_user_models(client)
 
-    models = get_user_models(client)
-
-    if not models:
+    if not models_list:
         typer.echo("No models found or authentication failed.", err=True)
         raise typer.Exit(1)
+
+    # Create mapping from model names to UUIDs for JSON output
+    models = {}
+    for model in models_list:
+        model_id = model.get("id")
+        model_name = model.get("name")
+        tournament = model.get("tournament")
+
+        if model_id and model_name:
+            # Include tournament info in the key for clarity
+            key = f"{model_name}"
+            if tournament:
+                key = f"{model_name}_t{tournament}"
+            models[key] = model_id
 
     # Output JSON to stdout
     print(json.dumps(models, indent=2))
@@ -785,50 +734,49 @@ def top(
         python compare_models.py top --limit 5 --tournament 11
     """
     # Try without authentication first
-    client = NumeraiGraphQLClient()
+    with NumeraiGraphQLClient() as client:
+        typer.echo(f"Fetching top {limit} accounts by MMC from tournament {tournament}...", err=True)
 
-    typer.echo(f"Fetching top {limit} accounts by MMC from tournament {tournament}...", err=True)
-
-    top_accounts = get_top_accounts(client, limit, tournament)
-
-    if not top_accounts:
-        # Try with authentication if available
-        api_public_id = public_id or os.environ.get("NUMER_PUBLIC_API_KEY")
-        api_secret_key = secret_key or os.environ.get("NUMER_SECRET_API_KEY")
-
-        if api_public_id and api_secret_key:
-            typer.echo("Retrying with authentication...", err=True)
-            client = NumeraiGraphQLClient(public_id=api_public_id, secret_key=api_secret_key)
-            top_accounts = get_top_accounts(client, limit, tournament)
+        top_accounts = get_top_accounts(client, limit, tournament)
 
         if not top_accounts:
-            typer.echo("Error: Could not fetch top accounts data.", err=True)
-            raise typer.Exit(1)
+            # Try with authentication if available
+            api_public_id = public_id or os.environ.get("NUMER_PUBLIC_API_KEY")
+            api_secret_key = secret_key or os.environ.get("NUMER_SECRET_API_KEY")
 
-    typer.echo(f"Found {len(top_accounts)} accounts. Fetching best models...", err=True)
+            if api_public_id and api_secret_key:
+                typer.echo("Retrying with authentication...", err=True)
+                with NumeraiGraphQLClient(public_id=api_public_id, secret_key=api_secret_key) as auth_client:
+                    top_accounts = get_top_accounts(auth_client, limit, tournament)
 
-    # Get best model for each account
-    top_models_data = []
-    for account in top_accounts:
-        username = account.get("username")
-        if not username:
-            continue
+            if not top_accounts:
+                typer.echo("Error: Could not fetch top accounts data.", err=True)
+                raise typer.Exit(1)
 
-        best_model = get_account_best_model(client, username, tournament)
+        typer.echo(f"Found {len(top_accounts)} accounts. Fetching best models...", err=True)
 
-        # Combine account data with model data
-        model_data = {
-            "rank": account.get("rank"),
-            "username": username,
-            "displayName": account.get("displayName"),
-            "mmc": account.get("mmc"),
-            "corr": account.get("corr"),
-            "nmrStaked": account.get("nmrStaked"),
-            "best_model_name": f"Model for {username}" if best_model.get("id") else "No model found",
-            "best_model_id": best_model.get("id", "")
-        }
+        # Get best model for each account
+        top_models_data = []
+        for account in top_accounts:
+            username = account.get("username")
+            if not username:
+                continue
 
-        top_models_data.append(model_data)
+            best_model = get_account_best_model(client, username, tournament)
+
+            # Combine account data with model data
+            model_data = {
+                "rank": account.get("rank"),
+                "username": username,
+                "displayName": account.get("displayName"),
+                "mmc": account.get("mmc"),
+                "corr": account.get("corr"),
+                "nmrStaked": account.get("nmrStaked"),
+                "best_model_name": f"Model for {username}" if best_model.get("id") else "No model found",
+                "best_model_id": best_model.get("id", "")
+            }
+
+            top_models_data.append(model_data)
 
     # Output results
     output = format_top_models_output(top_models_data, output_format)
@@ -959,40 +907,40 @@ def top_compare(
     typer.echo(f"Fetching top {limit} models from tournament {tournament}...", err=True)
 
     # Try without authentication first
-    client = NumeraiGraphQLClient()
-    top_accounts = get_top_accounts(client, limit, tournament)
-
-    if not top_accounts:
-        # Try with authentication if available
-        api_public_id = public_id or os.environ.get("NUMER_PUBLIC_API_KEY")
-        api_secret_key = secret_key or os.environ.get("NUMER_SECRET_API_KEY")
-
-        if api_public_id and api_secret_key:
-            typer.echo("Retrying with authentication...", err=True)
-            client = NumeraiGraphQLClient(public_id=api_public_id, secret_key=api_secret_key)
-            top_accounts = get_top_accounts(client, limit, tournament)
+    with NumeraiGraphQLClient() as client:
+        top_accounts = get_top_accounts(client, limit, tournament)
 
         if not top_accounts:
-            typer.echo("Error: Could not fetch top accounts data.", err=True)
-            raise typer.Exit(1)
+            # Try with authentication if available
+            api_public_id = public_id or os.environ.get("NUMER_PUBLIC_API_KEY")
+            api_secret_key = secret_key or os.environ.get("NUMER_SECRET_API_KEY")
 
-    # Get best models for each account
-    typer.echo(f"Found {len(top_accounts)} accounts. Fetching best models...", err=True)
+            if api_public_id and api_secret_key:
+                typer.echo("Retrying with authentication...", err=True)
+                with NumeraiGraphQLClient(public_id=api_public_id, secret_key=api_secret_key) as auth_client:
+                    top_accounts = get_top_accounts(auth_client, limit, tournament)
 
-    top_models_data = []
-    for account in top_accounts:
-        username = account.get("username")
-        if not username:
-            continue
+            if not top_accounts:
+                typer.echo("Error: Could not fetch top accounts data.", err=True)
+                raise typer.Exit(1)
 
-        best_model = get_account_best_model(client, username, tournament)
+        # Get best models for each account
+        typer.echo(f"Found {len(top_accounts)} accounts. Fetching best models...", err=True)
 
-        if best_model.get("id"):
-            model_data = {
-                "username": username,
-                "best_model_id": best_model.get("id")
-            }
-            top_models_data.append(model_data)
+        top_models_data = []
+        for account in top_accounts:
+            username = account.get("username")
+            if not username:
+                continue
+
+            best_model = get_account_best_model(client, username, tournament)
+
+            if best_model.get("id"):
+                model_data = {
+                    "username": username,
+                    "best_model_id": best_model.get("id")
+                }
+                top_models_data.append(model_data)
 
     if not top_models_data:
         typer.echo("Error: No models found for top accounts.", err=True)
