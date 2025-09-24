@@ -16,4 +16,6 @@ retrieve the data that you may need.
 Hope this will be useful to fellow datascientists out there! If anyone has any questions etc, feel free to 
 raise an Issue in github, or you can find me in the Numerai discord.
 
+## Utils
+A collection of python tools to retrieve and compare your performance against other models
 
