@@ -177,7 +177,7 @@ Get public profile information for any user.
     location
     models {
       id
-      name
+      displayName
       tournament
     }
     returns {
@@ -195,6 +195,8 @@ Get public profile information for any user.
 **Parameters:**
 - `username` (String, required): Username to look up
 - `tournament` (Int): Tournament ID (default: 8)
+
+**Important:** The `models` field returns `ModelProfile` objects, which use `displayName` (not `name`) for the model name. See [ModelProfile Type](#modelprofile-type) for all available fields.
 
 ### 5. Account Leaderboard Query
 Get leaderboard rankings with filtering and sorting.
@@ -389,6 +391,68 @@ type Model {
 }
 ```
 
+**Note:** This type is returned by the `model(modelId)` query and `account.models`. For models returned by `accountProfile.models`, see [ModelProfile Type](#modelprofile-type) below.
+
+### ModelProfile Type
+This type is returned when querying models via `accountProfile`. It has different fields than the `Model` type.
+
+```graphql
+type ModelProfile {
+  id: ID
+  displayName: String          # Use this instead of "name"
+  tournament: Int
+  username: String
+  accountId: ID
+  profileUrl: String
+  startDate: Time
+  stake: Nmr
+  return1y: Float
+  # Reputation scores
+  corrRep: Float
+  corr60Rep: Float
+  corr20V2Rep: Float
+  corrV4Rep: Float
+  corj60Rep: Float
+  mmcRep: Float
+  mmc60Rep: Float
+  tcRep: Float
+  fncV3Rep: Float
+  fncV4Rep: Float
+  icV2Rep: Float
+  ricRep: Float
+  mpcRep: Float
+  alphaRep: Float
+}
+```
+
+**Important:** When querying `accountProfile.models`, use `displayName` to get the model name, not `name`. The `name` field does not exist on `ModelProfile`.
+
+**Example:**
+```graphql
+{
+  accountProfile(username: "videigren", tournament: 8) {
+    models {
+      id
+      displayName
+      tournament
+    }
+  }
+}
+```
+
+**Response:**
+```json
+{
+  "data": {
+    "accountProfile": {
+      "models": [
+        {"id": "97b8045c-77b5-47bf-bfb1-76bf3d785d6e", "displayName": "videigren", "tournament": 8}
+      ]
+    }
+  }
+}
+```
+
 ### Round Type
 ```graphql
 type Round {
@@ -461,7 +525,7 @@ curl -X POST -H "Content-Type: application/json" \
 ### Get User Profile
 ```bash
 curl -X POST -H "Content-Type: application/json" \
-  -d '{"query": "{ accountProfile(username: \"username\") { displayName bio models { name tournament } returns { oneYear allTime } } }"}' \
+  -d '{"query": "{ accountProfile(username: \"username\", tournament: 8) { displayName bio models { id displayName tournament } returns { oneYear allTime } } }"}' \
   https://api-tournament.numer.ai/
 ```
 
@@ -502,6 +566,134 @@ The API implements rate limiting. Be respectful with request frequency to avoid 
 3. **Filtering**: Use available filter parameters to get specific data
 4. **Introspection**: Use schema introspection to discover new fields and types
 5. **Error handling**: Always check for errors in the response
+6. **Model vs ModelProfile**: The `accountProfile.models` field returns `ModelProfile` objects (use `displayName`), while `account.models` and `model()` query return `Model` objects (use `name`). This is a common source of errors.
+
+## Crypto Tournament API Differences
+
+The Crypto Signals tournament (ID: 12) has some key differences from the Classic tournament (ID: 8) when querying the API.
+
+### Key Differences
+
+| Feature | Classic (Tournament 8) | Crypto (Tournament 12) |
+|---------|------------------------|------------------------|
+| Model lookup | `v3UserProfile(modelName: "model_name")` | Use `accountProfile` with `tournament: 12` |
+| Performance data | `v3UserProfile.roundModelPerformances` | `v2RoundModelPerformances(modelId: UUID, tournament: 12)` |
+| Model identifier | Model name (string) | Model UUID |
+| Score fields | Direct fields (corr, mmc, etc.) | Nested in `submissionScores` array |
+
+### Getting Crypto Models for a User
+
+To get a user's Crypto tournament models, you MUST include the `tournament` parameter:
+
+```bash
+curl -X POST -H "Content-Type: application/json" \
+  -d '{"query": "{ accountProfile(username: \"fish_n_chips\", tournament: 12) { username models { id displayName tournament } } }"}' \
+  https://api-tournament.numer.ai/
+```
+
+**Response:**
+```json
+{
+  "data": {
+    "accountProfile": {
+      "username": "fish_n_chips",
+      "models": [
+        {"id": "b27db79e-bafa-4a76-8a75-9f91168cd222", "displayName": "fncc_t1", "tournament": 12},
+        {"id": "c8a5bd73-ca3a-4b52-8d9c-68effe58e66a", "displayName": "fncc_t2", "tournament": 12}
+      ]
+    }
+  }
+}
+```
+
+**Important:** Without the `tournament: 12` parameter, `accountProfile` returns Classic (tournament 8) models only.
+
+### Getting Crypto Model Performance Data
+
+Crypto models use `v2RoundModelPerformances` instead of `v3UserProfile.roundModelPerformances`:
+
+```bash
+curl -X POST -H "Content-Type: application/json" \
+  -d '{"query": "{ v2RoundModelPerformances(modelId: \"b27db79e-bafa-4a76-8a75-9f91168cd222\", tournament: 12, lastNRounds: 10) { roundNumber roundResolved submissionScores { displayName value } } }"}' \
+  https://api-tournament.numer.ai/
+```
+
+**Response:**
+```json
+{
+  "data": {
+    "v2RoundModelPerformances": [
+      {
+        "roundNumber": 1163,
+        "roundResolved": true,
+        "submissionScores": [
+          {"displayName": "corr", "value": -0.166},
+          {"displayName": "mmc", "value": -0.113},
+          {"displayName": "canon_corr", "value": -0.166},
+          {"displayName": "canon_mmc", "value": -0.113},
+          {"displayName": "season_score", "value": -0.113}
+        ]
+      }
+    ]
+  }
+}
+```
+
+### Crypto Leaderboard
+
+To get the Crypto tournament leaderboard:
+
+```bash
+curl -X POST -H "Content-Type: application/json" \
+  -d '{"query": "{ accountLeaderboard(tournament: 12, limit: 10) { username rank corr mmc nmrStaked } }"}' \
+  https://api-tournament.numer.ai/
+```
+
+### Available Score Types in Crypto
+
+The `submissionScores` array contains these metrics for Crypto:
+
+| displayName | Description |
+|-------------|-------------|
+| `corr` | Correlation score |
+| `mmc` | Meta Model Contribution |
+| `canon_corr` | Canonical correlation |
+| `canon_mmc` | Canonical MMC |
+| `apcwcm` | Average pairwise correlation weighted by crypto market cap |
+| `mcwcm` | Market cap weighted correlation metric |
+| `season_score` | Current season score |
+
+### Workflow for Crypto Tournament
+
+1. **Find user models** - Use `accountProfile(username, tournament: 12)` to get model list with UUIDs
+2. **Get model ID** - Extract the `id` field (UUID) from the model
+3. **Fetch performance** - Use `v2RoundModelPerformances(modelId: UUID, tournament: 12)` for metrics
+4. **Access scores** - Parse the `submissionScores` array for individual metrics
+
+### Example: Complete Workflow
+
+```javascript
+// Step 1: Get user's Crypto models
+const modelsQuery = `{
+  accountProfile(username: "fish_n_chips", tournament: 12) {
+    models { id displayName tournament }
+  }
+}`;
+
+// Step 2: Use model UUID to get performance
+const modelId = "b27db79e-bafa-4a76-8a75-9f91168cd222"; // fncc_t1
+const perfQuery = `{
+  v2RoundModelPerformances(modelId: "${modelId}", tournament: 12, lastNRounds: 20) {
+    roundNumber
+    roundResolved
+    submissionScores { displayName value }
+  }
+}`;
+
+// Step 3: Extract corr and mmc from submissionScores
+const corr = submissionScores.find(s => s.displayName === 'corr')?.value;
+const mmc = submissionScores.find(s => s.displayName === 'mmc')?.value;
+```
 
 ## Additional Resources
 
