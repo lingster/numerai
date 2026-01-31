@@ -9,9 +9,8 @@ I've also used an LLM to pickout and summarise keys discussions so
 hopefully that will be useful for the community at large!
 
 I have used the very useful DiscordChatExporter: 
-https://github.com/Tyrrrz/DiscordChatExporter
-
-To export chats!
+https://github.com/Tyrrrz/DiscordChatExporter to export chats ask asked 
+an LLM to extract out useful information
 
 
 
