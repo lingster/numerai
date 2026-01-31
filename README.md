@@ -23,4 +23,4 @@ A collection of python tools to retrieve and compare your performance against ot
 ## Discord
 There's signal and noise in the discord channel, so for the benefit of anyone wanting to come up to speed, I've 
 created a summary of the main channels with potentially useful tidbits of information for anyone who's new here like I was. 
-Check out the discord folder
+Check out [`discord`](https://github.com/lingster/numerai/tree/main/discord)
