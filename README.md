@@ -20,3 +20,7 @@ raise an Issue in github, or you can find me in the Numerai discord.
 ## Utils
 A collection of python tools to retrieve and compare your performance against other models
 
+## Discord
+There's signal and noise in the discord channel, so for the benefit of anyone wanting to come up to speed, I've 
+created a summary of the main channels with potentially useful tidbits of information for anyone who's new here like I was. 
+Check out the discord folder
