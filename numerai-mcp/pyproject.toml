@@ -1,0 +1,10 @@
+[project]
+name = "numerai-mcp"
+version = "0.1.0"
+description = "Numerai MCP for querying graphql data"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.26.0",
+]
