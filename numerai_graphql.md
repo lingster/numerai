@@ -956,7 +956,7 @@ To get all unresolved rounds, first query for rounds where `resolvedGeneral` is 
 
 ```bash
 # Step 1: Get current unresolved rounds
-curl -X POST -H "Content-Type: application/json" \
+curl -X POST -H "Content-Type: application-json" \
   -d '{
     "query": "{ rounds(tournament: 8, status: RESOLVING) { number } }"
   }' \
