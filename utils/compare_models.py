@@ -38,7 +38,7 @@ Examples:
 """
 
 import json
-import pandas as pd
+import polars as pl
 from typing import Dict, List, Optional, Annotated
 import sys
 import os
@@ -224,10 +224,10 @@ def get_round_dates(client: NumeraiGraphQLClient, tournament: int = 8,
 
 
 def compare_models(model_a_data: List[Dict], model_b_data: List[Dict],
-                  model_a_name: str, model_b_name: str) -> pd.DataFrame:
+                  model_a_name: str, model_b_name: str) -> pl.DataFrame:
     """Compare two models' performance data across multiple metrics"""
 
-    def extract_all_metrics(data: List[Dict]) -> pd.DataFrame:
+    def extract_all_metrics(data: List[Dict]) -> pl.DataFrame:
         """Extract all relevant metrics from the submission scores format"""
         rows = []
         for round_data in data:
@@ -235,7 +235,6 @@ def compare_models(model_a_data: List[Dict], model_b_data: List[Dict],
             round_resolved = round_data.get("roundResolved", False)
             submission_scores = round_data.get("submissionScores", [])
 
-            # Create a dict for this round
             round_metrics = {
                 "roundNumber": round_num,
                 "resolved": round_resolved,
@@ -243,7 +242,6 @@ def compare_models(model_a_data: List[Dict], model_b_data: List[Dict],
                 "canon_mmc": None
             }
 
-            # Extract all metrics we care about
             for score in submission_scores:
                 display_name = score.get("displayName", "")
                 if display_name in ["v2_corr20", "canon_mmc"]:
@@ -252,34 +250,30 @@ def compare_models(model_a_data: List[Dict], model_b_data: List[Dict],
             if round_num is not None:
                 rows.append(round_metrics)
 
-        return pd.DataFrame(rows)
+        return pl.DataFrame(rows)
 
-    # Extract data for both models
     df_a = extract_all_metrics(model_a_data)
     df_b = extract_all_metrics(model_b_data)
 
-    if df_a.empty or df_b.empty:
-        return pd.DataFrame()
+    if df_a.is_empty() or df_b.is_empty():
+        return pl.DataFrame()
 
-    # Merge on roundNumber
-    merged = pd.merge(df_a, df_b, on="roundNumber", suffixes=("_a", "_b"), how="inner")
+    # Rename overlapping columns with suffixes before join
+    overlap_cols = ["resolved", "v2_corr20", "canon_mmc"]
+    df_a = df_a.rename({col: f"{col}_a" for col in overlap_cols})
+    df_b = df_b.rename({col: f"{col}_b" for col in overlap_cols})
+    merged = df_a.join(df_b, on="roundNumber", how="inner")
 
     # Use resolved status from either model (should be the same)
-    merged["resolved"] = merged["resolved_a"]
+    merged = merged.with_columns(pl.col("resolved_a").alias("resolved"))
 
-    # Calculate differences for each metric
-    def safe_subtract(a, b):
-        if a is None or b is None:
-            return None
-        return a - b
-
+    # Calculate differences (polars handles null subtraction natively)
     for metric in ["v2_corr20", "canon_mmc"]:
-        merged[f"{metric}_diff"] = merged.apply(
-            lambda row: safe_subtract(row[f"{metric}_a"], row[f"{metric}_b"]), axis=1
+        merged = merged.with_columns(
+            (pl.col(f"{metric}_a") - pl.col(f"{metric}_b")).alias(f"{metric}_diff")
         )
 
     # Rename columns for clarity using actual model names
-    # Clean model names for column headers (remove problematic characters)
     clean_model_a = model_a_name.replace(" ", "_").replace("(", "").replace(")", "").replace("-", "_")
     clean_model_b = model_b_name.replace(" ", "_").replace("(", "").replace(")", "").replace("-", "_")
 
@@ -288,49 +282,51 @@ def compare_models(model_a_data: List[Dict], model_b_data: List[Dict],
         column_renames[f"{metric}_a"] = f"{metric}_{clean_model_a}"
         column_renames[f"{metric}_b"] = f"{metric}_{clean_model_b}"
 
-    merged.rename(columns=column_renames, inplace=True)
+    merged = merged.rename(column_renames)
 
-    # Select and order columns with actual model names
     columns = ["Round", "resolved",
                f"v2_corr20_{clean_model_a}", f"v2_corr20_{clean_model_b}", "v2_corr20_diff",
                f"canon_mmc_{clean_model_a}", f"canon_mmc_{clean_model_b}", "canon_mmc_diff"]
 
-    return merged[columns]
+    return merged.select(columns)
 
 
-def format_table(df: pd.DataFrame, round_dates: Dict[int, str]) -> str:
+def format_table(df: pl.DataFrame, round_dates: Dict[int, str]) -> str:
     """Format the comparison table with dates and multiple metrics"""
 
-    if df.empty:
+    if df.is_empty():
         return "No overlapping data found between the two models."
 
-    # Add date column
-    df_copy = df.copy()
-    df_copy["Date"] = df_copy["Round"].map(lambda x: round_dates.get(x, "Unknown"))
-    df_copy["Resolution_Status"] = df_copy["resolved"].map(lambda x: "Resolved" if x else "Unresolved")
+    # Add date and resolution columns
+    df = df.with_columns(
+        pl.col("Round").map_elements(lambda x: round_dates.get(x, "Unknown"), return_dtype=pl.Utf8).alias("Date"),
+        pl.when(pl.col("resolved")).then(pl.lit("Resolved")).otherwise(pl.lit("Unresolved")).alias("Resolution_Status"),
+    )
 
-    # Convert date strings to datetime for proper sorting
-    df_copy["date_parsed"] = pd.to_datetime(df_copy["Date"], errors="coerce")
+    # Parse dates for sorting
+    df = df.with_columns(pl.col("Date").str.to_datetime(strict=False).alias("date_parsed"))
+    df = df.sort("date_parsed", descending=True)
 
-    # Sort by date descending (most recent first)
-    df_sorted = df_copy.sort_values("date_parsed", ascending=False)
-
-    # Get column names dynamically (they now contain actual model names)
-    metric_columns = [col for col in df_sorted.columns if any(metric in col for metric in ["v2_corr20", "canon_mmc"])]
-
-    # Reorder columns for better readability
+    # Select display columns
+    metric_columns = [col for col in df.columns if any(metric in col for metric in ["v2_corr20", "canon_mmc"])]
     columns = ["Round", "Date", "Resolution_Status"] + metric_columns
+    df = df.select(columns)
 
-    df_formatted = df_sorted[columns]
+    # Format rows for display
+    rows = []
+    for row in df.iter_rows(named=True):
+        formatted = []
+        for col in columns:
+            val = row[col]
+            if col in ("Round", "Date", "Resolution_Status"):
+                formatted.append(val)
+            elif val is None:
+                formatted.append("N/A")
+            else:
+                formatted.append(f"{val:.6f}")
+        rows.append(formatted)
 
-    # Replace None values with "N/A" for better display
-    df_display = df_formatted.copy()
-    for col in df_display.columns:
-        if col not in ["Round", "Date", "Resolution_Status"]:
-            df_display[col] = df_display[col].apply(lambda x: "N/A" if x is None else x)
-
-    # Format the table with better precision
-    return df_display.to_string(index=False, float_format="%.6f")
+    return tabulate(rows, headers=columns, tablefmt="plain")
 
 
 class MetricType(str, Enum):
@@ -431,13 +427,13 @@ def compare(
         # Compare models
         comparison_df = compare_models(model_a_data, model_b_data, model_a_name, model_b_name)
 
-        if comparison_df.empty:
+        if comparison_df.is_empty():
             typer.echo("No overlapping rounds found between the two models.")
             raise typer.Exit(0)
 
         # Get round dates
         typer.echo("Fetching round dates...")
-        round_numbers = comparison_df["Round"].tolist()
+        round_numbers = comparison_df["Round"].to_list()
         round_dates = get_round_dates(client, tournament, round_numbers)
 
     # Format and display results
@@ -449,23 +445,21 @@ def compare(
     # Export to CSV if requested
     if output_csv:
         try:
-            # Prepare data for CSV export (both resolved and unresolved)
-            export_df = comparison_df.copy()
-            if not export_df.empty:
+            if not comparison_df.is_empty():
                 # Add date and resolution status columns for CSV
-                export_df['Date'] = export_df['Round'].map(lambda x: round_dates.get(x, "Unknown"))
-                export_df['Resolution_Status'] = export_df['resolved'].map(lambda x: "Resolved" if x else "Unresolved")
+                export_df = comparison_df.with_columns(
+                    pl.col("Round").map_elements(lambda x: round_dates.get(x, "Unknown"), return_dtype=pl.Utf8).alias("Date"),
+                    pl.when(pl.col("resolved")).then(pl.lit("Resolved")).otherwise(pl.lit("Unresolved")).alias("Resolution_Status"),
+                )
+                export_df = export_df.with_columns(
+                    pl.col("Date").str.to_datetime(strict=False).alias("date_parsed")
+                )
+                export_df = export_df.sort("date_parsed", descending=True)
 
-                # Sort by date descending (most recent first)
-                export_df['date_parsed'] = pd.to_datetime(export_df['Date'], errors="coerce")
-                export_df = export_df.sort_values("date_parsed", ascending=False)
-
-                # Select and reorder columns for CSV (using dynamic column names)
                 metric_columns = [col for col in export_df.columns if any(metric in col for metric in ["v2_corr20", "canon_mmc"])]
                 csv_columns = ["Round", "Date", "Resolution_Status"] + metric_columns
 
-                csv_df = export_df[csv_columns]
-                csv_df.to_csv(output_csv, index=False, float_format="%.6f")
+                export_df.select(csv_columns).write_csv(output_csv, float_precision=6)
                 typer.echo(f"\nResults exported to: {output_csv}")
             else:
                 typer.echo(f"\nNo rounds to export to CSV.", err=True)
@@ -473,91 +467,57 @@ def compare(
             typer.echo(f"\nError exporting to CSV: {e}", err=True)
 
     # Summary statistics for both resolved and unresolved rounds
-    resolved_df = comparison_df[comparison_df['resolved'] == True]
-    unresolved_df = comparison_df[comparison_df['resolved'] == False]
+    resolved_df = comparison_df.filter(pl.col("resolved"))
+    unresolved_df = comparison_df.filter(~pl.col("resolved"))
 
     typer.echo("\nSummary Statistics:")
     typer.echo(f"  Total overlapping rounds: {len(comparison_df)}")
     typer.echo(f"  Resolved rounds: {len(resolved_df)}")
     typer.echo(f"  Unresolved rounds: {len(unresolved_df)}")
 
-    # Resolved rounds statistics
-    if len(resolved_df) > 0:
-        typer.echo("\n--- RESOLVED ROUNDS STATISTICS ---")
+    clean_model_a = model_a_name.replace(" ", "_").replace("(", "").replace(")", "").replace("-", "_")
+    clean_model_b = model_b_name.replace(" ", "_").replace("(", "").replace(")", "").replace("-", "_")
 
-        # Get the actual column names which now contain model names
-        clean_model_a = model_a_name.replace(" ", "_").replace("(", "").replace(")", "").replace("-", "_")
-        clean_model_b = model_b_name.replace(" ", "_").replace("(", "").replace(")", "").replace("-", "_")
+    def _print_metric_stats(subset_df: pl.DataFrame, section_label: str) -> None:
+        if len(subset_df) == 0:
+            typer.echo(f"\n--- {section_label} ---")
+            typer.echo("  No rounds with data found." if "RESOLVED" in section_label and "UN" not in section_label
+                       else "  No unresolved rounds found.")
+            return
 
+        typer.echo(f"\n--- {section_label} ---")
         for metric in ["v2_corr20", "canon_mmc"]:
             diff_col = f"{metric}_diff"
             model_a_col = f"{metric}_{clean_model_a}"
             model_b_col = f"{metric}_{clean_model_b}"
 
-            if diff_col in resolved_df.columns:
-                valid_diffs = resolved_df[diff_col].dropna()
-                if len(valid_diffs) > 0:
-                    # Calculate total scores for each model
-                    model_a_scores = resolved_df[model_a_col].dropna() if model_a_col in resolved_df.columns else pd.Series()
-                    model_b_scores = resolved_df[model_b_col].dropna() if model_b_col in resolved_df.columns else pd.Series()
+            if diff_col not in subset_df.columns:
+                continue
+            valid_diffs = subset_df[diff_col].drop_nulls()
+            if len(valid_diffs) == 0:
+                typer.echo(f"\n  {metric.upper()}: No data available (metrics not yet calculated)")
+                continue
 
-                    typer.echo(f"\n  {metric.upper()}:")
-                    typer.echo(f"    Average difference ({model_a_name} - {model_b_name}): {valid_diffs.mean():.6f}")
-                    typer.echo(f"    Standard deviation: {valid_diffs.std():.6f}")
-                    typer.echo(f"    {model_a_name} wins: {sum(valid_diffs > 0)} rounds")
-                    typer.echo(f"    {model_b_name} wins: {sum(valid_diffs < 0)} rounds")
-                    typer.echo(f"    Ties: {sum(valid_diffs == 0)} rounds")
+            model_a_scores = subset_df[model_a_col].drop_nulls() if model_a_col in subset_df.columns else pl.Series([])
+            model_b_scores = subset_df[model_b_col].drop_nulls() if model_b_col in subset_df.columns else pl.Series([])
 
-                    if len(model_a_scores) > 0:
-                        typer.echo(f"    Total {model_a_name} score: {model_a_scores.sum():.6f}")
-                    if len(model_b_scores) > 0:
-                        typer.echo(f"    Total {model_b_name} score: {model_b_scores.sum():.6f}")
-                    if len(model_a_scores) > 0 and len(model_b_scores) > 0:
-                        total_diff = model_a_scores.sum() - model_b_scores.sum()
-                        typer.echo(f"    Total difference ({model_a_name} - {model_b_name}): {total_diff:.6f}")
-    else:
-        typer.echo("\n--- RESOLVED ROUNDS STATISTICS ---")
-        typer.echo("  No resolved rounds with data found.")
+            typer.echo(f"\n  {metric.upper()}:")
+            typer.echo(f"    Average difference ({model_a_name} - {model_b_name}): {valid_diffs.mean():.6f}")
+            typer.echo(f"    Standard deviation: {valid_diffs.std():.6f}")
+            typer.echo(f"    {model_a_name} wins: {(valid_diffs > 0).sum()} rounds")
+            typer.echo(f"    {model_b_name} wins: {(valid_diffs < 0).sum()} rounds")
+            typer.echo(f"    Ties: {(valid_diffs == 0).sum()} rounds")
 
-    # Unresolved rounds statistics
-    if len(unresolved_df) > 0:
-        typer.echo("\n--- UNRESOLVED ROUNDS STATISTICS ---")
+            if len(model_a_scores) > 0:
+                typer.echo(f"    Total {model_a_name} score: {model_a_scores.sum():.6f}")
+            if len(model_b_scores) > 0:
+                typer.echo(f"    Total {model_b_name} score: {model_b_scores.sum():.6f}")
+            if len(model_a_scores) > 0 and len(model_b_scores) > 0:
+                total_diff = model_a_scores.sum() - model_b_scores.sum()
+                typer.echo(f"    Total difference ({model_a_name} - {model_b_name}): {total_diff:.6f}")
 
-        # Use the same clean model names
-        clean_model_a = model_a_name.replace(" ", "_").replace("(", "").replace(")", "").replace("-", "_")
-        clean_model_b = model_b_name.replace(" ", "_").replace("(", "").replace(")", "").replace("-", "_")
-
-        for metric in ["v2_corr20", "canon_mmc"]:
-            diff_col = f"{metric}_diff"
-            model_a_col = f"{metric}_{clean_model_a}"
-            model_b_col = f"{metric}_{clean_model_b}"
-
-            if diff_col in unresolved_df.columns:
-                valid_diffs = unresolved_df[diff_col].dropna()
-                if len(valid_diffs) > 0:
-                    # Calculate total scores for each model
-                    model_a_scores = unresolved_df[model_a_col].dropna() if model_a_col in unresolved_df.columns else pd.Series()
-                    model_b_scores = unresolved_df[model_b_col].dropna() if model_b_col in unresolved_df.columns else pd.Series()
-
-                    typer.echo(f"\n  {metric.upper()}:")
-                    typer.echo(f"    Average difference ({model_a_name} - {model_b_name}): {valid_diffs.mean():.6f}")
-                    typer.echo(f"    Standard deviation: {valid_diffs.std():.6f}")
-                    typer.echo(f"    {model_a_name} wins: {sum(valid_diffs > 0)} rounds")
-                    typer.echo(f"    {model_b_name} wins: {sum(valid_diffs < 0)} rounds")
-                    typer.echo(f"    Ties: {sum(valid_diffs == 0)} rounds")
-
-                    if len(model_a_scores) > 0:
-                        typer.echo(f"    Total {model_a_name} score: {model_a_scores.sum():.6f}")
-                    if len(model_b_scores) > 0:
-                        typer.echo(f"    Total {model_b_name} score: {model_b_scores.sum():.6f}")
-                    if len(model_a_scores) > 0 and len(model_b_scores) > 0:
-                        total_diff = model_a_scores.sum() - model_b_scores.sum()
-                        typer.echo(f"    Total difference ({model_a_name} - {model_b_name}): {total_diff:.6f}")
-                else:
-                    typer.echo(f"\n  {metric.upper()}: No data available (metrics not yet calculated)")
-    else:
-        typer.echo("\n--- UNRESOLVED ROUNDS STATISTICS ---")
-        typer.echo("  No unresolved rounds found.")
+    _print_metric_stats(resolved_df, "RESOLVED ROUNDS STATISTICS")
+    _print_metric_stats(unresolved_df, "UNRESOLVED ROUNDS STATISTICS")
 
 
 @app.command()
