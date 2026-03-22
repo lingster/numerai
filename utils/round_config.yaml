@@ -1,0 +1,42 @@
+# Numerai Round Performance Configuration
+# CLI arguments override these values.
+
+# Tournament: classic | signals | crypto  (or 8/11/12)
+tournament: classic
+
+# Per-tournament payout formulas
+formulas:
+  classic:
+    mmc_multiplier: 2.25
+    corr_multiplier: 0.75
+    clip_min: -0.05
+    clip_max: 0.05
+  crypto:
+    mmc_multiplier: 0.5
+    corr_multiplier: 0.05
+    clip_min: -0.05
+    clip_max: 0.05
+  signals:
+    alpha_multiplier: 0.3
+    mpc_multiplier: 0.8
+    clip_min: -0.017
+    clip_max: 0.017
+
+# Data fetching method: rounddetails | permodel | both
+method: rounddetails
+
+# Default sort: return_pct | mmc20 | corr20 | model_name
+sort_by: return_pct
+sort_desc: true
+
+# Max models to query individually in permodel method
+max_models: 100
+
+# Default model regex (uncomment to set a default filter)
+# model_regex: ".*"
+
+# Parquet cache file path
+parquet_path: round_details.parquet
+
+# Position tracking metric: return_pct | score1 | score2
+position_metric: return_pct

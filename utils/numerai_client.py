@@ -38,8 +38,10 @@ class NumeraiGraphQLClient:
             secret_key: Secret API key for authentication
         """
         self.base_url = base_url
-        self.client = httpx.Client()
-        self.client.headers.update({"Content-Type": "application/json"})
+        self.client = httpx.Client(
+            timeout=httpx.Timeout(connect=5.0, read=30.0, write=5.0, pool=5.0),
+            headers={"Content-Type": "application/json"},
+        )
 
         # Add authentication if provided
         if public_id and secret_key:
@@ -60,15 +62,15 @@ class NumeraiGraphQLClient:
                 return True
         return False
 
-    def query(self, query: str, variables: Optional[Dict] = None, max_retries: int = 5, initial_wait: float = 5.0) -> Dict:
+    def query(self, query: str, variables: Optional[Dict] = None, max_retries: int = 5, initial_wait: float = 2.0) -> Dict:
         """
-        Execute a GraphQL query with exponential backoff retry for rate limiting
+        Execute a GraphQL query with linear backoff retry for rate limiting
 
         Args:
             query: GraphQL query string
             variables: Optional query variables
             max_retries: Maximum number of retry attempts
-            initial_wait: Initial wait time in seconds
+            initial_wait: Base wait time in seconds (waits initial_wait, 2x, 3x, ...)
 
         Returns:
             GraphQL response data
@@ -88,8 +90,8 @@ class NumeraiGraphQLClient:
                 # Check for rate limiting in GraphQL errors
                 if "errors" in result and self._is_rate_limited(result):
                     if attempt < max_retries:
-                        # Calculate exponential backoff with jitter
-                        wait_time = initial_wait * (2 ** attempt) + random.uniform(0, 1)
+                        # Linear backoff with jitter: 2s, 4s, 6s, 8s, ...
+                        wait_time = initial_wait * (attempt + 1) + random.uniform(0, 1)
                         print(f"Rate limited. Retrying in {wait_time:.2f} seconds (attempt {attempt + 1}/{max_retries})...", file=sys.stderr)
                         time.sleep(wait_time)
                         continue
@@ -107,8 +109,8 @@ class NumeraiGraphQLClient:
             except httpx.RequestError as e:
                 last_error = e
                 if attempt < max_retries:
-                    # Network errors also get exponential backoff
-                    wait_time = initial_wait * (2 ** attempt) + random.uniform(0, 1)
+                    # Network errors also get linear backoff
+                    wait_time = initial_wait * (attempt + 1) + random.uniform(0, 1)
                     print(f"Request error: {e}. Retrying in {wait_time:.2f} seconds (attempt {attempt + 1}/{max_retries})...", file=sys.stderr)
                     time.sleep(wait_time)
                     continue

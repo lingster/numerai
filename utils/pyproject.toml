@@ -6,9 +6,14 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "numerapi>=2.20.6",
-    "pandas>=2.2.3",
     "requests>=2.32.3",
     "typer>=0.16.0",
     "tabulate>=0.9.0",
     "httpx>=0.28.1",
+    "pyyaml>=6.0",
+    "loguru>=0.7.0",
+    "pydantic>=2.0",
+    "pyarrow>=14.0",
+    "plotext>=5.3.2",
+    "polars>=1.38.1",
 ]
