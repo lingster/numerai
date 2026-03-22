@@ -1,0 +1,22 @@
+{
+  "name": "numerai-ql",
+  "version": "1.0.0",
+  "description": "Query the Numerai Tournament GraphQL API to retrieve model performance, leaderboards, round data, and tournament information.",
+  "author": {
+    "name": "Ling",
+    "url": "https://github.com/lingster/numerai"
+  },
+  "homepage": "https://github.com/lingster/numerai",
+  "repository": "https://github.com/lingster/numerai",
+  "license": "MIT",
+  "keywords": [
+    "numerai",
+    "graphql",
+    "tournament",
+    "datascience",
+    "predictions",
+    "nmr"
+  ],
+  "skills": ["skills/numerai-ql"],
+  "hooks": {}
+}
