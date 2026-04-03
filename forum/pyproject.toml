@@ -1,0 +1,16 @@
+[project]
+name = "forum"
+version = "0.1.0"
+description = "Scrape Numerai Discourse forum to markdown files for LLM use"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.27",
+    "html2text>=2024.2",
+    "typer>=0.12",
+    "loguru>=0.7",
+    "pydantic>=2.0",
+]
+
+[project.scripts]
+forum-scraper = "main:app"

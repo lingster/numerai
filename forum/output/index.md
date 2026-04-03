@@ -1,0 +1,1021 @@
+# Numerai Forum Index
+_Last updated: 2026-04-03 16:12 UTC_
+
+_990 topics across 9 categories_
+
+## Announcements
+
+- [UX for the Modern Era](announcements/ux-for-the-modern-era.md) — 2026-01-23 | 0 replies | 516 views
+- [New Target for Payouts and Data V5.2 - Faith II](announcements/new-target-for-payouts-and-data-v5-2-faith-ii.md) — 2025-12-22 | 3 replies | 1,548 views
+- [Data V5.1 Release - Faith](announcements/data-v5-1-release-faith.md) — 2025-11-07 | 6 replies | 2,072 views
+- [Crypto V2.0 "Spectra" Dataset](announcements/crypto-v2-0-spectra-dataset.md) — 2025-10-08 | 0 replies | 997 views
+- [Signals Alpha, MPC, and Turnover](announcements/signals-alpha-mpc-and-turnover.md) — 2025-07-31 | 0 replies | 803 views
+- [Numerai 60D Scores](announcements/numerai-60d-scores.md) — 2025-05-05 | 0 replies | 1,393 views
+- [Reducing Numerai Crypto Payouts](announcements/reducing-numerai-crypto-payouts.md) — 2025-02-14 | 4 replies | 1,357 views
+- [Using the SWMM for MMC](announcements/using-the-swmm-for-mmc.md) — 2025-02-04 | 0 replies | 812 views
+- [Signals V2 “Cosmic” Data](announcements/signals-v2-cosmic-data.md) — 2024-12-08 | 4 replies | 1,811 views
+- [V5 "Atlas" Data Release](announcements/v5-atlas-data-release.md) — 2024-10-06 | 33 replies | 4,699 views
+- [Signals Churn Threshold](announcements/signals-churn-threshold.md) — 2024-09-24 | 9 replies | 1,071 views
+- [Better LGBM Params, Signals V2 Data, and Reducing Signals Churn](announcements/better-lgbm-params-signals-v2-data-and-reducing-signals-churn.md) — 2024-08-15 | 24 replies | 2,406 views
+- [Updated Signals Ticker Map](announcements/updated-signals-ticker-map.md) — 2024-07-29 | 3 replies | 2,131 views
+- [Benchmark Models](announcements/benchmark-models.md) — 2024-03-10 | 9 replies | 3,703 views
+- [MMC staking starts Jan 2, 2024](announcements/mmc-staking-starts-jan-2-2024.md) — 2024-02-15 | 24 replies | 4,041 views
+- [Signals Payout Update](announcements/signals-payout-update.md) — 2024-02-07 | 0 replies | 1,132 views
+- [Midnight Data Release](announcements/midnight-data-release.md) — 2024-01-24 | 2 replies | 1,901 views
+- [Teager Target Release](announcements/teager-target-release.md) — 2023-12-04 | 1 reply | 1,711 views
+- [Numerai CLI 1.0.0](announcements/numerai-cli-1-0-0.md) — 2023-11-20 | 1 reply | 799 views
+- [Stake multiplier updates starting round 589](announcements/stake-multiplier-updates-starting-round-589.md) — 2023-10-07 | 0 replies | 853 views
+- [Rain Data Release](announcements/rain-data-release.md) — 2023-10-06 | 10 replies | 5,350 views
+- [Model Upload Beta!](announcements/model-upload-beta.md) — 2023-06-19 | 9 replies | 1,699 views
+- [Churn - New Signals Diagnostics Metric](announcements/churn-new-signals-diagnostics-metric.md) — 2023-06-05 | 2 replies | 1,376 views
+- [Discord - the next chapter](announcements/discord-the-next-chapter.md) — 2023-05-24 | 4 replies | 1,939 views
+- [Target Cyrus - New Primary Target](announcements/target-cyrus-new-primary-target.md) — 2023-05-15 | 28 replies | 5,517 views
+- [Signals FNCV4 Transition](announcements/signals-fncv4-transition.md) — 2023-05-01 | 0 replies | 1,224 views
+- [Super Massive Data: Sunshine](announcements/super-massive-data-sunshine.md) — 2023-03-23 | 24 replies | 7,966 views
+- [Updated Models Page](announcements/updated-models-page.md) — 2023-01-30 | 0 replies | 695 views
+- [Numerai Quant Club with Michael Oliver](announcements/numerai-quant-club-with-michael-oliver.md) — 2023-01-27 | 3 replies | 2,309 views
+- [Api-tournament deprecation notice](announcements/api-tournament-deprecation-notice.md) — 2023-01-15 | 3 replies | 1,147 views
+- [Welcome to the Numerai forums](announcements/welcome-to-the-numerai-forums.md) — 2022-12-26 | 1 reply | 12,074 views
+- [New Signals Targets](announcements/new-signals-targets.md) — 2022-11-16 | 0 replies | 1,553 views
+- [New Targets for the Tournament](announcements/new-targets-for-the-tournament.md) — 2022-11-12 | 0 replies | 2,657 views
+- [Daily Tournaments](announcements/daily-tournaments.md) — 2022-10-21 | 0 replies | 5,254 views
+- [V4 Tournament Data Announcement](announcements/v4-tournament-data-announcement.md) — 2022-03-28 | 0 replies | 3,487 views
+- [Information Coefficient (IC) added to Signals](announcements/information-coefficient-ic-added-to-signals.md) — 2022-03-15 | 0 replies | 1,217 views
+- [Rocketchat DNS issues - use https://rocketchat.numer.ai](announcements/rocketchat-dns-issues-use-https-rocketchat-numer-ai.md) — 2022-01-30 | 1 reply | 835 views
+- [Goodbye to 1099s](announcements/goodbye-to-1099s.md) — 2022-01-13 | 0 replies | 1,697 views
+- [Numerai API down Sunday December 12th, 2021](announcements/numerai-api-down-sunday-december-12th-2021.md) — 2021-12-12 | 0 replies | 919 views
+- [November 2021 Updates](announcements/november-2021-updates.md) — 2021-12-06 | 0 replies | 1,794 views
+- [October 2021 Updates](announcements/october-2021-updates.md) — 2021-10-23 | 0 replies | 3,422 views
+- [Numerai's Hedge Fund Performance](announcements/numerais-hedge-fund-performance.md) — 2021-10-06 | 0 replies | 1,849 views
+- [Q3 End-of-Quarter Updates](announcements/q3-end-of-quarter-updates.md) — 2021-10-04 | 0 replies | 1,365 views
+- [Signals will soon change to a 20 day target](announcements/signals-will-soon-change-to-a-20-day-target.md) — 2021-08-02 | 0 replies | 1,921 views
+- [Stake Management: Earnings](announcements/stake-management-earnings.md) — 2021-06-24 | 0 replies | 1,109 views
+- [Announcing new NMR staking minimum](announcements/announcing-new-nmr-staking-minimum.md) — 2021-04-10 | 0 replies | 2,333 views
+- [Numerai CLI 0.3.0](announcements/numerai-cli-0-3-0.md) — 2021-04-01 | 0 replies | 2,004 views
+- [Announcing new payouts system mini-release](announcements/announcing-new-payouts-system-mini-release.md) — 2021-03-20 | 0 replies | 2,653 views
+- [Signals Model Diagnostics: Cumulative Correlation Graphs](announcements/signals-model-diagnostics-cumulative-correlation-graphs.md) — 2021-03-18 | 0 replies | 1,024 views
+- [Per-Model Webhooks](announcements/per-model-webhooks.md) — 2021-03-08 | 0 replies | 1,461 views
+- [Updated Signals Validation Data](announcements/updated-signals-validation-data.md) — 2021-02-27 | 0 replies | 1,377 views
+- [Model Split API Changes](announcements/model-split-api-changes.md) — 2021-02-26 | 0 replies | 1,354 views
+- [Feature Neutral Correlation Added to the Tournament Site](announcements/feature-neutral-correlation-added-to-the-tournament-site.md) — 2021-02-09 | 0 replies | 5,573 views
+- [Model Diagnostics Update](announcements/model-diagnostics-update.md) — 2020-09-03 | 0 replies | 11,741 views
+- [Discourse-math plugin now available](announcements/discourse-math-plugin-now-available.md) — 2020-08-20 | 1 reply | 1,098 views
+- [Numerai Payouts App](announcements/numerai-payouts-app.md) — 2020-08-19 | 0 replies | 3,196 views
+- [MMC Staking Change - Corr+MMC](announcements/mmc-staking-change-corr-mmc.md) — 2020-07-21 | 0 replies | 2,849 views
+- [Metamodel Contribution Live](announcements/metamodel-contribution-live.md) — 2020-05-21 | 0 replies | 3,401 views
+- [Announcing general availability of multi-model account support for all users](announcements/announcing-general-availability-of-multi-model-account-support-for-all-users.md) — 2020-05-14 | 0 replies | 3,601 views
+- [MMC - Payout Details and Analysis](announcements/mmc-payout-details-and-analysis.md) — 2020-04-21 | 0 replies | 4,400 views
+- [Validation 2 Announcement](announcements/validation-2-announcement.md) — 2020-04-14 | 0 replies | 4,819 views
+- [Numerai Forum Launch Announcement](announcements/numerai-forum-launch-announcement.md) — 2020-03-23 | 0 replies | 1,474 views
+- [About the Announcements category](announcements/about-the-announcements-category.md) — 2020-03-20 | 0 replies | 1,273 views
+
+## Data Science
+
+- [Foundation Models on Numerai Data: TabPFN v2.5 and TabICL v2](data-science/foundation-models-on-numerai-data-tabpfn-v2-5-and-tabicl-v2.md) — 2026-03-30 | 0 replies | 97 views
+- [How often do you re-train your model?](data-science/how-often-do-you-re-train-your-model.md) — 2026-03-21 | 8 replies | 1,257 views
+- [AI for ML by jefferythewind](data-science/ai-for-ml-by-jefferythewind.md) — 2026-02-14 | 0 replies | 251 views
+- [What World Are Our Models Building?](data-science/what-world-are-our-models-building.md) — 2026-02-11 | 2 replies | 289 views
+- [Vibesciencing my way through v5.2 data (Faith II)](data-science/vibesciencing-my-way-through-v5-2-data-faith-ii.md) — 2026-02-04 | 1 reply | 681 views
+- [Fine-Tuning LLMs with RL for ML Code Generation: Post-Mortem](data-science/fine-tuning-llms-with-rl-for-ml-code-generation-post-mortem.md) — 2026-01-29 | 0 replies | 193 views
+- [200 Trees Per Second with Cuda](data-science/200-trees-per-second-with-cuda.md) — 2025-12-30 | 12 replies | 2,967 views
+- [What can explain so many models getting same score?](data-science/what-can-explain-so-many-models-getting-same-score.md) — 2025-11-14 | 9 replies | 2,172 views
+- [Implications of heavily correlated MMC and CORR?](data-science/implications-of-heavily-correlated-mmc-and-corr.md) — 2025-06-05 | 3 replies | 401 views
+- [DANCR R&D AI agents, running locally](data-science/dancr-r-d-ai-agents-running-locally.md) — 2025-05-06 | 1 reply | 492 views
+- [New DataScientist on board - Where do I start?](data-science/new-datascientist-on-board-where-do-i-start.md) — 2025-04-15 | 3 replies | 2,423 views
+- [GFlowNets for Signal Miner: A New Way to Find Diverse, High-Performing Models](data-science/gflownets-for-signal-miner-a-new-way-to-find-diverse-high-performing-models.md) — 2025-03-20 | 1 reply | 1,683 views
+- [About the Data Science category](data-science/about-the-data-science-category.md) — 2025-01-11 | 6 replies | 1,636 views
+- [Modular Defi Crypto Portfolio Management System](data-science/modular-defi-crypto-portfolio-management-system.md) — 2024-12-18 | 2 replies | 1,440 views
+- [Jane Street Real-Time Market Data Forecasting Kaggle — Really similar format to Numerai’s](data-science/jane-street-real-time-market-data-forecasting-kaggle-really-similar-format-to-numerai-s.md) — 2024-11-11 | 0 replies | 787 views
+- [Numerai Crypto TB100 and Statistical Risk Model](data-science/numerai-crypto-tb100-and-statistical-risk-model.md) — 2024-11-08 | 7 replies | 953 views
+- [Crypto Price Dynamics](data-science/crypto-price-dynamics.md) — 2024-10-18 | 6 replies | 1,214 views
+- [Suggestions for undergraduate of quantitative finance](data-science/suggestions-for-undergraduate-of-quantitative-finance.md) — 2024-09-17 | 4 replies | 1,016 views
+- [Modeling Cryptocurrency Factors For Price Returns](data-science/modeling-cryptocurrency-factors-for-price-returns.md) — 2024-09-10 | 2 replies | 502 views
+- [Factor Analysis of Cryptocurrency Returns Using Momentum Indicators](data-science/factor-analysis-of-cryptocurrency-returns-using-momentum-indicators.md) — 2024-08-30 | 8 replies | 794 views
+- [A Detailed Case Study on Crypto Multi-factor Risk Analysis](data-science/a-detailed-case-study-on-crypto-multi-factor-risk-analysis.md) — 2024-08-27 | 3 replies | 709 views
+- [Crypto Factor Modeling for evaluating crypto return](data-science/crypto-factor-modeling-for-evaluating-crypto-return.md) — 2024-08-27 | 8 replies | 595 views
+- [Introducing the Crypto Price Variance Model (CPVM)](data-science/introducing-the-crypto-price-variance-model-cpvm.md) — 2024-08-27 | 1 reply | 439 views
+- [Multi-Factor Risk Modeling for Cryptocurrency Price Prediction](data-science/multi-factor-risk-modeling-for-cryptocurrency-price-prediction.md) — 2024-08-27 | 5 replies | 1,243 views
+- [Crypto Factor model - Prediction the return of Bitcoin and Crypto with High Trading Volume](data-science/crypto-factor-model-prediction-the-return-of-bitcoin-and-crypto-with-high-trading-volume.md) — 2024-08-27 | 6 replies | 732 views
+- [Multi-Factor-Risk-Models-for-Cryptocurrency-Price-Variance](data-science/multi-factor-risk-models-for-cryptocurrency-price-variance.md) — 2024-08-26 | 0 replies | 370 views
+- [Possible collaboration](data-science/possible-collaboration.md) — 2024-07-09 | 4 replies | 507 views
+- [Feature Neutralization Increases Bias and Reduces Variance](data-science/feature-neutralization-increases-bias-and-reduces-variance.md) — 2024-06-04 | 1 reply | 1,346 views
+- [Orthogonal Model Performance Across Eras](data-science/orthogonal-model-performance-across-eras.md) — 2024-05-14 | 1 reply | 787 views
+- [Feature selection by Marcos Lopez de Prado](data-science/feature-selection-by-marcos-lopez-de-prado.md) — 2024-04-03 | 34 replies | 8,423 views
+- [Era Splitting Re-ignited](data-science/era-splitting-re-ignited.md) — 2024-03-15 | 0 replies | 1,441 views
+- [ShatteredX's Improved & Compact Feature Set (225 features) for v4.3 Midnight Data](data-science/shatteredxs-improved-compact-feature-set-225-features-for-v4-3-midnight-data.md) — 2024-03-07 | 13 replies | 3,383 views
+- [Advice on setup for training new models](data-science/advice-on-setup-for-training-new-models.md) — 2024-03-03 | 1 reply | 522 views
+- [I am new and want to build my first model](data-science/i-am-new-and-want-to-build-my-first-model.md) — 2024-01-10 | 8 replies | 1,517 views
+- [Using Transformers on Numerai's stock market data](data-science/using-transformers-on-numerais-stock-market-data.md) — 2023-12-22 | 22 replies | 6,041 views
+- [About the Stake Weighted Meta Model](data-science/about-the-stake-weighted-meta-model.md) — 2023-12-22 | 3 replies | 908 views
+- [Initial MM Correlation Tests with Rain Dataset](data-science/initial-mm-correlation-tests-with-rain-dataset.md) — 2023-11-27 | 5 replies | 563 views
+- [Preview: NumerBlox 1.0](data-science/preview-numerblox-1-0.md) — 2023-11-15 | 11 replies | 1,208 views
+- [Differentiable Spearman in PyTorch (Optimize for CORR directly)](data-science/differentiable-spearman-in-pytorch-optimize-for-corr-directly.md) — 2023-11-07 | 30 replies | 25,220 views
+- [How to solve the Numerai Tournament / lecture by Marcos Lopez de Prado](data-science/how-to-solve-the-numerai-tournament-lecture-by-marcos-lopez-de-prado.md) — 2023-11-07 | 12 replies | 4,419 views
+- [Hyperparameters optimization for "small" LGBM models](data-science/hyperparameters-optimization-for-small-lgbm-models.md) — 2023-10-09 | 7 replies | 2,727 views
+- [Era Splitting - Invariant Learning for Gradient Boosted Decision Trees](data-science/era-splitting-invariant-learning-for-gradient-boosted-decision-trees.md) — 2023-10-03 | 5 replies | 1,792 views
+- [Model Diagnostics: Feature Exposure](data-science/model-diagnostics-feature-exposure.md) — 2023-09-16 | 43 replies | 32,198 views
+- [Target orthogonality](data-science/target-orthogonality.md) — 2023-07-25 | 6 replies | 1,168 views
+- [Target Jerome Is Dominating And That's Weird](data-science/target-jerome-is-dominating-and-thats-weird.md) — 2023-07-14 | 14 replies | 3,504 views
+- [Optimal Portfolio and Stake Allocation (or the poor man's stake management)](data-science/optimal-portfolio-and-stake-allocation-or-the-poor-mans-stake-management.md) — 2023-07-09 | 4 replies | 1,191 views
+- [Master Thesis subject](data-science/master-thesis-subject.md) — 2023-07-05 | 2 replies | 1,093 views
+- [Numerai as a blockchain using IBC](data-science/numerai-as-a-blockchain-using-ibc.md) — 2023-06-29 | 0 replies | 532 views
+- [Using spark api to get the prediction data](data-science/using-spark-api-to-get-the-prediction-data.md) — 2023-05-30 | 1 reply | 800 views
+- [Regimes, turbulence, matching eras, and whatnot](data-science/regimes-turbulence-matching-eras-and-whatnot.md) — 2023-05-12 | 1 reply | 880 views
+- [V4 vs V4.1, Nomi vs Ralph vs Cyrus](data-science/v4-vs-v4-1-nomi-vs-ralph-vs-cyrus.md) — 2023-05-02 | 2 replies | 1,237 views
+- [Demo: How to Train an NN on FNC TB200 Directly](data-science/demo-how-to-train-an-nn-on-fnc-tb200-directly.md) — 2023-04-29 | 5 replies | 1,747 views
+- [Neutralization output in [-5, 5] range?](data-science/neutralization-output-in-5-5-range.md) — 2023-04-26 | 2 replies | 676 views
+- [Numerai Self-Supervised Learning & Data Augmentation Projects](data-science/numerai-self-supervised-learning-data-augmentation-projects.md) — 2023-03-22 | 114 replies | 11,073 views
+- [Learning to Rank](data-science/learning-to-rank.md) — 2023-03-21 | 29 replies | 19,777 views
+- [Correlation between Meta Model Predictions and Targets](data-science/correlation-between-meta-model-predictions-and-targets.md) — 2023-03-04 | 1 reply | 1,222 views
+- [Digging into Sunshine Data](data-science/digging-into-sunshine-data.md) — 2023-02-08 | 4 replies | 1,088 views
+- [Validation metrics example script vs website diagnostics](data-science/validation-metrics-example-script-vs-website-diagnostics.md) — 2023-01-25 | 4 replies | 879 views
+- [Causality in Finance and ML](data-science/causality-in-finance-and-ml.md) — 2023-01-23 | 4 replies | 2,542 views
+- [Feature Selection with BorutaShap](data-science/feature-selection-with-borutashap.md) — 2023-01-17 | 16 replies | 12,777 views
+- [How to estimate TC with the numerai meta model data](data-science/how-to-estimate-tc-with-the-numerai-meta-model-data.md) — 2023-01-12 | 2 replies | 1,363 views
+- [Another way to optimize for TC](data-science/another-way-to-optimize-for-tc.md) — 2023-01-05 | 22 replies | 2,946 views
+- [The New Look of Numerai Data, Images via IGTD](data-science/the-new-look-of-numerai-data-images-via-igtd.md) — 2023-01-03 | 2 replies | 1,387 views
+- [Saving memory with uint8 features](data-science/saving-memory-with-uint8-features.md) — 2022-12-20 | 1 reply | 2,797 views
+- [Is TC slowing down your research and experimentation?](data-science/is-tc-slowing-down-your-research-and-experimentation.md) — 2022-12-02 | 21 replies | 1,949 views
+- [Modern Portfolio Theory for my models](data-science/modern-portfolio-theory-for-my-models.md) — 2022-11-16 | 5 replies | 1,387 views
+- [Time series CV & seperation to live data](data-science/time-series-cv-seperation-to-live-data.md) — 2022-11-13 | 5 replies | 1,034 views
+- [Why are there NaNs in the new targets?](data-science/why-are-there-nans-in-the-new-targets.md) — 2022-11-11 | 3 replies | 874 views
+- [How can we download previous rounds' data or any data outside of the rounds' open hours?](data-science/how-can-we-download-previous-rounds-data-or-any-data-outside-of-the-rounds-open-hours.md) — 2022-11-06 | 3 replies | 639 views
+- [How to train on the full V4 dataset with 8GB RAM](data-science/how-to-train-on-the-full-v4-dataset-with-8gb-ram.md) — 2022-10-06 | 5 replies | 1,567 views
+- [TL;DR scaling of tree ensemble size with training data size](data-science/tl-dr-scaling-of-tree-ensemble-size-with-training-data-size.md) — 2022-09-26 | 2 replies | 944 views
+- [What is the difference between feature exposure and regularization?](data-science/what-is-the-difference-between-feature-exposure-and-regularization.md) — 2022-09-24 | 1 reply | 1,093 views
+- [Generating Feature Groups](data-science/generating-feature-groups.md) — 2022-09-16 | 19 replies | 3,340 views
+- [Removing Dangerous Features](data-science/removing-dangerous-features.md) — 2022-08-30 | 23 replies | 4,835 views
+- [Announcing the M6 Forecasting competition](data-science/announcing-the-m6-forecasting-competition.md) — 2022-08-18 | 12 replies | 2,755 views
+- [Better neutralization?](data-science/better-neutralization.md) — 2022-07-23 | 6 replies | 2,421 views
+- [Custom loss functions for XGBoost using PyTorch](data-science/custom-loss-functions-for-xgboost-using-pytorch.md) — 2022-07-16 | 23 replies | 20,345 views
+- [Wicked problems](data-science/wicked-problems.md) — 2022-06-18 | 10 replies | 1,995 views
+- [Numerai Datasets url](data-science/numerai-datasets-url.md) — 2022-06-18 | 2 replies | 1,033 views
+- [Feature Neutralisation & Autocorrelation Presentation](data-science/feature-neutralisation-autocorrelation-presentation.md) — 2022-06-15 | 5 replies | 3,282 views
+- [SQL and the Dataset](data-science/sql-and-the-dataset.md) — 2022-06-10 | 5 replies | 999 views
+- [Experiment Report: using V3 models to infer on V4 data](data-science/experiment-report-using-v3-models-to-infer-on-v4-data.md) — 2022-05-25 | 2 replies | 923 views
+- [Opinions on getting a PhD in CS](data-science/opinions-on-getting-a-phd-in-cs.md) — 2022-05-22 | 5 replies | 1,598 views
+- [Incorporate era similarity in ranking models](data-science/incorporate-era-similarity-in-ranking-models.md) — 2022-05-20 | 9 replies | 2,007 views
+- [Help with KeyError](data-science/help-with-keyerror.md) — 2022-04-15 | 1 reply | 726 views
+- [Generate Forged Signature From Real one for data augmentation](data-science/generate-forged-signature-from-real-one-for-data-augmentation.md) — 2022-03-26 | 1 reply | 1,806 views
+- [Open-sourcing numerblox (Solid Numerai pipelines)](data-science/open-sourcing-numerblox-solid-numerai-pipelines.md) — 2022-03-17 | 0 replies | 1,189 views
+- [AutoEncoder and multitask MLP on new dataset (from Kaggle Jane Street)](data-science/autoencoder-and-multitask-mlp-on-new-dataset-from-kaggle-jane-street.md) — 2022-03-07 | 30 replies | 9,996 views
+- [Challenges shared by Richard](data-science/challenges-shared-by-richard.md) — 2022-03-03 | 2 replies | 1,014 views
+- [What do the top models do that lesser models don’t?](data-science/what-do-the-top-models-do-that-lesser-models-don-t.md) — 2022-02-17 | 26 replies | 4,622 views
+- [Participating in the M6 Forecasting Competition](data-science/participating-in-the-m6-forecasting-competition.md) — 2022-02-10 | 0 replies | 999 views
+- [Diagnostics for #39](data-science/diagnostics-for-39.md) — 2022-01-31 | 64 replies | 4,881 views
+- [Strange correlation behavior](data-science/strange-correlation-behavior.md) — 2022-01-22 | 2 replies | 957 views
+- [ML-Quant: Professional & Open Research](data-science/ml-quant-professional-open-research.md) — 2022-01-17 | 2 replies | 1,425 views
+- [Generic version of Numerai (non-trading challenges)?](data-science/generic-version-of-numerai-non-trading-challenges.md) — 2022-01-17 | 4 replies | 1,037 views
+- [Independence and Sharpe](data-science/independence-and-sharpe.md) — 2022-01-13 | 20 replies | 4,052 views
+- [Custom Objective for LightGBM](data-science/custom-objective-for-lightgbm.md) — 2022-01-13 | 12 replies | 8,257 views
+- [Will early stopping in cross validation introduce overfitting?](data-science/will-early-stopping-in-cross-validation-introduce-overfitting.md) — 2022-01-01 | 7 replies | 1,733 views
+- [[Newbie Question!] Error When Running Example Notebook to Load Data](data-science/newbie-question-error-when-running-example-notebook-to-load-data.md) — 2021-12-25 | 2 replies | 1,292 views
+- [Parameter and Evaluation Distribution Analysis using Bayesian NN](data-science/parameter-and-evaluation-distribution-analysis-using-bayesian-nn.md) — 2021-12-21 | 0 replies | 735 views
+- [Cross validation - do you watch the generalization gap?](data-science/cross-validation-do-you-watch-the-generalization-gap.md) — 2021-12-13 | 0 replies | 740 views
+- [Public AWS AMI instance?](data-science/public-aws-ami-instance.md) — 2021-12-13 | 5 replies | 1,561 views
+- [2x Feature Neutralization Speed Up](data-science/2x-feature-neutralization-speed-up.md) — 2021-12-09 | 5 replies | 1,841 views
+- [What exactly is neutralization?](data-science/what-exactly-is-neutralization.md) — 2021-12-08 | 11 replies | 7,025 views
+- [Numerai Tournament Training Data Explorer](data-science/numerai-tournament-training-data-explorer.md) — 2021-12-02 | 1 reply | 1,347 views
+- [Performing Exploratory Data Analysis on Numerai Tournament Data with R](data-science/performing-exploratory-data-analysis-on-numerai-tournament-data-with-r.md) — 2021-12-02 | 3 replies | 6,425 views
+- [Super Massive Data Release: Deep Dive](data-science/super-massive-data-release-deep-dive.md) — 2021-11-22 | 81 replies | 21,799 views
+- [Feature Timing, Predicting When Features Will Work](data-science/feature-timing-predicting-when-features-will-work.md) — 2021-11-21 | 8 replies | 3,371 views
+- [LightGBM with vast.ai cloud GPU](data-science/lightgbm-with-vast-ai-cloud-gpu.md) — 2021-11-11 | 1 reply | 1,386 views
+- [Era-wise Time-series Cross Validation](data-science/era-wise-time-series-cross-validation.md) — 2021-11-05 | 24 replies | 11,886 views
+- [Intel Extension to Scikit-learn that speeds some processes 10-100x](data-science/intel-extension-to-scikit-learn-that-speeds-some-processes-10-100x.md) — 2021-11-01 | 0 replies | 964 views
+- [Gradient Boosting Machines for multi-target regression](data-science/gradient-boosting-machines-for-multi-target-regression.md) — 2021-10-30 | 5 replies | 9,103 views
+- [Era Boosted Models](data-science/era-boosted-models.md) — 2021-10-10 | 21 replies | 15,519 views
+- [What research papers have been useful for helping you build better models?](data-science/what-research-papers-have-been-useful-for-helping-you-build-better-models.md) — 2021-10-06 | 0 replies | 1,028 views
+- [Self supervised learning on pseudo labels](data-science/self-supervised-learning-on-pseudo-labels.md) — 2021-10-05 | 2 replies | 1,014 views
+- [Distance analysis using Facebook AI Similarity Search (faiss)](data-science/distance-analysis-using-facebook-ai-similarity-search-faiss.md) — 2021-09-28 | 2 replies | 871 views
+- [What is test data used for?](data-science/what-is-test-data-used-for.md) — 2021-09-27 | 9 replies | 1,009 views
+- [Eejits guide to Numer.ai](data-science/eejits-guide-to-numer-ai.md) — 2021-09-19 | 2 replies | 1,266 views
+- [Maths, stats, insights and limitations](data-science/maths-stats-insights-and-limitations.md) — 2021-09-19 | 0 replies | 642 views
+- [Twelve software design tips for data scientists](data-science/twelve-software-design-tips-for-data-scientists.md) — 2021-09-19 | 1 reply | 708 views
+- [Does make sense a neutralization with proportion 1?](data-science/does-make-sense-a-neutralization-with-proportion-1.md) — 2021-09-15 | 1 reply | 654 views
+- [Mapping of eras from old to new](data-science/mapping-of-eras-from-old-to-new.md) — 2021-09-12 | 3 replies | 809 views
+- [Visualizing the New Data](data-science/visualizing-the-new-data.md) — 2021-09-10 | 3 replies | 1,039 views
+- [Speedup training Random Forests with GPU](data-science/speedup-training-random-forests-with-gpu.md) — 2021-09-09 | 5 replies | 1,429 views
+- [Era batches for trainning Keras NN](data-science/era-batches-for-trainning-keras-nn.md) — 2021-09-08 | 3 replies | 1,364 views
+- [How to ensemble models](data-science/how-to-ensemble-models.md) — 2021-09-07 | 14 replies | 3,763 views
+- [Synthetic data generation using GANs](data-science/synthetic-data-generation-using-gans.md) — 2021-09-06 | 8 replies | 2,484 views
+- [NN architecture for >0.03 CORR on validation set](data-science/nn-architecture-for-0-03-corr-on-validation-set.md) — 2021-08-26 | 52 replies | 8,443 views
+- [Sharpe and Sortino ratios on live performance of your models](data-science/sharpe-and-sortino-ratios-on-live-performance-of-your-models.md) — 2021-08-17 | 2 replies | 1,770 views
+- [Research Repository](data-science/research-repository.md) — 2021-08-01 | 3 replies | 831 views
+- [Era distribution](data-science/era-distribution.md) — 2021-07-30 | 1 reply | 855 views
+- [Any Julia lang developers?](data-science/any-julia-lang-developers.md) — 2021-07-29 | 12 replies | 2,421 views
+- [L2 regularization in MLPs and noisy domains](data-science/l2-regularization-in-mlps-and-noisy-domains.md) — 2021-07-27 | 4 replies | 833 views
+- [Important question with models](data-science/important-question-with-models.md) — 2021-07-18 | 4 replies | 1,019 views
+- [Overfitting to Validation Data](data-science/overfitting-to-validation-data.md) — 2021-07-08 | 13 replies | 1,833 views
+- [Question: Public AWS AMI instance](data-science/question-public-aws-ami-instance.md) — 2021-06-25 | 2 replies | 621 views
+- [How are others improving/working on their models after a bad round?](data-science/how-are-others-improving-working-on-their-models-after-a-bad-round.md) — 2021-06-23 | 6 replies | 1,303 views
+- [Most Common IDE's or Software](data-science/most-common-ides-or-software.md) — 2021-06-14 | 12 replies | 1,609 views
+- [Advice from the Kaggle which I've found very useful](data-science/advice-from-the-kaggle-which-ive-found-very-useful.md) — 2021-06-14 | 2 replies | 2,809 views
+- [Can we have few validation examples of weekly data?](data-science/can-we-have-few-validation-examples-of-weekly-data.md) — 2021-06-13 | 2 replies | 751 views
+- [Taking advantage of Eras](data-science/taking-advantage-of-eras.md) — 2021-06-10 | 6 replies | 3,509 views
+- [How can I prevent my models from only predicting the mean](data-science/how-can-i-prevent-my-models-from-only-predicting-the-mean.md) — 2021-06-06 | 2 replies | 1,047 views
+- [Fast Combinatorial Cross Validation](data-science/fast-combinatorial-cross-validation.md) — 2021-05-28 | 5 replies | 4,204 views
+- [Feature reversing input noise](data-science/feature-reversing-input-noise.md) — 2021-05-18 | 21 replies | 6,294 views
+- [Training on eras groups and ensemble models](data-science/training-on-eras-groups-and-ensemble-models.md) — 2021-05-14 | 3 replies | 2,536 views
+- [Coloring validation metrics](data-science/coloring-validation-metrics.md) — 2021-05-11 | 4 replies | 1,270 views
+- [How can we overcome Key Errors with Numerox](data-science/how-can-we-overcome-key-errors-with-numerox.md) — 2021-05-07 | 3 replies | 785 views
+- [Cross-validation done right](data-science/cross-validation-done-right.md) — 2021-05-02 | 4 replies | 2,438 views
+- [Analyzing Training Data](data-science/analyzing-training-data.md) — 2021-05-02 | 2 replies | 1,429 views
+- [Lesson Learned (maybe) - Proper Sample Size for Testing](data-science/lesson-learned-maybe-proper-sample-size-for-testing.md) — 2021-04-29 | 1 reply | 1,054 views
+- [Validation Metrics Backtest](data-science/validation-metrics-backtest.md) — 2021-04-21 | 0 replies | 947 views
+- [Running example model with less than half a gig of RAM](data-science/running-example-model-with-less-than-half-a-gig-of-ram.md) — 2021-04-19 | 1 reply | 2,527 views
+- [Adversarial Validation](data-science/adversarial-validation.md) — 2021-04-13 | 2 replies | 2,642 views
+- [Objetive Function](data-science/objetive-function.md) — 2021-04-13 | 7 replies | 2,607 views
+- [Do you use FNC to measure your model's performance?](data-science/do-you-use-fnc-to-measure-your-models-performance.md) — 2021-04-12 | 2 replies | 1,144 views
+- [Faster data loading with datatable](data-science/faster-data-loading-with-datatable.md) — 2021-04-09 | 6 replies | 1,865 views
+- [Cryptogalaxy : An app to get crypto market data from multiple exchanges](data-science/cryptogalaxy-an-app-to-get-crypto-market-data-from-multiple-exchanges.md) — 2021-04-08 | 0 replies | 663 views
+- [My Theory on Why Randomness Shows Up in Stock Pricing](data-science/my-theory-on-why-randomness-shows-up-in-stock-pricing.md) — 2021-04-07 | 2 replies | 977 views
+- [More metrics for ya](data-science/more-metrics-for-ya.md) — 2021-04-04 | 23 replies | 7,249 views
+- [A more clear understanding of the Ranked Correlation](data-science/a-more-clear-understanding-of-the-ranked-correlation.md) — 2021-04-01 | 5 replies | 2,922 views
+- [Interpreting Model Diagnostics](data-science/interpreting-model-diagnostics.md) — 2021-03-30 | 0 replies | 789 views
+- [Differentiable Spearman Correlation](data-science/differentiable-spearman-correlation.md) — 2021-03-30 | 2 replies | 4,457 views
+- [Kaggle environment on your local machine](data-science/kaggle-environment-on-your-local-machine.md) — 2021-03-29 | 2 replies | 5,539 views
+- [Teach Your Neural Net to Minimize Risk with Lagrangian Dynamics](data-science/teach-your-neural-net-to-minimize-risk-with-lagrangian-dynamics.md) — 2021-03-25 | 12 replies | 2,270 views
+- [Model Evaluation Metrics](data-science/model-evaluation-metrics.md) — 2021-03-25 | 17 replies | 9,490 views
+- [Why do linear models sometimes do so well?](data-science/why-do-linear-models-sometimes-do-so-well.md) — 2021-03-24 | 2 replies | 1,930 views
+- [Hosted Development Environment](data-science/hosted-development-environment.md) — 2021-03-20 | 6 replies | 925 views
+- [Bayesian Statistics](data-science/bayesian-statistics.md) — 2021-03-15 | 0 replies | 932 views
+- [Era overlap question](data-science/era-overlap-question.md) — 2021-03-15 | 1 reply | 826 views
+- [Deep metric learning to find a close era to live](data-science/deep-metric-learning-to-find-a-close-era-to-live.md) — 2021-03-12 | 2 replies | 1,855 views
+- [Development Environments - RapidsAI, cuML, Docker](data-science/development-environments-rapidsai-cuml-docker.md) — 2021-03-12 | 0 replies | 1,372 views
+- [Performance Stationarity](data-science/performance-stationarity.md) — 2021-03-06 | 15 replies | 8,415 views
+- [MLP hyperparameter tuning starter](data-science/mlp-hyperparameter-tuning-starter.md) — 2021-03-04 | 5 replies | 1,794 views
+- [Meta-analysis: clustering model performances](data-science/meta-analysis-clustering-model-performances.md) — 2021-03-01 | 3 replies | 1,857 views
+- [Feature neutralization workflow](data-science/feature-neutralization-workflow.md) — 2021-02-24 | 6 replies | 5,579 views
+- [Going Beyond the Intro Model](data-science/going-beyond-the-intro-model.md) — 2021-02-24 | 2 replies | 1,545 views
+- [Does Good Model Diagnostics Correlate with Tournament Performance?](data-science/does-good-model-diagnostics-correlate-with-tournament-performance.md) — 2021-02-07 | 13 replies | 3,050 views
+- [Re-training vs training online](data-science/re-training-vs-training-online.md) — 2021-01-19 | 1 reply | 1,287 views
+- [Reducing Memory](data-science/reducing-memory.md) — 2021-01-19 | 10 replies | 3,990 views
+- [Live Results on FN](data-science/live-results-on-fn.md) — 2020-12-26 | 8 replies | 1,883 views
+- [Feature Groups and Interactions](data-science/feature-groups-and-interactions.md) — 2020-12-23 | 8 replies | 1,643 views
+- [I am searSearching partner I am having arround 100 methods for feature engineering](data-science/i-am-searsearching-partner-i-am-having-arround-100-methods-for-feature-engineering.md) — 2020-12-19 | 0 replies | 1,341 views
+- [Database of Standard Models](data-science/database-of-standard-models.md) — 2020-12-15 | 5 replies | 1,460 views
+- [How to test stationarity of Freatures?](data-science/how-to-test-stationarity-of-freatures.md) — 2020-11-22 | 1 reply | 1,115 views
+- [Presentation on clustering eras - Office Hours with Arbitrage 5](data-science/presentation-on-clustering-eras-office-hours-with-arbitrage-5.md) — 2020-11-07 | 2 replies | 2,461 views
+- [Example for using Tensorflow / Keras with a custom callback](data-science/example-for-using-tensorflow-keras-with-a-custom-callback.md) — 2020-11-03 | 7 replies | 3,177 views
+- [Numerai Model Survey Results](data-science/numerai-model-survey-results.md) — 2020-10-20 | 0 replies | 1,687 views
+- [Neural Nets are all you need. Really?](data-science/neural-nets-are-all-you-need-really.md) — 2020-10-14 | 2 replies | 4,331 views
+- [Relevance of historical training_data to new market regime](data-science/relevance-of-historical-training-data-to-new-market-regime.md) — 2020-10-11 | 5 replies | 1,334 views
+- [How to Safely Perform Feature Neutralization](data-science/how-to-safely-perform-feature-neutralization.md) — 2020-10-03 | 3 replies | 2,771 views
+- [Model types survey](data-science/model-types-survey.md) — 2020-09-30 | 0 replies | 867 views
+- [Automating R submissions?](data-science/automating-r-submissions.md) — 2020-09-15 | 5 replies | 1,092 views
+- [Learning Two Uncorrelated Models](data-science/learning-two-uncorrelated-models.md) — 2020-09-09 | 16 replies | 6,674 views
+- [Model Diagnostics: Risk Metrics](data-science/model-diagnostics-risk-metrics.md) — 2020-09-03 | 0 replies | 2,982 views
+- [Model Diagnostics: MMC](data-science/model-diagnostics-mmc.md) — 2020-09-03 | 0 replies | 3,325 views
+- [Building XGBoost from source on Windows 10 with GPU support](data-science/building-xgboost-from-source-on-windows-10-with-gpu-support.md) — 2020-08-07 | 6 replies | 3,602 views
+- [MMC Payouts Adjustment Proposal](data-science/mmc-payouts-adjustment-proposal.md) — 2020-07-28 | 27 replies | 4,928 views
+- [Era Purging to minimize data leakage between train/val/test](data-science/era-purging-to-minimize-data-leakage-between-train-val-test.md) — 2020-07-27 | 4 replies | 1,864 views
+- [Hardware recommendations](data-science/hardware-recommendations.md) — 2020-07-26 | 1 reply | 1,321 views
+- [Neutralisation trouble](data-science/neutralisation-trouble.md) — 2020-07-07 | 0 replies | 1,169 views
+- [Alternative Modelling Algorithms & Approaches](data-science/alternative-modelling-algorithms-approaches.md) — 2020-07-05 | 4 replies | 3,429 views
+- [Probabilistic Sharpe Ratio](data-science/probabilistic-sharpe-ratio.md) — 2020-07-01 | 4 replies | 3,408 views
+- [Light as a Feather](data-science/light-as-a-feather.md) — 2020-06-13 | 2 replies | 3,968 views
+- [Rnumerai - R Interface to the Numerai Machine Learning Tournament API](data-science/rnumerai-r-interface-to-the-numerai-machine-learning-tournament-api.md) — 2020-05-18 | 11 replies | 1,917 views
+- [MMC2 Announcement](data-science/mmc2-announcement.md) — 2020-05-15 | 22 replies | 13,857 views
+- [Lottery Ticket Hypothesis](data-science/lottery-ticket-hypothesis.md) — 2020-05-08 | 0 replies | 1,744 views
+- [Incorporating Val2 in Training](data-science/incorporating-val2-in-training.md) — 2020-05-05 | 5 replies | 1,748 views
+- [Code to Calculate MMC vs Regular Payouts](data-science/code-to-calculate-mmc-vs-regular-payouts.md) — 2020-04-26 | 8 replies | 3,296 views
+- [Stories of Validation](data-science/stories-of-validation.md) — 2020-03-28 | 5 replies | 2,628 views
+
+## Signals
+
+- [Signals V1 Data Release](signals/signals-v1-data-release.md) — 2025-02-23 | 4 replies | 2,889 views
+- [Using LLMs to Create Trading Signals](signals/using-llms-to-create-trading-signals.md) — 2024-11-03 | 8 replies | 17,094 views
+- [Crypto Signals Media Sentiment Data](signals/crypto-signals-media-sentiment-data.md) — 2024-10-31 | 0 replies | 399 views
+- [Hourly bars (open, high, low, end, weighted average, volume)](signals/hourly-bars-open-high-low-end-weighted-average-volume.md) — 2023-09-24 | 1 reply | 846 views
+- [Open round info using API](signals/open-round-info-using-api.md) — 2023-08-26 | 1 reply | 709 views
+- [The Signals Meta Model Has Been Released: Here Are The Feature Exposures](signals/the-signals-meta-model-has-been-released-here-are-the-feature-exposures.md) — 2023-08-23 | 9 replies | 2,231 views
+- [Signals datasets](signals/signals-datasets.md) — 2023-08-21 | 0 replies | 629 views
+- [Historical prices for 10,900 tickers - ticker map and downloader for eodhistoricaldata](signals/historical-prices-for-10-900-tickers-ticker-map-and-downloader-for-eodhistoricaldata.md) — 2023-06-02 | 8 replies | 3,459 views
+- [Diagnostics tool missing?](signals/diagnostics-tool-missing.md) — 2023-05-18 | 1 reply | 547 views
+- [(im)perfect validation scores](signals/im-perfect-validation-scores.md) — 2023-05-09 | 0 replies | 482 views
+- [Why is there scoring every day?](signals/why-is-there-scoring-every-day.md) — 2023-05-09 | 0 replies | 551 views
+- [Neural Networks for Numerai Signals](signals/neural-networks-for-numerai-signals.md) — 2023-05-05 | 2 replies | 1,021 views
+- [Creating features from currency-exposed metrics](signals/creating-features-from-currency-exposed-metrics.md) — 2023-04-10 | 1 reply | 713 views
+- [Signals open to the public?](signals/signals-open-to-the-public.md) — 2023-04-08 | 0 replies | 747 views
+- [Signals time series modeling with targets--no external data](signals/signals-time-series-modeling-with-targets-no-external-data.md) — 2023-04-06 | 7 replies | 2,456 views
+- [Signals - daily, any point?](signals/signals-daily-any-point.md) — 2023-03-28 | 1 reply | 879 views
+- [Signals Diagnostics Guide](signals/signals-diagnostics-guide.md) — 2022-12-19 | 0 replies | 1,435 views
+- [Signals Diagnostics Scoring Issue Post Mortem](signals/signals-diagnostics-scoring-issue-post-mortem.md) — 2022-12-02 | 0 replies | 539 views
+- [Submission Issue](signals/submission-issue.md) — 2022-11-28 | 1 reply | 521 views
+- [Full signals pipeline](signals/full-signals-pipeline.md) — 2022-10-18 | 6 replies | 2,247 views
+- [What is good models for numerai signals?](signals/what-is-good-models-for-numerai-signals.md) — 2022-10-05 | 15 replies | 3,458 views
+- [Collaboration Request - Math looking for ML](signals/collaboration-request-math-looking-for-ml.md) — 2022-07-24 | 0 replies | 749 views
+- [Long-term google trends](signals/long-term-google-trends.md) — 2022-06-30 | 5 replies | 1,741 views
+- [True Contribution for Signals](signals/true-contribution-for-signals.md) — 2022-06-15 | 0 replies | 1,264 views
+- [Signal US Yahoo Mapping Incomplete](signals/signal-us-yahoo-mapping-incomplete.md) — 2022-05-16 | 0 replies | 685 views
+- [[Proposal] Improving Signals Competition](signals/proposal-improving-signals-competition.md) — 2022-04-21 | 5 replies | 1,263 views
+- [Can You Beat Random Numbers?](signals/can-you-beat-random-numbers.md) — 2022-04-01 | 16 replies | 3,333 views
+- [Open Source Datasets for Numerai Signals](signals/open-source-datasets-for-numerai-signals.md) — 2022-03-08 | 5 replies | 1,695 views
+- [Why does Numerai give us targets even they want us to find original signals? (elementary question)](signals/why-does-numerai-give-us-targets-even-they-want-us-to-find-original-signals-elementary-question.md) — 2022-03-07 | 3 replies | 1,303 views
+- [Missing Signals Targets](signals/missing-signals-targets.md) — 2022-01-28 | 0 replies | 716 views
+- [Sharadar Core Bundle](signals/sharadar-core-bundle.md) — 2022-01-27 | 0 replies | 936 views
+- [Signals sources: List?](signals/signals-sources-list.md) — 2022-01-20 | 2 replies | 1,071 views
+- [Multiprocessing for Signals example script (10x improvement)](signals/multiprocessing-for-signals-example-script-10x-improvement.md) — 2022-01-17 | 8 replies | 2,108 views
+- [Signals submission errors](signals/signals-submission-errors.md) — 2022-01-09 | 0 replies | 530 views
+- [Poll: Are you submitting signals on all equities or US only?](signals/poll-are-you-submitting-signals-on-all-equities-or-us-only.md) — 2021-12-22 | 0 replies | 667 views
+- [Why signals neutralization blackboxed?](signals/why-signals-neutralization-blackboxed.md) — 2021-12-08 | 1 reply | 870 views
+- [Target for signal file](signals/target-for-signal-file.md) — 2021-11-12 | 0 replies | 585 views
+- [Signals Dashboard](signals/signals-dashboard.md) — 2021-10-25 | 0 replies | 758 views
+- [What is the intended effect of gaussianization in Signals neutralization?](signals/what-is-the-intended-effect-of-gaussianization-in-signals-neutralization.md) — 2021-10-21 | 1 reply | 927 views
+- [Signals Starter at Kaggle](signals/signals-starter-at-kaggle.md) — 2021-10-15 | 6 replies | 1,636 views
+- [Possible p / (1-p) vulnerability in Signals](signals/possible-p-1-p-vulnerability-in-signals.md) — 2021-10-14 | 9 replies | 1,093 views
+- [Is TB200 neutralizing the Moore-Penrose Inversion neutralization step in Signals](signals/is-tb200-neutralizing-the-moore-penrose-inversion-neutralization-step-in-signals.md) — 2021-10-10 | 0 replies | 910 views
+- [My latest signal performance](signals/my-latest-signal-performance.md) — 2021-10-08 | 1 reply | 823 views
+- [R yahoo! Finance Download for Signals Universe](signals/r-yahoo-finance-download-for-signals-universe.md) — 2021-10-05 | 7 replies | 1,273 views
+- [Stake on Signals, vs. Trade Directly](signals/stake-on-signals-vs-trade-directly.md) — 2021-09-28 | 20 replies | 2,670 views
+- [Unable to download signals example from side panel](signals/unable-to-download-signals-example-from-side-panel.md) — 2021-09-14 | 2 replies | 666 views
+- [Stock Data Transform Example Notebook](signals/stock-data-transform-example-notebook.md) — 2021-09-08 | 1 reply | 1,160 views
+- [Leverage numerai signal solution in real trading](signals/leverage-numerai-signal-solution-in-real-trading.md) — 2021-08-19 | 14 replies | 2,262 views
+- [How to download quarterly reports from IEX Cloud](signals/how-to-download-quarterly-reports-from-iex-cloud.md) — 2021-08-12 | 0 replies | 714 views
+- [Does the 20 day signals target replace the current 4 day, or supplement it?](signals/does-the-20-day-signals-target-replace-the-current-4-day-or-supplement-it.md) — 2021-08-03 | 0 replies | 662 views
+- [Basic info about companies - signals](signals/basic-info-about-companies-signals.md) — 2021-08-03 | 1 reply | 834 views
+- [First real signal submission](signals/first-real-signal-submission.md) — 2021-08-03 | 4 replies | 1,233 views
+- [Free or cheap data and tools for Numerai Signals](signals/free-or-cheap-data-and-tools-for-numerai-signals.md) — 2021-07-23 | 18 replies | 11,128 views
+- [Necessary to include more stocks in signal file?](signals/necessary-to-include-more-stocks-in-signal-file.md) — 2021-07-21 | 16 replies | 1,101 views
+- [Signals: Plugging in the data from Alpha Vantage](signals/signals-plugging-in-the-data-from-alpha-vantage.md) — 2021-07-03 | 2 replies | 1,744 views
+- [Tips on mismatched ticker names?](signals/tips-on-mismatched-ticker-names.md) — 2021-07-02 | 4 replies | 1,106 views
+- [Longer Signals Target - A Proposal For Higher Payouts](signals/longer-signals-target-a-proposal-for-higher-payouts.md) — 2021-07-02 | 25 replies | 3,086 views
+- [Signals baseline covering most of the universe?](signals/signals-baseline-covering-most-of-the-universe.md) — 2021-07-02 | 4 replies | 717 views
+- [Invalid Tickers in Diagnostics: How to fix it?](signals/invalid-tickers-in-diagnostics-how-to-fix-it.md) — 2021-06-24 | 4 replies | 1,058 views
+- [[Help] Model analysis](signals/help-model-analysis.md) — 2021-06-21 | 0 replies | 592 views
+- [Creating new targets for Signals](signals/creating-new-targets-for-signals.md) — 2021-06-20 | 4 replies | 1,186 views
+- [Transfering NMRs from original tournament models to Signals models](signals/transfering-nmrs-from-original-tournament-models-to-signals-models.md) — 2021-06-19 | 3 replies | 684 views
+- [How to Reduce Overfitting in Random Forest Regression](signals/how-to-reduce-overfitting-in-random-forest-regression.md) — 2021-06-18 | 2 replies | 1,757 views
+- [Get your (unofficial) Signals target22 here to start building your models](signals/get-your-unofficial-signals-target22-here-to-start-building-your-models.md) — 2021-06-14 | 1 reply | 1,084 views
+- [Signals' Bonus System proposals](signals/signals-bonus-system-proposals.md) — 2021-06-12 | 12 replies | 828 views
+- [Signals Neutralization?](signals/signals-neutralization.md) — 2021-06-10 | 1 reply | 1,353 views
+- [Decoding the signals target](signals/decoding-the-signals-target.md) — 2021-06-09 | 5 replies | 2,322 views
+- [Is there a reason why the two places you can get the latest universe has different tickers?](signals/is-there-a-reason-why-the-two-places-you-can-get-the-latest-universe-has-different-tickers.md) — 2021-06-04 | 8 replies | 966 views
+- [Signals diagnostic script](signals/signals-diagnostic-script.md) — 2021-05-28 | 1 reply | 659 views
+- [Signals payout improvement?](signals/signals-payout-improvement.md) — 2021-05-27 | 11 replies | 1,632 views
+- [Train/validation dates](signals/train-validation-dates.md) — 2021-05-19 | 3 replies | 757 views
+- [New Data Source: IEX Cloud (free-ish)](signals/new-data-source-iex-cloud-free-ish.md) — 2021-04-29 | 1 reply | 1,680 views
+- [Understanding Bloomberg Tickers](signals/understanding-bloomberg-tickers.md) — 2021-04-20 | 8 replies | 6,888 views
+- [Signals: Plugging in the data from Quandl](signals/signals-plugging-in-the-data-from-quandl.md) — 2021-03-20 | 2 replies | 1,806 views
+- [Signals Data Engineering Workflow](signals/signals-data-engineering-workflow.md) — 2021-03-06 | 1 reply | 885 views
+- [Stake change still pending](signals/stake-change-still-pending.md) — 2021-03-02 | 3 replies | 867 views
+- [Multi Timeframe](signals/multi-timeframe.md) — 2021-03-02 | 3 replies | 838 views
+- [Newbie Signals Format Q](signals/newbie-signals-format-q.md) — 2021-02-18 | 2 replies | 1,187 views
+- [Frequency of data?](signals/frequency-of-data.md) — 2021-02-10 | 0 replies | 770 views
+- [Microsoft Qlib: AI Quant workflow and backtesting](signals/microsoft-qlib-ai-quant-workflow-and-backtesting.md) — 2021-02-08 | 5 replies | 3,259 views
+- [Testing results](signals/testing-results.md) — 2021-01-12 | 8 replies | 1,483 views
+- [Newbie question](signals/newbie-question.md) — 2020-10-16 | 1 reply | 1,445 views
+
+## Tournament
+
+- [Does crowding exist in market-neutral quant?](tournament/does-crowding-exist-in-market-neutral-quant.md) — 2026-03-31 | 2 replies | 69 views
+- [Rant at numerai admins](tournament/rant-at-numerai-admins.md) — 2026-03-17 | 5 replies | 160 views
+- [When to Retrain a Model — A Casuistic Analysis](tournament/when-to-retrain-a-model-a-casuistic-analysis.md) — 2026-02-17 | 0 replies | 229 views
+- [Validation data missing ids?](tournament/validation-data-missing-ids.md) — 2026-02-09 | 1 reply | 59 views
+- [YAND: Yet Another Numerai Dashboard](tournament/yand-yet-another-numerai-dashboard.md) — 2026-01-22 | 15 replies | 2,827 views
+- [Numerisle: a new community app predicting next round performances](tournament/numerisle-a-new-community-app-predicting-next-round-performances.md) — 2025-11-11 | 3 replies | 383 views
+- [On what data do I need to send my predictions ('validation', 'test', 'live')?](tournament/on-what-data-do-i-need-to-send-my-predictions-validation-test-live.md) — 2025-10-03 | 12 replies | 1,876 views
+- [Apparent scam on the mail](tournament/apparent-scam-on-the-mail.md) — 2025-06-19 | 0 replies | 189 views
+- [The Real-Time Reckoning of Correlation Assumptions in Active Management](tournament/the-real-time-reckoning-of-correlation-assumptions-in-active-management.md) — 2025-05-22 | 0 replies | 280 views
+- [Signal Miner: Find Unique Alpha & Beat the Benchmark](tournament/signal-miner-find-unique-alpha-beat-the-benchmark.md) — 2025-04-16 | 18 replies | 2,370 views
+- [Revolutionizing Staking: Aligning Users and the Fund Through Unique Models](tournament/revolutionizing-staking-aligning-users-and-the-fund-through-unique-models.md) — 2025-01-27 | 4 replies | 541 views
+- [Change in crypto signals submission requirements?](tournament/change-in-crypto-signals-submission-requirements.md) — 2024-11-21 | 4 replies | 417 views
+- [Numerai Crypto TB10](tournament/numerai-crypto-tb10.md) — 2024-11-01 | 0 replies | 450 views
+- [Error when uploading model](tournament/error-when-uploading-model.md) — 2024-10-26 | 5 replies | 1,413 views
+- [Can I no longer submit predictions as a CSV file?](tournament/can-i-no-longer-submit-predictions-as-a-csv-file.md) — 2024-10-03 | 7 replies | 577 views
+- [Bye-Bye, V4 Data](tournament/bye-bye-v4-data.md) — 2024-09-29 | 1 reply | 516 views
+- [Where do you train your models (if not Google Colab)](tournament/where-do-you-train-your-models-if-not-google-colab.md) — 2024-09-19 | 11 replies | 2,039 views
+- [Improvement to payout factor](tournament/improvement-to-payout-factor.md) — 2024-09-17 | 5 replies | 1,203 views
+- [The humans of Numerai](tournament/the-humans-of-numerai.md) — 2024-09-10 | 47 replies | 13,857 views
+- [Daily Signals upload](tournament/daily-signals-upload.md) — 2024-08-26 | 4 replies | 986 views
+- [True Contribution for dummies](tournament/true-contribution-for-dummies.md) — 2024-08-25 | 48 replies | 3,833 views
+- [Kaggle Numerati: Yet Another Numerai Dashboard](tournament/kaggle-numerati-yet-another-numerai-dashboard.md) — 2024-06-24 | 0 replies | 353 views
+- [Crypto Numerai Tournament - Worth the time?](tournament/crypto-numerai-tournament-worth-the-time.md) — 2024-06-21 | 1 reply | 1,012 views
+- [About the Tournament category](tournament/about-the-tournament-category.md) — 2024-06-13 | 1 reply | 1,203 views
+- [CWMM lower than numerai computation](tournament/cwmm-lower-than-numerai-computation.md) — 2024-06-13 | 3 replies | 590 views
+- [Something strange with my validation results](tournament/something-strange-with-my-validation-results.md) — 2024-05-10 | 2 replies | 416 views
+- [Numerbay: which model to choose?](tournament/numerbay-which-model-to-choose.md) — 2024-05-05 | 6 replies | 795 views
+- [Upload pkl predictions](tournament/upload-pkl-predictions.md) — 2024-04-20 | 4 replies | 601 views
+- [Numerbay - Duplicated Numerai Wallet](tournament/numerbay-duplicated-numerai-wallet.md) — 2024-04-14 | 0 replies | 308 views
+- [Accessing Model Upload predictions?](tournament/accessing-model-upload-predictions.md) — 2024-04-04 | 1 reply | 348 views
+- [Introducing Queued Submissions & Submission Statuses](tournament/introducing-queued-submissions-submission-statuses.md) — 2024-04-04 | 8 replies | 1,287 views
+- [Benchmark Metrics with numerai-tools v0.0.11](tournament/benchmark-metrics-with-numerai-tools-v0-0-11.md) — 2024-04-03 | 1 reply | 761 views
+- [Does numerapi.exe check-new-round still work?](tournament/does-numerapi-exe-check-new-round-still-work.md) — 2024-03-31 | 2 replies | 340 views
+- [Payout potential issue](tournament/payout-potential-issue.md) — 2024-03-27 | 5 replies | 513 views
+- [Still understanding scores: CORR of the MM](tournament/still-understanding-scores-corr-of-the-mm.md) — 2024-03-18 | 5 replies | 557 views
+- [I don't find CWMM formula](tournament/i-dont-find-cwmm-formula.md) — 2024-03-09 | 0 replies | 364 views
+- [Which trading session correspond to today's scores?](tournament/which-trading-session-correspond-to-todays-scores.md) — 2024-03-08 | 3 replies | 447 views
+- [About the target discretization](tournament/about-the-target-discretization.md) — 2024-03-08 | 5 replies | 605 views
+- [Issubclass error when uploading](tournament/issubclass-error-when-uploading.md) — 2024-03-08 | 0 replies | 291 views
+- [Uploaded models](tournament/uploaded-models.md) — 2024-02-27 | 1 reply | 335 views
+- [Problem with features.json](tournament/problem-with-features-json.md) — 2024-02-26 | 0 replies | 287 views
+- [Number of eras to embargo between train and test sets?](tournament/number-of-eras-to-embargo-between-train-and-test-sets.md) — 2024-01-31 | 0 replies | 367 views
+- [Numerai rounds to era](tournament/numerai-rounds-to-era.md) — 2024-01-28 | 8 replies | 1,658 views
+- [Reproducing MMC from MM data](tournament/reproducing-mmc-from-mm-data.md) — 2024-01-19 | 1 reply | 350 views
+- [New data frequency](tournament/new-data-frequency.md) — 2024-01-18 | 7 replies | 516 views
+- [Error Submitting Model](tournament/error-submitting-model.md) — 2024-01-18 | 0 replies | 262 views
+- [How many high-mmc-models have recently been unstaked?](tournament/how-many-high-mmc-models-have-recently-been-unstaked.md) — 2024-01-13 | 1 reply | 712 views
+- [MMC Calculation](tournament/mmc-calculation.md) — 2023-12-21 | 0 replies | 548 views
+- [MMC and other metrics for all targets](tournament/mmc-and-other-metrics-for-all-targets.md) — 2023-12-17 | 6 replies | 934 views
+- [MMC vs CORR vs CorrWMetaModel](tournament/mmc-vs-corr-vs-corrwmetamodel.md) — 2023-12-15 | 2 replies | 555 views
+- [Regarding the MMC Sum](tournament/regarding-the-mmc-sum.md) — 2023-12-08 | 5 replies | 819 views
+- [How to deal with market timing](tournament/how-to-deal-with-market-timing.md) — 2023-11-29 | 0 replies | 452 views
+- [Changing Scoring & Payouts Again To MMC Only](tournament/changing-scoring-payouts-again-to-mmc-only.md) — 2023-11-29 | 29 replies | 3,996 views
+- [A Closed-Form Expression for TC](tournament/a-closed-form-expression-for-tc.md) — 2023-11-17 | 2 replies | 1,005 views
+- [Where are the features belongs to each group?](tournament/where-are-the-features-belongs-to-each-group.md) — 2023-11-15 | 3 replies | 693 views
+- [New Leaderboard](tournament/new-leaderboard.md) — 2023-11-12 | 1 reply | 485 views
+- [Unpacking round_model_performances_v2](tournament/unpacking-round-model-performances-v2.md) — 2023-11-11 | 0 replies | 481 views
+- [TC isn't really True Contribution](tournament/tc-isnt-really-true-contribution.md) — 2023-11-02 | 1 reply | 591 views
+- [Submitting Portfolio Weights rather than Scores](tournament/submitting-portfolio-weights-rather-than-scores.md) — 2023-10-27 | 1 reply | 747 views
+- [Numerai Fireside Chats](tournament/numerai-fireside-chats.md) — 2023-10-27 | 2 replies | 873 views
+- [Finding the best/worst performers in my models](tournament/finding-the-best-worst-performers-in-my-models.md) — 2023-10-27 | 0 replies | 442 views
+- [How to use the stake credits?](tournament/how-to-use-the-stake-credits.md) — 2023-10-21 | 5 replies | 676 views
+- [Era types (monthly, weekly, daily) in V4.2 dataset](tournament/era-types-monthly-weekly-daily-in-v4-2-dataset.md) — 2023-10-15 | 1 reply | 505 views
+- [Cannot upload round 592 predictions on v4 live data](tournament/cannot-upload-round-592-predictions-on-v4-live-data.md) — 2023-10-13 | 5 replies | 504 views
+- [Stock tickers in dataset?](tournament/stock-tickers-in-dataset.md) — 2023-10-11 | 3 replies | 544 views
+- [Huge memory (and speed) differences between v4.1 and v4 data](tournament/huge-memory-and-speed-differences-between-v4-1-and-v4-data.md) — 2023-09-18 | 9 replies | 1,154 views
+- [Numerai Doctor Error](tournament/numerai-doctor-error.md) — 2023-09-16 | 0 replies | 550 views
+- [I am bored therefore I write](tournament/i-am-bored-therefore-i-write.md) — 2023-09-14 | 0 replies | 627 views
+- [[Feature proposal] Archive models](tournament/feature-proposal-archive-models.md) — 2023-09-08 | 4 replies | 474 views
+- [Automating Rust](tournament/automating-rust.md) — 2023-09-05 | 4 replies | 607 views
+- [Automated submissions from bash shell script](tournament/automated-submissions-from-bash-shell-script.md) — 2023-09-02 | 5 replies | 3,065 views
+- [TC vs CORR vs FNCv3 vs CorrWMetaModel](tournament/tc-vs-corr-vs-fncv3-vs-corrwmetamodel.md) — 2023-08-29 | 6 replies | 1,149 views
+- [Numerai Dashboards](tournament/numerai-dashboards.md) — 2023-08-15 | 6 replies | 1,173 views
+- [Node Config Error](tournament/node-config-error.md) — 2023-08-13 | 1 reply | 449 views
+- [Rapid Evaluation of Models from Resolving Scores (REMRS)](tournament/rapid-evaluation-of-models-from-resolving-scores-remrs.md) — 2023-08-06 | 0 replies | 705 views
+- [Are the Meta Model weights optimal?](tournament/are-the-meta-model-weights-optimal.md) — 2023-08-06 | 2 replies | 1,020 views
+- [Temporary TC Bragging Rights](tournament/temporary-tc-bragging-rights.md) — 2023-08-04 | 14 replies | 1,509 views
+- [In search of better performance via stake management ( long, thorny read )](tournament/in-search-of-better-performance-via-stake-management-long-thorny-read.md) — 2023-07-27 | 8 replies | 1,491 views
+- [Luck vs Knowledge](tournament/luck-vs-knowledge.md) — 2023-07-24 | 5 replies | 981 views
+- [True Contribution: what's the point?](tournament/true-contribution-whats-the-point.md) — 2023-07-20 | 2 replies | 1,377 views
+- [Super Massive LGBM Grid Search](tournament/super-massive-lgbm-grid-search.md) — 2023-07-06 | 10 replies | 3,903 views
+- [What model is currently used for live_example_preds.parquet?](tournament/what-model-is-currently-used-for-live-example-preds-parquet.md) — 2023-07-02 | 0 replies | 515 views
+- [Situation about tax for crypto in your country](tournament/situation-about-tax-for-crypto-in-your-country.md) — 2023-06-28 | 2 replies | 504 views
+- [When medals are given?](tournament/when-medals-are-given.md) — 2023-06-24 | 3 replies | 534 views
+- [Problems downloading data](tournament/problems-downloading-data.md) — 2023-06-19 | 5 replies | 765 views
+- [Score Submissions and Liquidity](tournament/score-submissions-and-liquidity.md) — 2023-06-10 | 2 replies | 617 views
+- [How gpt change us?](tournament/how-gpt-change-us.md) — 2023-06-07 | 4 replies | 1,402 views
+- [Has the validation uploads feature been removed](tournament/has-the-validation-uploads-feature-been-removed.md) — 2023-05-28 | 1 reply | 457 views
+- [Daily submission example on Azure cloud](tournament/daily-submission-example-on-azure-cloud.md) — 2023-05-14 | 0 replies | 501 views
+- [Scoring question](tournament/scoring-question.md) — 2023-05-14 | 1 reply | 492 views
+- [644.8% 1-year return - how?](tournament/644-8-1-year-return-how.md) — 2023-05-09 | 4 replies | 1,287 views
+- [Daily Tournament - Update #2 (Payouts)](tournament/daily-tournament-update-2-payouts.md) — 2023-05-03 | 5 replies | 2,756 views
+- [The real problem with TC is Optimizer Misalignment](tournament/the-real-problem-with-tc-is-optimizer-misalignment.md) — 2023-05-03 | 8 replies | 2,028 views
+- [CORR20v2 Leaderboard](tournament/corr20v2-leaderboard.md) — 2023-04-26 | 3 replies | 738 views
+- [New CORR20V2 score](tournament/new-corr20v2-score.md) — 2023-04-18 | 1 reply | 1,029 views
+- [Basic CORR vs TC payout question](tournament/basic-corr-vs-tc-payout-question.md) — 2023-04-17 | 11 replies | 1,372 views
+- [What is your total return at numerai?](tournament/what-is-your-total-return-at-numerai.md) — 2023-04-15 | 2 replies | 1,033 views
+- [How do medals work?](tournament/how-do-medals-work.md) — 2023-04-13 | 3 replies | 670 views
+- [Safe way to use numerbay credentials in numerai-cli compute](tournament/safe-way-to-use-numerbay-credentials-in-numerai-cli-compute.md) — 2023-04-08 | 1 reply | 543 views
+- [Diagnostic Tool](tournament/diagnostic-tool.md) — 2023-04-08 | 2 replies | 801 views
+- [API Deprecation Notice](tournament/api-deprecation-notice.md) — 2023-04-04 | 0 replies | 643 views
+- [Missing values in targets](tournament/missing-values-in-targets.md) — 2023-03-28 | 4 replies | 589 views
+- [What is your submission automation cost?](tournament/what-is-your-submission-automation-cost.md) — 2023-03-27 | 23 replies | 2,782 views
+- [Automated numerai submission with Notebook](tournament/automated-numerai-submission-with-notebook.md) — 2023-03-25 | 17 replies | 2,313 views
+- [Beginner's luck?](tournament/beginners-luck.md) — 2023-03-21 | 2 replies | 797 views
+- [Eras to years mapping](tournament/eras-to-years-mapping.md) — 2023-03-19 | 4 replies | 988 views
+- [Feature sets: mappings and purpose of FNCv3](tournament/feature-sets-mappings-and-purpose-of-fncv3.md) — 2023-03-18 | 3 replies | 1,569 views
+- [NumerBay + AWS Compute](tournament/numerbay-aws-compute.md) — 2023-03-18 | 0 replies | 560 views
+- [A Step Towards Account Level Staking: Staking Slots and Prediction Slots](tournament/a-step-towards-account-level-staking-staking-slots-and-prediction-slots.md) — 2023-03-07 | 0 replies | 549 views
+- [Numerai Compute Lite](tournament/numerai-compute-lite.md) — 2023-03-05 | 1 reply | 630 views
+- [1 Year Reputation](tournament/1-year-reputation.md) — 2023-03-03 | 0 replies | 858 views
+- [Does the daily data require new models?](tournament/does-the-daily-data-require-new-models.md) — 2023-03-01 | 2 replies | 926 views
+- [Relation between rounds eras and validation set eras](tournament/relation-between-rounds-eras-and-validation-set-eras.md) — 2023-02-20 | 1 reply | 848 views
+- [Signals Diagnostics Update](tournament/signals-diagnostics-update.md) — 2023-02-13 | 2 replies | 627 views
+- [Echelon - a Numerai portfolio](tournament/echelon-a-numerai-portfolio.md) — 2023-02-11 | 13 replies | 5,865 views
+- [Daily Tournament - Update #1](tournament/daily-tournament-update-1.md) — 2023-02-10 | 29 replies | 3,554 views
+- [Faced an error while uploading predictions](tournament/faced-an-error-while-uploading-predictions.md) — 2023-01-25 | 1 reply | 420 views
+- [Request for TC of perfect predictions](tournament/request-for-tc-of-perfect-predictions.md) — 2023-01-24 | 2 replies | 1,218 views
+- [Investor Letter](tournament/investor-letter.md) — 2023-01-18 | 1 reply | 1,360 views
+- [Very, very strange TC behavior](tournament/very-very-strange-tc-behavior.md) — 2023-01-13 | 37 replies | 3,197 views
+- [When are weekday rounds actually open for submissions?](tournament/when-are-weekday-rounds-actually-open-for-submissions.md) — 2023-01-12 | 18 replies | 1,706 views
+- [TC inconsistency between frontend and API](tournament/tc-inconsistency-between-frontend-and-api.md) — 2023-01-10 | 6 replies | 734 views
+- [Scoring and overlapping open rounds](tournament/scoring-and-overlapping-open-rounds.md) — 2023-01-07 | 3 replies | 528 views
+- [TC Duplicate on Submissions](tournament/tc-duplicate-on-submissions.md) — 2022-12-29 | 3 replies | 513 views
+- [Tournament Diagnostics](tournament/tournament-diagnostics.md) — 2022-12-25 | 0 replies | 486 views
+- [Payments dashboard including currencies](tournament/payments-dashboard-including-currencies.md) — 2022-12-23 | 19 replies | 2,011 views
+- [Participant-centric model benchmark](tournament/participant-centric-model-benchmark.md) — 2022-12-15 | 2 replies | 616 views
+- [[Community Release] Oracle Compute for Numerai predictions](tournament/community-release-oracle-compute-for-numerai-predictions.md) — 2022-11-30 | 2 replies | 891 views
+- [Feature target correlation seasonality](tournament/feature-target-correlation-seasonality.md) — 2022-11-28 | 0 replies | 660 views
+- [Server Errors on Friday](tournament/server-errors-on-friday.md) — 2022-11-28 | 5 replies | 995 views
+- [What is the metric CORRJ60 for?](tournament/what-is-the-metric-corrj60-for.md) — 2022-11-26 | 3 replies | 578 views
+- [Daily submission error](tournament/daily-submission-error.md) — 2022-11-16 | 4 replies | 796 views
+- [What to do with the "New Targets for the Tournament"](tournament/what-to-do-with-the-new-targets-for-the-tournament.md) — 2022-11-15 | 8 replies | 1,015 views
+- [Reproducing 1d, 3mo, 12mo staking returns the hard way](tournament/reproducing-1d-3mo-12mo-staking-returns-the-hard-way.md) — 2022-11-15 | 3 replies | 950 views
+- [Return Calculus](tournament/return-calculus.md) — 2022-11-15 | 3 replies | 1,058 views
+- [Using old model that is using v2 features for daily not possible (SOLVED)](tournament/using-old-model-that-is-using-v2-features-for-daily-not-possible-solved.md) — 2022-11-11 | 3 replies | 553 views
+- [This Model Wow Can I Buy?](tournament/this-model-wow-can-i-buy.md) — 2022-11-10 | 7 replies | 1,282 views
+- [Which is the current dataset?](tournament/which-is-the-current-dataset.md) — 2022-11-09 | 22 replies | 1,970 views
+- [Why is TC not in diagnostics?](tournament/why-is-tc-not-in-diagnostics.md) — 2022-11-08 | 2 replies | 489 views
+- [Download v2/dataset for daily uploads (Numerai Classic)](tournament/download-v2-dataset-for-daily-uploads-numerai-classic.md) — 2022-11-03 | 9 replies | 1,048 views
+- [Numerai Tax Advantaged Accounts](tournament/numerai-tax-advantaged-accounts.md) — 2022-11-01 | 2 replies | 622 views
+- [Data Availability and Compression Methods](tournament/data-availability-and-compression-methods.md) — 2022-11-01 | 1 reply | 546 views
+- [True Contribution Details](tournament/true-contribution-details.md) — 2022-10-30 | 38 replies | 10,766 views
+- [Does Draining my account?](tournament/does-draining-my-account.md) — 2022-10-30 | 1 reply | 585 views
+- [Will we get a larger dataset with daily eras?](tournament/will-we-get-a-larger-dataset-with-daily-eras.md) — 2022-10-30 | 1 reply | 501 views
+- [Bias in the TC? - low CORR, high TC](tournament/bias-in-the-tc-low-corr-high-tc.md) — 2022-10-28 | 2 replies | 616 views
+- [What is your machine spec(CPU and GPU) for NUMERAI?](tournament/what-is-your-machine-spec-cpu-and-gpu-for-numerai.md) — 2022-10-28 | 28 replies | 2,181 views
+- [How to test my submissions?](tournament/how-to-test-my-submissions.md) — 2022-10-27 | 8 replies | 784 views
+- [Motivations / incentives for participating in (daily) tournament](tournament/motivations-incentives-for-participating-in-daily-tournament.md) — 2022-10-27 | 2 replies | 692 views
+- [Daily tournament](tournament/daily-tournament.md) — 2022-10-26 | 16 replies | 1,481 views
+- [ValueError uploading new daily predictions](tournament/valueerror-uploading-new-daily-predictions.md) — 2022-10-25 | 7 replies | 853 views
+- [Daily example predictions?](tournament/daily-example-predictions.md) — 2022-10-25 | 1 reply | 599 views
+- [The basic examples Modeling/Submissions are not working, please help](tournament/the-basic-examples-modeling-submissions-are-not-working-please-help.md) — 2022-10-21 | 6 replies | 729 views
+- [Script for downloading tournament data](tournament/script-for-downloading-tournament-data.md) — 2022-10-18 | 5 replies | 1,275 views
+- [Frequency of target releases?](tournament/frequency-of-target-releases.md) — 2022-10-17 | 4 replies | 626 views
+- [I will Build Compute nodes](tournament/i-will-build-compute-nodes.md) — 2022-10-12 | 0 replies | 531 views
+- [Selling Predictions via NumerBay](tournament/selling-predictions-via-numerbay.md) — 2022-09-30 | 11 replies | 1,168 views
+- [TC, stake and payout: let's get some facts straight](tournament/tc-stake-and-payout-lets-get-some-facts-straight.md) — 2022-09-29 | 17 replies | 1,355 views
+- [TC strikes back](tournament/tc-strikes-back.md) — 2022-09-28 | 5 replies | 705 views
+- [Question on TC: Is it True Contribution or something else?](tournament/question-on-tc-is-it-true-contribution-or-something-else.md) — 2022-09-28 | 7 replies | 1,814 views
+- [Some info on multiple targets?](tournament/some-info-on-multiple-targets.md) — 2022-09-20 | 10 replies | 1,643 views
+- [Why feature values are binned?](tournament/why-feature-values-are-binned.md) — 2022-09-19 | 2 replies | 757 views
+- [Which dataset should I use?](tournament/which-dataset-should-i-use.md) — 2022-09-18 | 1 reply | 652 views
+- [Validation dataset and eras with non-zero targets](tournament/validation-dataset-and-eras-with-non-zero-targets.md) — 2022-09-18 | 1 reply | 555 views
+- [Why CORJ60 Rank?](tournament/why-corj60-rank.md) — 2022-09-10 | 1 reply | 780 views
+- [Numerapi v4 dataset](tournament/numerapi-v4-dataset.md) — 2022-09-05 | 5 replies | 1,290 views
+- [The Un-Meta Model](tournament/the-un-meta-model.md) — 2022-08-30 | 7 replies | 1,553 views
+- [Can we get more TC related metrics?](tournament/can-we-get-more-tc-related-metrics.md) — 2022-08-27 | 4 replies | 1,086 views
+- [How was the tournament at the beginning of numerai?](tournament/how-was-the-tournament-at-the-beginning-of-numerai.md) — 2022-08-22 | 3 replies | 698 views
+- [Rank or not to rank the predictions?](tournament/rank-or-not-to-rank-the-predictions.md) — 2022-08-16 | 3 replies | 902 views
+- [What's the portfolio return if we regarding a specific model as meta model?](tournament/whats-the-portfolio-return-if-we-regarding-a-specific-model-as-meta-model.md) — 2022-07-27 | 2 replies | 697 views
+- [CORR with Meta Model](tournament/corr-with-meta-model.md) — 2022-07-27 | 5 replies | 1,145 views
+- [Does TC penalize uniqueness?](tournament/does-tc-penalize-uniqueness.md) — 2022-07-20 | 9 replies | 936 views
+- [Historical Meta Model Predictions](tournament/historical-meta-model-predictions.md) — 2022-07-20 | 1 reply | 733 views
+- [What went wrong with TC and a solution](tournament/what-went-wrong-with-tc-and-a-solution.md) — 2022-07-07 | 15 replies | 1,528 views
+- [V4 data realease - questions](tournament/v4-data-realease-questions.md) — 2022-07-04 | 14 replies | 2,172 views
+- [Thoughts on True Contribution](tournament/thoughts-on-true-contribution.md) — 2022-07-03 | 21 replies | 2,906 views
+- [Numerai NPV investment analysis](tournament/numerai-npv-investment-analysis.md) — 2022-07-01 | 4 replies | 797 views
+- [Numerapi command line interface with new data format](tournament/numerapi-command-line-interface-with-new-data-format.md) — 2022-06-30 | 9 replies | 1,398 views
+- [Relationship of daily round correlations to final round correlations](tournament/relationship-of-daily-round-correlations-to-final-round-correlations.md) — 2022-06-29 | 47 replies | 6,158 views
+- [[Community Release] : Classics tournament reporting including TC](tournament/community-release-classics-tournament-reporting-including-tc.md) — 2022-06-22 | 4 replies | 1,095 views
+- [Introductory Colab Notebook Addressing Common Challenges](tournament/introductory-colab-notebook-addressing-common-challenges.md) — 2022-06-14 | 7 replies | 2,325 views
+- [NumerBay API Question](tournament/numerbay-api-question.md) — 2022-06-12 | 3 replies | 583 views
+- [Numerai Automation with IBM Cloud](tournament/numerai-automation-with-ibm-cloud.md) — 2022-06-09 | 0 replies | 616 views
+- [Do really someone feel comfortable with TC?](tournament/do-really-someone-feel-comfortable-with-tc.md) — 2022-06-03 | 6 replies | 1,045 views
+- [Decreasing Payout Limits?](tournament/decreasing-payout-limits.md) — 2022-05-27 | 1 reply | 737 views
+- [Optimizing for FNC and TB scores](tournament/optimizing-for-fnc-and-tb-scores.md) — 2022-05-26 | 31 replies | 6,613 views
+- [Prediction Hedging to Improve TC Volatility](tournament/prediction-hedging-to-improve-tc-volatility.md) — 2022-05-25 | 4 replies | 857 views
+- [TC Calculation Details](tournament/tc-calculation-details.md) — 2022-05-24 | 2 replies | 893 views
+- [[Community Release] Automated Numerai Tournament weekly submission pipeline for free, using Azure functions and python](tournament/community-release-automated-numerai-tournament-weekly-submission-pipeline-for-free-using-azure-functions-and-python.md) — 2022-05-23 | 1 reply | 789 views
+- [[Community Release] Azure Compute for Numerai predictions](tournament/community-release-azure-compute-for-numerai-predictions.md) — 2022-05-23 | 11 replies | 1,294 views
+- [Teaming up offer for new model building](tournament/teaming-up-offer-for-new-model-building.md) — 2022-05-22 | 1 reply | 611 views
+- [Why does staking wait until Thursday?](tournament/why-does-staking-wait-until-thursday.md) — 2022-05-12 | 7 replies | 1,036 views
+- [Why are my TC scores worse after V4 data? Is volatility with a high TC score good for participants?](tournament/why-are-my-tc-scores-worse-after-v4-data-is-volatility-with-a-high-tc-score-good-for-participants.md) — 2022-05-10 | 9 replies | 1,013 views
+- [V4 diagnostic data](tournament/v4-diagnostic-data.md) — 2022-05-07 | 2 replies | 754 views
+- [[Proposal] Community contribution to BENCHMARK MODELS](tournament/proposal-community-contribution-to-benchmark-models.md) — 2022-05-05 | 0 replies | 733 views
+- [Open sourcing my dashboard for Stake PL & Performance Tracking](tournament/open-sourcing-my-dashboard-for-stake-pl-performance-tracking.md) — 2022-04-29 | 0 replies | 843 views
+- [Numerai Tournament Example code using Pytorch NN and Optuna](tournament/numerai-tournament-example-code-using-pytorch-nn-and-optuna.md) — 2022-04-25 | 13 replies | 2,813 views
+- [Some troubleshooting for setting up Numerai Compute](tournament/some-troubleshooting-for-setting-up-numerai-compute.md) — 2022-04-23 | 14 replies | 2,478 views
+- [V4/train.parquet changed from 311 to 312?](tournament/v4-train-parquet-changed-from-311-to-312.md) — 2022-04-17 | 2 replies | 959 views
+- [Will diagnostics tool include test eras recently?](tournament/will-diagnostics-tool-include-test-eras-recently.md) — 2022-04-17 | 0 replies | 499 views
+- [A True Contribution backtest](tournament/a-true-contribution-backtest.md) — 2022-04-12 | 29 replies | 3,799 views
+- [Mapping of feature names from legacy to new](tournament/mapping-of-feature-names-from-legacy-to-new.md) — 2022-04-11 | 4 replies | 1,318 views
+- [Why "test" data?](tournament/why-test-data.md) — 2022-04-10 | 4 replies | 961 views
+- [Can we have more model slots?](tournament/can-we-have-more-model-slots.md) — 2022-04-05 | 6 replies | 896 views
+- [TC vs. Legacy Data](tournament/tc-vs-legacy-data.md) — 2022-04-04 | 2 replies | 857 views
+- [NFT Experiment -- You could stake on my predictions for Round 256](tournament/nft-experiment-you-could-stake-on-my-predictions-for-round-256.md) — 2022-04-01 | 7 replies | 3,577 views
+- [16GB Intermediate solution: XGB Era Boosting](tournament/16gb-intermediate-solution-xgb-era-boosting.md) — 2022-04-01 | 54 replies | 5,915 views
+- [Discrepancy in versioning between Numerai database and NumerAPI?](tournament/discrepancy-in-versioning-between-numerai-database-and-numerapi.md) — 2022-03-31 | 5 replies | 957 views
+- [New data V4 gives the target for test data. Sounds good but I am worried](tournament/new-data-v4-gives-the-target-for-test-data-sounds-good-but-i-am-worried.md) — 2022-03-29 | 2 replies | 736 views
+- [Lagacy Predictions](tournament/lagacy-predictions.md) — 2022-03-28 | 8 replies | 828 views
+- [Cannot replicate the result of example_validation_predictions.csv](tournament/cannot-replicate-the-result-of-example-validation-predictions-csv.md) — 2022-03-27 | 1 reply | 545 views
+- [Impact of submitting identical predictions on MMC](tournament/impact-of-submitting-identical-predictions-on-mmc.md) — 2022-03-26 | 6 replies | 786 views
+- [Numercon and You](tournament/numercon-and-you.md) — 2022-03-13 | 15 replies | 1,504 views
+- [Live prediction ids do not match. IDs must match current tournament data exactly, including ordering. Make sure you are using the latest tournament data](tournament/live-prediction-ids-do-not-match-ids-must-match-current-tournament-data-exactly-including-ordering-make-sure-you-are-using-the-latest-tournament-data.md) — 2022-03-09 | 3 replies | 635 views
+- [How to label live data](tournament/how-to-label-live-data.md) — 2022-03-01 | 4 replies | 873 views
+- [The Meta of Numerai](tournament/the-meta-of-numerai.md) — 2022-02-22 | 14 replies | 1,342 views
+- [Insufficient permission for upload_submission](tournament/insufficient-permission-for-upload-submission.md) — 2022-02-21 | 3 replies | 653 views
+- [An introduction to feature neutralization / exposure](tournament/an-introduction-to-feature-neutralization-exposure.md) — 2022-02-15 | 0 replies | 6,277 views
+- [About the new dataset and RAM usage](tournament/about-the-new-dataset-and-ram-usage.md) — 2022-02-15 | 4 replies | 2,683 views
+- [Why can't we stake on FNC?](tournament/why-cant-we-stake-on-fnc.md) — 2022-02-03 | 9 replies | 809 views
+- [Clustering Eras](tournament/clustering-eras.md) — 2022-02-02 | 15 replies | 2,325 views
+- [Which Model is Better?](tournament/which-model-is-better.md) — 2022-01-27 | 44 replies | 3,063 views
+- [Live Era Proximity](tournament/live-era-proximity.md) — 2022-01-27 | 2 replies | 691 views
+- [What are some good research papers?](tournament/what-are-some-good-research-papers.md) — 2022-01-20 | 1 reply | 1,280 views
+- [True Contribution explained](tournament/true-contribution-explained.md) — 2022-01-19 | 13 replies | 1,873 views
+- [Does affect test predictions to MMC?](tournament/does-affect-test-predictions-to-mmc.md) — 2022-01-15 | 1 reply | 579 views
+- [Difference of Feature Sets](tournament/difference-of-feature-sets.md) — 2022-01-13 | 2 replies | 1,221 views
+- [New data and the example predictions](tournament/new-data-and-the-example-predictions.md) — 2022-01-06 | 4 replies | 1,417 views
+- [Example predictions - am i missing something?](tournament/example-predictions-am-i-missing-something.md) — 2022-01-01 | 6 replies | 1,329 views
+- [Round 295 Incorrect Stake "At-Risk" Value](tournament/round-295-incorrect-stake-at-risk-value.md) — 2021-12-26 | 3 replies | 776 views
+- [No Xmas data release](tournament/no-xmas-data-release.md) — 2021-12-25 | 0 replies | 772 views
+- [Should stake on only one model or many? (virtually maximize stake value)](tournament/should-stake-on-only-one-model-or-many-virtually-maximize-stake-value.md) — 2021-12-23 | 3 replies | 861 views
+- [Legacy Data Expiration](tournament/legacy-data-expiration.md) — 2021-12-22 | 8 replies | 1,737 views
+- [A few simple newb questions](tournament/a-few-simple-newb-questions.md) — 2021-12-21 | 3 replies | 854 views
+- [How to manage the compute drawback](tournament/how-to-manage-the-compute-drawback.md) — 2021-12-21 | 7 replies | 1,026 views
+- [(Way too early) Comparison of legacy & new models](tournament/way-too-early-comparison-of-legacy-new-models.md) — 2021-12-20 | 27 replies | 2,421 views
+- [How to upload new dataset submissions through the API](tournament/how-to-upload-new-dataset-submissions-through-the-api.md) — 2021-12-18 | 7 replies | 1,409 views
+- [Tournament Data Target "NaN"](tournament/tournament-data-target-nan.md) — 2021-12-16 | 2 replies | 774 views
+- [Are the target values of past tournaments released?](tournament/are-the-target-values-of-past-tournaments-released.md) — 2021-12-11 | 2 replies | 577 views
+- [Error when reading in validation parquet file](tournament/error-when-reading-in-validation-parquet-file.md) — 2021-12-11 | 6 replies | 7,756 views
+- [Numerai vs Quantopian](tournament/numerai-vs-quantopian.md) — 2021-12-08 | 8 replies | 2,937 views
+- [Anyone trying the Kaggle crypto prediction competition?](tournament/anyone-trying-the-kaggle-crypto-prediction-competition.md) — 2021-12-01 | 0 replies | 637 views
+- [What does the target range mean?](tournament/what-does-the-target-range-mean.md) — 2021-11-25 | 4 replies | 900 views
+- [Compute Node and GPU](tournament/compute-node-and-gpu.md) — 2021-11-24 | 2 replies | 762 views
+- [Joblib or pickel model files into compute?](tournament/joblib-or-pickel-model-files-into-compute.md) — 2021-11-22 | 2 replies | 859 views
+- [Submissions for round 285 failing](tournament/submissions-for-round-285-failing.md) — 2021-11-18 | 11 replies | 1,104 views
+- [Prediction upload failing during crunch time using compute & numerapi](tournament/prediction-upload-failing-during-crunch-time-using-compute-numerapi.md) — 2021-11-16 | 2 replies | 584 views
+- [Numerai Compute not consistent Timing](tournament/numerai-compute-not-consistent-timing.md) — 2021-11-14 | 0 replies | 524 views
+- [Suggestion and code needed to improve MMC](tournament/suggestion-and-code-needed-to-improve-mmc.md) — 2021-11-12 | 3 replies | 853 views
+- [ValueError: Failed to complete validation of upload!](tournament/valueerror-failed-to-complete-validation-of-upload.md) — 2021-11-06 | 3 replies | 894 views
+- [What to do with "Out of Distribution" signal?](tournament/what-to-do-with-out-of-distribution-signal.md) — 2021-11-02 | 13 replies | 1,525 views
+- [Projected Payout went down](tournament/projected-payout-went-down.md) — 2021-10-31 | 3 replies | 691 views
+- [Self Custody Timeline](tournament/self-custody-timeline.md) — 2021-10-31 | 1 reply | 560 views
+- [API for setting profile data like bio and images](tournament/api-for-setting-profile-data-like-bio-and-images.md) — 2021-10-29 | 1 reply | 502 views
+- [Metamodel CORR info](tournament/metamodel-corr-info.md) — 2021-10-28 | 1 reply | 677 views
+- [New target in Q4](tournament/new-target-in-q4.md) — 2021-10-27 | 4 replies | 983 views
+- [Ordering in Data](tournament/ordering-in-data.md) — 2021-10-27 | 1 reply | 631 views
+- [Stock Ordering Coherence](tournament/stock-ordering-coherence.md) — 2021-10-20 | 0 replies | 595 views
+- [Tournament NN baseline with the new massive data](tournament/tournament-nn-baseline-with-the-new-massive-data.md) — 2021-10-19 | 3 replies | 1,416 views
+- [Submitting models weekly](tournament/submitting-models-weekly.md) — 2021-10-19 | 3 replies | 832 views
+- [Error of running example_model.py in Kaggle](tournament/error-of-running-example-model-py-in-kaggle.md) — 2021-10-18 | 4 replies | 755 views
+- [[Beta Release] : Classics tournament reporting](tournament/beta-release-classics-tournament-reporting.md) — 2021-10-16 | 4 replies | 1,164 views
+- [Is it a bad idea to use validation set for learning ensemble weight?](tournament/is-it-a-bad-idea-to-use-validation-set-for-learning-ensemble-weight.md) — 2021-10-12 | 1 reply | 1,278 views
+- [Is it safe to train on validation set/use part of training set as validation set?](tournament/is-it-safe-to-train-on-validation-set-use-part-of-training-set-as-validation-set.md) — 2021-10-12 | 0 replies | 541 views
+- [Are the new data more noisy?](tournament/are-the-new-data-more-noisy.md) — 2021-10-04 | 5 replies | 983 views
+- [Numerai Coaches wanted](tournament/numerai-coaches-wanted.md) — 2021-10-04 | 7 replies | 756 views
+- [Is there a live model to track the example model of the new testset?](tournament/is-there-a-live-model-to-track-the-example-model-of-the-new-testset.md) — 2021-10-01 | 1 reply | 576 views
+- [Example script failure in Colab](tournament/example-script-failure-in-colab.md) — 2021-10-01 | 1 reply | 595 views
+- [Only for fan: which is your favourite feature name?](tournament/only-for-fan-which-is-your-favourite-feature-name.md) — 2021-09-24 | 0 replies | 527 views
+- [R Download and Submit Super Massive Data](tournament/r-download-and-submit-super-massive-data.md) — 2021-09-20 | 8 replies | 1,698 views
+- [Are there tournament rules that can be violated](tournament/are-there-tournament-rules-that-can-be-violated.md) — 2021-09-20 | 9 replies | 1,352 views
+- [Simple math to calcuate economic value of a model](tournament/simple-math-to-calcuate-economic-value-of-a-model.md) — 2021-08-23 | 9 replies | 1,023 views
+- [Automated submission with google cloud](tournament/automated-submission-with-google-cloud.md) — 2021-08-19 | 1 reply | 2,119 views
+- [Nongamable Payout System that Boosts Original Models and Limits Exponential Growth of Payouts](tournament/nongamable-payout-system-that-boosts-original-models-and-limits-exponential-growth-of-payouts.md) — 2021-08-16 | 7 replies | 1,421 views
+- [Rnumerai - API issues](tournament/rnumerai-api-issues.md) — 2021-08-08 | 2 replies | 571 views
+- [Numerapi error when retrieving submission status](tournament/numerapi-error-when-retrieving-submission-status.md) — 2021-08-02 | 2 replies | 622 views
+- [Notebook to visualize historic model performance and see effect of different MMC multipliers and payout factors](tournament/notebook-to-visualize-historic-model-performance-and-see-effect-of-different-mmc-multipliers-and-payout-factors.md) — 2021-07-31 | 4 replies | 1,522 views
+- [Performance Pattern of leading board](tournament/performance-pattern-of-leading-board.md) — 2021-07-29 | 12 replies | 1,407 views
+- [Do really model diagnostics makes sense?](tournament/do-really-model-diagnostics-makes-sense.md) — 2021-07-27 | 10 replies | 852 views
+- [Crypto-asset tournament](tournament/crypto-asset-tournament.md) — 2021-07-27 | 2 replies | 642 views
+- [Monthly vs weekly eras](tournament/monthly-vs-weekly-eras.md) — 2021-07-21 | 3 replies | 1,101 views
+- [Why are you taking part in this competition?](tournament/why-are-you-taking-part-in-this-competition.md) — 2021-07-19 | 10 replies | 1,268 views
+- [Important question with the tournament!](tournament/important-question-with-the-tournament.md) — 2021-07-16 | 1 reply | 520 views
+- [Performance drop on round270 day1](tournament/performance-drop-on-round270-day1.md) — 2021-07-07 | 10 replies | 1,309 views
+- [Marketplace: jackerparker4 model for sale](tournament/marketplace-jackerparker4-model-for-sale.md) — 2021-07-04 | 23 replies | 2,779 views
+- [My reputation score](tournament/my-reputation-score.md) — 2021-07-03 | 4 replies | 870 views
+- [Is it possible to download the dataset zip from an old round?](tournament/is-it-possible-to-download-the-dataset-zip-from-an-old-round.md) — 2021-07-01 | 1 reply | 723 views
+- [Amazing rounds 264 and 265](tournament/amazing-rounds-264-and-265.md) — 2021-06-28 | 1 reply | 657 views
+- [Peak at R254 and R257](tournament/peak-at-r254-and-r257.md) — 2021-06-28 | 5 replies | 956 views
+- [Diagnostics on the models "more" tab doesn't work](tournament/diagnostics-on-the-models-more-tab-doesnt-work.md) — 2021-06-27 | 5 replies | 658 views
+- [Liberating payouts for stake rebalancing and NMR withdrawal](tournament/liberating-payouts-for-stake-rebalancing-and-nmr-withdrawal.md) — 2021-06-25 | 18 replies | 1,918 views
+- [Can I change a model's name?](tournament/can-i-change-a-models-name.md) — 2021-06-25 | 4 replies | 1,032 views
+- [Scoring of submitted prediction under different model](tournament/scoring-of-submitted-prediction-under-different-model.md) — 2021-06-18 | 2 replies | 593 views
+- [Basic question of data](tournament/basic-question-of-data.md) — 2021-06-13 | 11 replies | 1,147 views
+- [Suggestion of add in equity id in Tournament](tournament/suggestion-of-add-in-equity-id-in-tournament.md) — 2021-06-12 | 4 replies | 611 views
+- [Time ammount to solve tournament](tournament/time-ammount-to-solve-tournament.md) — 2021-06-12 | 5 replies | 843 views
+- [Feature Request – Publish Metamodel Feature Exposures](tournament/feature-request-publish-metamodel-feature-exposures.md) — 2021-06-10 | 7 replies | 1,258 views
+- [Will Numerai be over in two years?](tournament/will-numerai-be-over-in-two-years.md) — 2021-06-06 | 15 replies | 2,945 views
+- [NoneType error on Upload_Prediction](tournament/nonetype-error-on-upload-prediction.md) — 2021-05-31 | 13 replies | 1,067 views
+- [Can I stake someone?](tournament/can-i-stake-someone.md) — 2021-05-30 | 8 replies | 1,462 views
+- [Model shuffling](tournament/model-shuffling.md) — 2021-05-24 | 6 replies | 1,318 views
+- [Getting error when uploading](tournament/getting-error-when-uploading.md) — 2021-05-24 | 3 replies | 544 views
+- [Are predictions discrete or continuous?](tournament/are-predictions-discrete-or-continuous.md) — 2021-05-22 | 19 replies | 4,047 views
+- [Question About Beginning Correlation Reputation Score](tournament/question-about-beginning-correlation-reputation-score.md) — 2021-05-21 | 7 replies | 1,086 views
+- [Monetizing (further) your models](tournament/monetizing-further-your-models.md) — 2021-05-19 | 26 replies | 4,122 views
+- [The ideal total NMR staked in tourney, and the pros/cons of greater participation](tournament/the-ideal-total-nmr-staked-in-tourney-and-the-pros-cons-of-greater-participation.md) — 2021-05-17 | 5 replies | 1,209 views
+- [Impactful Lagging Indicators](tournament/impactful-lagging-indicators.md) — 2021-05-17 | 0 replies | 527 views
+- [Signals - Historic universe tickers](tournament/signals-historic-universe-tickers.md) — 2021-05-14 | 3 replies | 728 views
+- [Liz Experiment Review Q1 2021 : Generating Features and Applying Feature Neutralization](tournament/liz-experiment-review-q1-2021-generating-features-and-applying-feature-neutralization.md) — 2021-05-11 | 24 replies | 5,338 views
+- [Towards creating a method for determining optimal stake withdrawal rate (feedback appreciated)](tournament/towards-creating-a-method-for-determining-optimal-stake-withdrawal-rate-feedback-appreciated.md) — 2021-05-08 | 12 replies | 1,397 views
+- [Question about how to understand Meta Model in Each Round](tournament/question-about-how-to-understand-meta-model-in-each-round.md) — 2021-05-07 | 7 replies | 784 views
+- [How does training data and validation data relate in "time"?](tournament/how-does-training-data-and-validation-data-relate-in-time.md) — 2021-05-06 | 8 replies | 1,888 views
+- [How is my stake distributed?](tournament/how-is-my-stake-distributed.md) — 2021-05-06 | 4 replies | 728 views
+- [Looking for Suggestions for Junior Data Related Positions](tournament/looking-for-suggestions-for-junior-data-related-positions.md) — 2021-05-04 | 6 replies | 1,037 views
+- [Searching partner](tournament/searching-partner.md) — 2021-04-30 | 6 replies | 1,020 views
+- [The simple, obvious way staking should work (in my humble, correct opinion)](tournament/the-simple-obvious-way-staking-should-work-in-my-humble-correct-opinion.md) — 2021-04-26 | 5 replies | 743 views
+- [A Payout Scheme that Directly Encourages Unique Models](tournament/a-payout-scheme-that-directly-encourages-unique-models.md) — 2021-04-26 | 9 replies | 1,211 views
+- [Python code to validate submissions by validation correlation to run after you attempt to submit](tournament/python-code-to-validate-submissions-by-validation-correlation-to-run-after-you-attempt-to-submit.md) — 2021-04-25 | 0 replies | 669 views
+- [Some code to get your models performances by round](tournament/some-code-to-get-your-models-performances-by-round.md) — 2021-04-25 | 2 replies | 1,130 views
+- [Prediction Stake Experiment: Subscribing to predictions](tournament/prediction-stake-experiment-subscribing-to-predictions.md) — 2021-04-24 | 0 replies | 957 views
+- [ValueError: Your session is invalid or has expired](tournament/valueerror-your-session-is-invalid-or-has-expired.md) — 2021-04-23 | 0 replies | 536 views
+- [Do I HAVE TO submit predictions EVERY week](tournament/do-i-have-to-submit-predictions-every-week.md) — 2021-04-21 | 1 reply | 863 views
+- [Questions about reducing stake](tournament/questions-about-reducing-stake.md) — 2021-04-20 | 3 replies | 840 views
+- [ERROR! Values must be between 0 and 1 exclusive](tournament/error-values-must-be-between-0-and-1-exclusive.md) — 2021-04-20 | 1 reply | 792 views
+- [Is Numerai edging towards creating a microfund managment ecosystem?](tournament/is-numerai-edging-towards-creating-a-microfund-managment-ecosystem.md) — 2021-04-17 | 0 replies | 626 views
+- [How Do I Stake. Newbie Needs Help!](tournament/how-do-i-stake-newbie-needs-help.md) — 2021-04-17 | 1 reply | 727 views
+- [Sort order of predictions](tournament/sort-order-of-predictions.md) — 2021-04-17 | 7 replies | 875 views
+- [Numerai’s payout scheme disincentivises collaboration…](tournament/numerai-s-payout-scheme-disincentivises-collaboration.md) — 2021-04-09 | 6 replies | 1,281 views
+- [Leaderboard eligibility](tournament/leaderboard-eligibility.md) — 2021-04-07 | 3 replies | 1,169 views
+- [Upoload issues on both python and website](tournament/upoload-issues-on-both-python-and-website.md) — 2021-04-07 | 5 replies | 942 views
+- [A potential problem with MMC and payout_factor](tournament/a-potential-problem-with-mmc-and-payout-factor.md) — 2021-04-06 | 5 replies | 1,445 views
+- [Basic+. aka Fancy Basic](tournament/basic-aka-fancy-basic.md) — 2021-04-05 | 1 reply | 666 views
+- [Making sense of era number](tournament/making-sense-of-era-number.md) — 2021-04-04 | 3 replies | 2,395 views
+- [NFT Experiment #2 - You could stake on my predictions for Round 257](tournament/nft-experiment-2-you-could-stake-on-my-predictions-for-round-257.md) — 2021-04-03 | 3 replies | 1,548 views
+- [Why all my model scores started from -0.1?](tournament/why-all-my-model-scores-started-from-0-1.md) — 2021-04-02 | 2 replies | 805 views
+- [[Noob question] One more question about time series](tournament/noob-question-one-more-question-about-time-series.md) — 2021-04-02 | 3 replies | 1,047 views
+- [Noob question regarding predictions](tournament/noob-question-regarding-predictions.md) — 2021-04-01 | 3 replies | 983 views
+- [Training the example data doesn't work](tournament/training-the-example-data-doesnt-work.md) — 2021-04-01 | 3 replies | 929 views
+- [Compute works but doesn't end up uploading data?](tournament/compute-works-but-doesnt-end-up-uploading-data.md) — 2021-03-29 | 0 replies | 404 views
+- [Sustainable Payouts?](tournament/sustainable-payouts.md) — 2021-03-27 | 1 reply | 1,102 views
+- [Newbie with some mini tourney thoughts](tournament/newbie-with-some-mini-tourney-thoughts.md) — 2021-03-26 | 0 replies | 536 views
+- [Where is my bounty?](tournament/where-is-my-bounty.md) — 2021-03-23 | 0 replies | 741 views
+- [Diagnostics percentile calculation](tournament/diagnostics-percentile-calculation.md) — 2021-03-22 | 2 replies | 779 views
+- [Expected "Score" Value](tournament/expected-score-value.md) — 2021-03-20 | 2 replies | 771 views
+- [Are you a confused new user?](tournament/are-you-a-confused-new-user.md) — 2021-03-19 | 2 replies | 1,147 views
+- [How is 1 day return on stake calculated?](tournament/how-is-1-day-return-on-stake-calculated.md) — 2021-03-18 | 3 replies | 1,288 views
+- [Feature kazutsugi](tournament/feature-kazutsugi.md) — 2021-03-18 | 6 replies | 1,557 views
+- [Tournament Test Type With NA Target](tournament/tournament-test-type-with-na-target.md) — 2021-03-18 | 3 replies | 806 views
+- [Some Simple Tournament Questions](tournament/some-simple-tournament-questions.md) — 2021-03-16 | 12 replies | 2,017 views
+- [Did Daylight Savings Time Crash My R Script? How bad is it to upload late?](tournament/did-daylight-savings-time-crash-my-r-script-how-bad-is-it-to-upload-late.md) — 2021-03-15 | 1 reply | 557 views
+- [Historical .csvs from Previous Rounds](tournament/historical-csvs-from-previous-rounds.md) — 2021-03-15 | 2 replies | 764 views
+- [When does training/validation data change?](tournament/when-does-training-validation-data-change.md) — 2021-03-13 | 1 reply | 865 views
+- [Sharing stacked Numeraire between several models](tournament/sharing-stacked-numeraire-between-several-models.md) — 2021-03-13 | 1 reply | 756 views
+- [Notebook for Data Viz and Analysis on the Leaderboard](tournament/notebook-for-data-viz-and-analysis-on-the-leaderboard.md) — 2021-03-12 | 4 replies | 833 views
+- [How can I use the tournament data as a time series](tournament/how-can-i-use-the-tournament-data-as-a-time-series.md) — 2021-03-10 | 4 replies | 1,143 views
+- [Tournament Targets and Target Types](tournament/tournament-targets-and-target-types.md) — 2021-03-07 | 2 replies | 1,335 views
+- [Basic. So basic it hurts](tournament/basic-so-basic-it-hurts.md) — 2021-03-04 | 4 replies | 1,782 views
+- [NMR and Tournaments](tournament/nmr-and-tournaments.md) — 2021-03-02 | 2 replies | 995 views
+- [How often is the training and validation data updated?](tournament/how-often-is-the-training-and-validation-data-updated.md) — 2021-03-01 | 3 replies | 1,318 views
+- [I need help with everything](tournament/i-need-help-with-everything.md) — 2021-02-28 | 4 replies | 1,812 views
+- [Noob question regarding Data](tournament/noob-question-regarding-data.md) — 2021-02-16 | 10 replies | 2,078 views
+- [Noob question about Tournament without staking](tournament/noob-question-about-tournament-without-staking.md) — 2021-02-16 | 2 replies | 872 views
+- [Model ranked low....predictions CSV comparison?](tournament/model-ranked-low-predictions-csv-comparison.md) — 2021-02-08 | 5 replies | 838 views
+- [Stake Limit Documentation?](tournament/stake-limit-documentation.md) — 2021-02-07 | 1 reply | 831 views
+- [Submission Question](tournament/submission-question.md) — 2021-01-02 | 4 replies | 935 views
+- [Updating Validation Set](tournament/updating-validation-set.md) — 2020-12-27 | 1 reply | 830 views
+- [New Target Nomi Release](tournament/new-target-nomi-release.md) — 2020-12-15 | 15 replies | 6,961 views
+- [100 Data Scientists Investing 10,000 NMR - Guaranteed](tournament/100-data-scientists-investing-10-000-nmr-guaranteed.md) — 2020-12-14 | 21 replies | 3,584 views
+- [Different time resolution for training and live eras](tournament/different-time-resolution-for-training-and-live-eras.md) — 2020-11-19 | 2 replies | 854 views
+- [Missing eras in tournament data](tournament/missing-eras-in-tournament-data.md) — 2020-11-16 | 5 replies | 1,705 views
+- [Can I rename my models?](tournament/can-i-rename-my-models.md) — 2020-10-14 | 0 replies | 903 views
+- [ERROR numerapi.base_api: invalid tournament](tournament/error-numerapi-base-api-invalid-tournament.md) — 2020-10-13 | 3 replies | 1,093 views
+- [Different latest tournament rows from diffrent api?](tournament/different-latest-tournament-rows-from-diffrent-api.md) — 2020-10-13 | 1 reply | 630 views
+- [Submission core metrics](tournament/submission-core-metrics.md) — 2020-10-02 | 3 replies | 1,793 views
+- [Diagnostics not working properly in multi-model mode?](tournament/diagnostics-not-working-properly-in-multi-model-mode.md) — 2020-09-28 | 2 replies | 975 views
+- [How I get help If I'm not visible?](tournament/how-i-get-help-if-im-not-visible.md) — 2020-09-24 | 5 replies | 1,101 views
+- [Error on my compute experience, please help](tournament/error-on-my-compute-experience-please-help.md) — 2020-09-24 | 3 replies | 947 views
+- [New compute flow](tournament/new-compute-flow.md) — 2020-09-15 | 0 replies | 976 views
+- [Why this error occurring even though I am using id's from example prediction file](tournament/why-this-error-occurring-even-though-i-am-using-ids-from-example-prediction-file.md) — 2020-08-31 | 5 replies | 1,960 views
+- [Leaderboard Bonus Replacement -- Metamodel peformanced based NMR buyback](tournament/leaderboard-bonus-replacement-metamodel-peformanced-based-nmr-buyback.md) — 2020-08-15 | 1 reply | 1,696 views
+- [Sharpe name is incorrect](tournament/sharpe-name-is-incorrect.md) — 2020-07-31 | 1 reply | 971 views
+- [Discussion on incentives: MM clones vs MM improvement](tournament/discussion-on-incentives-mm-clones-vs-mm-improvement.md) — 2020-07-28 | 0 replies | 1,000 views
+- [Rolling labelled data updation](tournament/rolling-labelled-data-updation.md) — 2020-07-19 | 2 replies | 782 views
+- [Alternative payout when negative MMC but positive CORR](tournament/alternative-payout-when-negative-mmc-but-positive-corr.md) — 2020-07-08 | 21 replies | 2,412 views
+- [Another proposal to merge CORR & MMC: A Dynamic Payout Scheme](tournament/another-proposal-to-merge-corr-mmc-a-dynamic-payout-scheme.md) — 2020-07-08 | 1 reply | 1,027 views
+- [Ideas for replacement of leaderboard bonus](tournament/ideas-for-replacement-of-leaderboard-bonus.md) — 2020-07-01 | 5 replies | 1,661 views
+- [Multi model support](tournament/multi-model-support.md) — 2020-06-17 | 1 reply | 1,880 views
+- [No more maximum 100K NMR, for total staked in tourney?](tournament/no-more-maximum-100k-nmr-for-total-staked-in-tourney.md) — 2020-06-04 | 2 replies | 2,106 views
+- [COR vs MMC staking](tournament/cor-vs-mmc-staking.md) — 2020-06-02 | 10 replies | 2,275 views
+- [Submission Errors keep happening](tournament/submission-errors-keep-happening.md) — 2020-05-30 | 1 reply | 980 views
+- [Multi-model and staking](tournament/multi-model-and-staking.md) — 2020-05-23 | 0 replies | 1,086 views
+- [Staking and payout doubts](tournament/staking-and-payout-doubts.md) — 2020-05-22 | 6 replies | 1,809 views
+- [What is a good sharpe ratio and validation correlation?](tournament/what-is-a-good-sharpe-ratio-and-validation-correlation.md) — 2020-05-18 | 4 replies | 3,481 views
+- [Relation of Eras with time periods](tournament/relation-of-eras-with-time-periods.md) — 2020-05-10 | 1 reply | 1,680 views
+- [Community-managed wiki](tournament/community-managed-wiki.md) — 2020-05-07 | 2 replies | 887 views
+- [Leaderboard Bonus Exploit Uncovered](tournament/leaderboard-bonus-exploit-uncovered.md) — 2020-04-28 | 7 replies | 6,018 views
+- [When to start staking](tournament/when-to-start-staking.md) — 2020-04-27 | 2 replies | 1,891 views
+- [Burn Insurance Using Staked Value Puts](tournament/burn-insurance-using-staked-value-puts.md) — 2020-04-24 | 2 replies | 1,525 views
+- [MMC score different for same model?](tournament/mmc-score-different-for-same-model.md) — 2020-04-19 | 5 replies | 1,427 views
+- [Tournament contents help](tournament/tournament-contents-help.md) — 2020-03-28 | 1 reply | 1,116 views
+
+## Feedback
+
+- [USD staking to increase NMR demand and Meta Model performance](feedback/usd-staking-to-increase-nmr-demand-and-meta-model-performance.md) — 2025-12-26 | 0 replies | 98 views
+- [Tournament Data Change?](feedback/tournament-data-change.md) — 2025-03-03 | 1 reply | 246 views
+- [Daily Score Status Update (Main Tournament)](feedback/daily-score-status-update-main-tournament.md) — 2025-02-06 | 0 replies | 313 views
+- [Issue of loading profile content](feedback/issue-of-loading-profile-content.md) — 2024-12-26 | 0 replies | 254 views
+- [TC Feedback: Iterative Exhaustion and Impacts on Profitability](feedback/tc-feedback-iterative-exhaustion-and-impacts-on-profitability.md) — 2024-06-21 | 3 replies | 1,063 views
+- [Scam on discord server](feedback/scam-on-discord-server.md) — 2024-06-01 | 6 replies | 772 views
+- [Https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals_train_val_bbg.csv' access denied](feedback/https-numerai-signals-public-data-s3-us-west-2-amazonaws-com-signals-train-val-bbg-csv-access-denied.md) — 2024-04-08 | 3 replies | 499 views
+- [Feature request/bug report: Calculate leaderboard returns considering the payout factor](feedback/feature-request-bug-report-calculate-leaderboard-returns-considering-the-payout-factor.md) — 2024-03-28 | 1 reply | 859 views
+- [NumerAPI Usage Problem: RoundModelPerformance Module](feedback/numerapi-usage-problem-roundmodelperformance-module.md) — 2024-03-21 | 0 replies | 298 views
+- [Begining era selection in 'Scores' option](feedback/begining-era-selection-in-scores-option.md) — 2024-03-11 | 1 reply | 395 views
+- [Old user - Can't find how to reduce stake](feedback/old-user-cant-find-how-to-reduce-stake.md) — 2024-01-23 | 2 replies | 377 views
+- [Numerai Fireside Chat Aftermath](feedback/numerai-fireside-chat-aftermath.md) — 2023-11-04 | 61 replies | 2,058 views
+- [NumerAI Glossary?](feedback/numerai-glossary.md) — 2023-09-20 | 2 replies | 471 views
+- [Thoughts on Numerai](feedback/thoughts-on-numerai.md) — 2023-07-17 | 2 replies | 932 views
+- [Can we get up/down arrows back in the leaderboard?](feedback/can-we-get-up-down-arrows-back-in-the-leaderboard.md) — 2023-07-13 | 0 replies | 495 views
+- [Screen Layout Changes](feedback/screen-layout-changes.md) — 2023-05-19 | 2 replies | 544 views
+- [Feature names killing my sql](feedback/feature-names-killing-my-sql.md) — 2023-04-22 | 2 replies | 739 views
+- [Payouts as USD (Unofficial improvement implemented)](feedback/payouts-as-usd-unofficial-improvement-implemented.md) — 2023-03-29 | 6 replies | 1,749 views
+- [FNC 1-p mismatch](feedback/fnc-1-p-mismatch.md) — 2023-01-17 | 0 replies | 533 views
+- [Will model deletion ever be added?](feedback/will-model-deletion-ever-be-added.md) — 2022-12-31 | 1 reply | 1,805 views
+- [Help us improve Numerai Compute!](feedback/help-us-improve-numerai-compute.md) — 2022-12-02 | 48 replies | 3,722 views
+- [Are single era downloads possible?](feedback/are-single-era-downloads-possible.md) — 2022-10-29 | 5 replies | 681 views
+- [RocketChat Down again?](feedback/rocketchat-down-again.md) — 2022-10-25 | 9 replies | 631 views
+- [Rocketchat Down? Again?](feedback/rocketchat-down-again.md) — 2022-09-23 | 6 replies | 671 views
+- [Scores do not always update daily](feedback/scores-do-not-always-update-daily.md) — 2022-07-29 | 4 replies | 771 views
+- [Making your first submission on Numerai won't finish in google Colab](feedback/making-your-first-submission-on-numerai-wont-finish-in-google-colab.md) — 2022-06-14 | 0 replies | 727 views
+- [Slots above slot 32 are not showing in the graphs on Manage models page](feedback/slots-above-slot-32-are-not-showing-in-the-graphs-on-manage-models-page.md) — 2022-04-11 | 2 replies | 638 views
+- [How can we access recordings of the historic Fireside chats?](feedback/how-can-we-access-recordings-of-the-historic-fireside-chats.md) — 2022-04-11 | 2 replies | 1,129 views
+- [Chat License Revoked](feedback/chat-license-revoked.md) — 2022-01-29 | 9 replies | 793 views
+- [Feature request: Private model notes and tags](feedback/feature-request-private-model-notes-and-tags.md) — 2022-01-17 | 0 replies | 626 views
+- [Hide unresolved rounds](feedback/hide-unresolved-rounds.md) — 2022-01-11 | 2 replies | 689 views
+- [Feature request - Easy comparison of model performance](feedback/feature-request-easy-comparison-of-model-performance.md) — 2021-12-14 | 8 replies | 1,454 views
+- [Help / struggling with login](feedback/help-struggling-with-login.md) — 2021-11-30 | 2 replies | 716 views
+- ["Recent rounds" on model page not updating correctly](feedback/recent-rounds-on-model-page-not-updating-correctly.md) — 2021-11-26 | 0 replies | 684 views
+- [Numerai Compute Timing](feedback/numerai-compute-timing.md) — 2021-11-14 | 0 replies | 659 views
+- [Fees can be prohibitive for newcomers](feedback/fees-can-be-prohibitive-for-newcomers.md) — 2021-11-12 | 1 reply | 900 views
+- [Numerai Compute not consistent on trigger Timing](feedback/numerai-compute-not-consistent-on-trigger-timing.md) — 2021-10-31 | 0 replies | 548 views
+- [Feature Needed: comments for model](feedback/feature-needed-comments-for-model.md) — 2021-10-24 | 5 replies | 804 views
+- [Free NMR credit lost when moving stake](feedback/free-nmr-credit-lost-when-moving-stake.md) — 2021-10-18 | 3 replies | 958 views
+- [RocketChat Down?](feedback/rocketchat-down.md) — 2021-10-04 | 7 replies | 939 views
+- [Major issue with Numerai website](feedback/major-issue-with-numerai-website.md) — 2021-09-18 | 1 reply | 676 views
+- [MMC Calculation "Punishes" Originality During Meta-Model Burns](feedback/mmc-calculation-punishes-originality-during-meta-model-burns.md) — 2021-09-06 | 32 replies | 4,498 views
+- [Provide Tournament API endpoint results as downloadable files](feedback/provide-tournament-api-endpoint-results-as-downloadable-files.md) — 2021-08-21 | 1 reply | 657 views
+- [Allow staking with U$D instead of NMR](feedback/allow-staking-with-u-d-instead-of-nmr.md) — 2021-08-04 | 4 replies | 937 views
+- [[Enchantments] Reduce risk - weekly portfolio suggestion and external stakes on models](feedback/enchantments-reduce-risk-weekly-portfolio-suggestion-and-external-stakes-on-models.md) — 2021-08-04 | 5 replies | 1,006 views
+- [Numerai Guys: Please consider these suggestions](feedback/numerai-guys-please-consider-these-suggestions.md) — 2021-08-03 | 2 replies | 648 views
+- [Diagnostics Does Not Work Anymore!](feedback/diagnostics-does-not-work-anymore.md) — 2021-06-28 | 2 replies | 843 views
+- [Stable customer](feedback/stable-customer.md) — 2021-06-16 | 0 replies | 617 views
+- [Data download size](feedback/data-download-size.md) — 2021-06-14 | 3 replies | 801 views
+- [What it upload the submission many times](feedback/what-it-upload-the-submission-many-times.md) — 2021-06-13 | 6 replies | 1,434 views
+- [How about staking on FNC?](feedback/how-about-staking-on-fnc.md) — 2021-06-12 | 3 replies | 858 views
+- [Model stake increase not executed and incorrect warnings about stake balance](feedback/model-stake-increase-not-executed-and-incorrect-warnings-about-stake-balance.md) — 2021-05-29 | 2 replies | 646 views
+- [Another case for better stake management](feedback/another-case-for-better-stake-management.md) — 2021-05-24 | 0 replies | 720 views
+- [Staking on Other Users’ Models: A System for Success](feedback/staking-on-other-users-models-a-system-for-success.md) — 2021-05-23 | 24 replies | 6,949 views
+- [Removing Obsolete Unstaked Models](feedback/removing-obsolete-unstaked-models.md) — 2021-05-20 | 1 reply | 926 views
+- [Slow NMR Withdrawal from tournament linked wallet](feedback/slow-nmr-withdrawal-from-tournament-linked-wallet.md) — 2021-05-17 | 0 replies | 695 views
+- [Feature request: (virtual) return on NMR stake today](feedback/feature-request-virtual-return-on-nmr-stake-today.md) — 2021-05-16 | 9 replies | 1,240 views
+- [Wallet address looks weird](feedback/wallet-address-looks-weird.md) — 2021-04-24 | 2 replies | 734 views
+- [Help with compute (error 137 with multiple predictions in single node)](feedback/help-with-compute-error-137-with-multiple-predictions-in-single-node.md) — 2021-04-18 | 2 replies | 1,039 views
+- [Feature request: Stake on multiple models in an individual stake](feedback/feature-request-stake-on-multiple-models-in-an-individual-stake.md) — 2021-04-17 | 2 replies | 831 views
+- [Request: Possibility to retrieve stakes and payouts per round via numerapi (for specific model)](feedback/request-possibility-to-retrieve-stakes-and-payouts-per-round-via-numerapi-for-specific-model.md) — 2021-04-15 | 2 replies | 607 views
+- [GAS fees - are staking contracts really necessary?](feedback/gas-fees-are-staking-contracts-really-necessary.md) — 2021-04-10 | 12 replies | 1,604 views
+- [Why burn and not lose? Plus heavy staker management](feedback/why-burn-and-not-lose-plus-heavy-staker-management.md) — 2021-04-09 | 2 replies | 721 views
+- [Some questions from Newbie](feedback/some-questions-from-newbie.md) — 2021-04-08 | 2 replies | 1,039 views
+- [Feature request: allow fiat-pegged stakes](feedback/feature-request-allow-fiat-pegged-stakes.md) — 2021-04-08 | 8 replies | 2,051 views
+- [Covid21 model code is not available?](feedback/covid21-model-code-is-not-available.md) — 2021-04-06 | 0 replies | 692 views
+- [Accidentally overwriting previous models](feedback/accidentally-overwriting-previous-models.md) — 2021-04-02 | 0 replies | 582 views
+- [Confused about everything](feedback/confused-about-everything.md) — 2021-03-29 | 17 replies | 5,274 views
+- [Issues with chat, links and other questions ))](feedback/issues-with-chat-links-and-other-questions.md) — 2021-03-03 | 1 reply | 665 views
+- [Providing a detailed description for payment and staking](feedback/providing-a-detailed-description-for-payment-and-staking.md) — 2021-02-15 | 19 replies | 4,440 views
+- [Staking and numerapi issues/questions](feedback/staking-and-numerapi-issues-questions.md) — 2021-02-14 | 3 replies | 1,188 views
+- [Is there a discord](feedback/is-there-a-discord.md) — 2021-02-13 | 2 replies | 1,726 views
+- [Question about open-sourcing models](feedback/question-about-open-sourcing-models.md) — 2021-01-10 | 9 replies | 1,444 views
+- [Issue with Numerai API query](feedback/issue-with-numerai-api-query.md) — 2021-01-09 | 0 replies | 769 views
+- [Feature request - portfolio stake](feedback/feature-request-portfolio-stake.md) — 2020-12-16 | 6 replies | 1,239 views
+- [Include targets at different time periods](feedback/include-targets-at-different-time-periods.md) — 2020-12-15 | 14 replies | 1,113 views
+- [Is forum darkmode a thing?](feedback/is-forum-darkmode-a-thing.md) — 2020-09-27 | 0 replies | 712 views
+- [MMC histogram and percentile in resolved round e-mail](feedback/mmc-histogram-and-percentile-in-resolved-round-e-mail.md) — 2020-09-03 | 0 replies | 1,020 views
+- [How to get model_id, public_id, secret_key](feedback/how-to-get-model-id-public-id-secret-key.md) — 2020-08-25 | 5 replies | 2,689 views
+- [New UI feedback](feedback/new-ui-feedback.md) — 2020-08-19 | 2 replies | 1,217 views
+- [Delete models from an account](feedback/delete-models-from-an-account.md) — 2020-05-24 | 1 reply | 2,165 views
+- [Stake Decrease Proposal](feedback/stake-decrease-proposal.md) — 2020-05-09 | 0 replies | 1,203 views
+
+## Other Languages
+
+- [【中文】使用中文的朋友，一起聊聊](languages/topic.md) — 2025-09-03 | 39 replies | 4,854 views
+- [Ketään suomalaisia paikalla?](languages/ketaan-suomalaisia-paikalla.md) — 2023-12-14 | 1 reply | 367 views
+- [【日本語】Numeaiについて雑談・質問](languages/numeai.md) — 2023-02-06 | 29 replies | 6,088 views
+- [No module named 'kronos' in ubuntu](languages/no-module-named-kronos-in-ubuntu.md) — 2022-09-28 | 2 replies | 577 views
+- [【中文】应对超大数据的一种方案——虚拟内存](languages/topic.md) — 2021-10-26 | 2 replies | 842 views
+- [【日本語】Numerai Signals について雑談・質問](languages/numerai-signals.md) — 2021-08-23 | 5 replies | 1,772 views
+
+## Numeraire
+
+- [US exchange for NMR](numeraire/us-exchange-for-nmr.md) — 2026-01-25 | 1 reply | 114 views
+- [NMR price hedging: 2026 edition](numeraire/nmr-price-hedging-2026-edition.md) — 2026-01-13 | 2 replies | 473 views
+- [Borrowing NMR for avoid currency change risk](numeraire/borrowing-nmr-for-avoid-currency-change-risk.md) — 2025-12-28 | 26 replies | 4,096 views
+- [NMR vs FET - a fundamental comparison](numeraire/nmr-vs-fet-a-fundamental-comparison.md) — 2025-04-24 | 0 replies | 403 views
+- [Fund's recent performance](numeraire/funds-recent-performance.md) — 2024-09-17 | 5 replies | 2,883 views
+- [US Taxes from the Numerai (corporate) side... and the trickle down](numeraire/us-taxes-from-the-numerai-corporate-side-and-the-trickle-down.md) — 2024-07-11 | 5 replies | 582 views
+- [How to break free of NMR price risk](numeraire/how-to-break-free-of-nmr-price-risk.md) — 2024-06-01 | 26 replies | 5,852 views
+- [US Taxes dealing with Earning and Burning](numeraire/us-taxes-dealing-with-earning-and-burning.md) — 2024-05-21 | 4 replies | 1,079 views
+- [Idea: Generate USDC revenue through $NMR covered call lending](numeraire/idea-generate-usdc-revenue-through-nmr-covered-call-lending.md) — 2024-02-25 | 4 replies | 665 views
+- [Buy back and burn?](numeraire/buy-back-and-burn.md) — 2024-02-12 | 2 replies | 676 views
+- [Numeraire - worst part of NUMERAI - time to change](numeraire/numeraire-worst-part-of-numerai-time-to-change.md) — 2024-01-04 | 33 replies | 6,912 views
+- [Do someone see any floor to NMR?](numeraire/do-someone-see-any-floor-to-nmr.md) — 2023-06-18 | 26 replies | 2,874 views
+- [Numerai Sample Notebook Error](numeraire/numerai-sample-notebook-error.md) — 2023-05-27 | 11 replies | 1,268 views
+- [Tax Preperation](numeraire/tax-preperation.md) — 2023-03-13 | 26 replies | 2,547 views
+- [Is NMR Decorrelated from other Crypto Assets? A small study](numeraire/is-nmr-decorrelated-from-other-crypto-assets-a-small-study.md) — 2023-03-07 | 4 replies | 2,110 views
+- [Few questions about NumerAI](numeraire/few-questions-about-numerai.md) — 2023-02-23 | 1 reply | 855 views
+- [NMR price estimate (long term)](numeraire/nmr-price-estimate-long-term.md) — 2022-11-06 | 15 replies | 2,026 views
+- [How long will the NMR jump to the 90$ again?](numeraire/how-long-will-the-nmr-jump-to-the-90-again.md) — 2022-08-29 | 11 replies | 2,080 views
+- [Numerai Example Notebook Throwing Submission Errors](numeraire/numerai-example-notebook-throwing-submission-errors.md) — 2022-07-17 | 1 reply | 693 views
+- [Why NMR price jump?](numeraire/why-nmr-price-jump.md) — 2022-07-02 | 5 replies | 1,602 views
+- [Price Jump today?](numeraire/price-jump-today.md) — 2022-04-25 | 12 replies | 1,665 views
+- [Tokenomics, where staked NMR comes from](numeraire/tokenomics-where-staked-nmr-comes-from.md) — 2022-03-13 | 4 replies | 2,585 views
+- [Tournament/Signals Alternative Confidence Metric](numeraire/tournament-signals-alternative-confidence-metric.md) — 2022-03-07 | 2 replies | 765 views
+- [How to short sell NMR](numeraire/how-to-short-sell-nmr.md) — 2022-02-23 | 4 replies | 1,349 views
+- [Etherscan is broken](numeraire/etherscan-is-broken.md) — 2022-02-19 | 6 replies | 1,354 views
+- [Staking my numeraire](numeraire/staking-my-numeraire.md) — 2022-01-30 | 2 replies | 1,487 views
+- [NMR Token Price Hedge/Stability](numeraire/nmr-token-price-hedge-stability.md) — 2022-01-26 | 10 replies | 1,477 views
+- [SingularityDAO "vs" Numerai](numeraire/singularitydao-vs-numerai.md) — 2022-01-19 | 12 replies | 1,941 views
+- [Historial Numeraire Data](numeraire/historial-numeraire-data.md) — 2022-01-18 | 12 replies | 1,757 views
+- [On the existence of NMR](numeraire/on-the-existence-of-nmr.md) — 2021-12-27 | 17 replies | 1,977 views
+- [Bull Case / Bear Case](numeraire/bull-case-bear-case.md) — 2021-10-30 | 35 replies | 4,133 views
+- [Is Numerai hedge fund exists?](numeraire/is-numerai-hedge-fund-exists.md) — 2021-10-12 | 1 reply | 1,038 views
+- [Network fee for transfering NMR more than the value of NMR?](numeraire/network-fee-for-transfering-nmr-more-than-the-value-of-nmr.md) — 2021-10-11 | 5 replies | 2,476 views
+- [NMR Price Appreciation](numeraire/nmr-price-appreciation.md) — 2021-09-08 | 27 replies | 4,142 views
+- [Stake DAI instead of NMR?](numeraire/stake-dai-instead-of-nmr.md) — 2021-08-16 | 2 replies | 776 views
+- [No dockerfile found](numeraire/no-dockerfile-found.md) — 2021-07-27 | 1 reply | 614 views
+- [Is there any publicly available information on the hedge fund performance?](numeraire/is-there-any-publicly-available-information-on-the-hedge-fund-performance.md) — 2021-06-24 | 18 replies | 6,831 views
+- [What happens when there are no more tokens?](numeraire/what-happens-when-there-are-no-more-tokens.md) — 2021-06-12 | 12 replies | 2,983 views
+- [Regarding numeraire stake](numeraire/regarding-numeraire-stake.md) — 2021-06-07 | 2 replies | 792 views
+- [Borrowing NMR to avoid NMR risk](numeraire/borrowing-nmr-to-avoid-nmr-risk.md) — 2021-06-05 | 13 replies | 1,711 views
+- [300K Seems a bit low to start reducing the payout factor](numeraire/300k-seems-a-bit-low-to-start-reducing-the-payout-factor.md) — 2021-05-16 | 5 replies | 2,890 views
+- [Borrowing NMR at AAVE](numeraire/borrowing-nmr-at-aave.md) — 2021-05-15 | 1 reply | 1,059 views
+- [What is the treasury and does NumerAI consider funding proposals?](numeraire/what-is-the-treasury-and-does-numerai-consider-funding-proposals.md) — 2021-03-30 | 0 replies | 1,005 views
+- [Pearson vs. Spearman scoring confusion](numeraire/pearson-vs-spearman-scoring-confusion.md) — 2021-03-28 | 4 replies | 3,523 views
+- [Numerai AUM vs Numeraire MarketCap](numeraire/numerai-aum-vs-numeraire-marketcap.md) — 2021-03-24 | 2 replies | 1,580 views
+- [Fees from wiring from Coinbase](numeraire/fees-from-wiring-from-coinbase.md) — 2021-03-19 | 3 replies | 1,630 views
+- [Who is selling Numeraire?](numeraire/who-is-selling-numeraire.md) — 2021-02-24 | 4 replies | 1,989 views
+- [Noob and basic question](numeraire/noob-and-basic-question.md) — 2021-02-12 | 4 replies | 2,211 views
+- [I whant to buy wome NMR with btc](numeraire/i-whant-to-buy-wome-nmr-with-btc.md) — 2021-02-07 | 2 replies | 1,754 views
+- [What's the value of similar or low performance models?](numeraire/whats-the-value-of-similar-or-low-performance-models.md) — 2021-01-19 | 7 replies | 1,655 views
+- [Value of weak models](numeraire/value-of-weak-models.md) — 2021-01-02 | 2 replies | 1,211 views
+- [Question on Staking and Payouts](numeraire/question-on-staking-and-payouts.md) — 2021-01-02 | 2 replies | 1,626 views
+- [Manually upload signals](numeraire/manually-upload-signals.md) — 2020-10-14 | 1 reply | 1,011 views
+- [NMR price and value](numeraire/nmr-price-and-value.md) — 2020-08-03 | 2 replies | 2,887 views
+- [Token burning and the block chain](numeraire/token-burning-and-the-block-chain.md) — 2020-04-16 | 0 replies | 1,693 views
+
+## Erasure
+
+- [Crowdfund ErasureBay](erasure/crowdfund-erasurebay.md) — 2021-04-15 | 0 replies | 799 views
+
+## Council of Elders
+
+- [Elder Nominations - open until April 27 midnight UTC](council-of-elders/elder-nominations-open-until-april-27-midnight-utc.md) — 2026-03-27 | 2 replies | 148 views
+- [Retro Bounties for Outstanding Community Contributions](council-of-elders/retro-bounties-for-outstanding-community-contributions.md) — 2026-02-03 | 0 replies | 125 views
+- [[Proposal] Around the World with Numeratis](council-of-elders/proposal-around-the-world-with-numeratis.md) — 2026-01-08 | 20 replies | 3,976 views
+- [[Updates] NumerBay - The Community Marketplace](council-of-elders/updates-numerbay-the-community-marketplace.md) — 2026-01-05 | 106 replies | 13,264 views
+- [NumerBay for Crypto Tournament?](council-of-elders/numerbay-for-crypto-tournament.md) — 2024-12-15 | 1 reply | 375 views
+- [CoE and Numerai User Growth](council-of-elders/coe-and-numerai-user-growth.md) — 2024-09-22 | 0 replies | 567 views
+- [Introducing the Shiny Numerati Dashboard](council-of-elders/introducing-the-shiny-numerati-dashboard.md) — 2024-07-05 | 6 replies | 1,416 views
+- [[Proposal] Start Up Monthly Numerai Email Newsletter](council-of-elders/proposal-start-up-monthly-numerai-email-newsletter.md) — 2024-06-24 | 25 replies | 3,366 views
+- [Around the World with Numerati: Project Hanabi (aka Tokyo Meetup Round 2)](council-of-elders/around-the-world-with-numerati-project-hanabi-aka-tokyo-meetup-round-2.md) — 2024-06-03 | 3 replies | 668 views
+- [Huge thanks to Josef, and a call to action for the community!](council-of-elders/huge-thanks-to-josef-and-a-call-to-action-for-the-community.md) — 2024-05-03 | 1 reply | 621 views
+- [Around the World with Numeratis: Survey for Upcoming Events](council-of-elders/around-the-world-with-numeratis-survey-for-upcoming-events.md) — 2024-04-24 | 8 replies | 1,163 views
+- [[ACTIVE] Bounty for using and feedback on NumerBlox](council-of-elders/active-bounty-for-using-and-feedback-on-numerblox.md) — 2023-11-15 | 5 replies | 835 views
+- [A Personal Update](council-of-elders/a-personal-update.md) — 2023-11-06 | 17 replies | 2,264 views
+- [[Vote] Elders Voting (Election #4)](council-of-elders/vote-elders-voting-election-4.md) — 2023-10-31 | 0 replies | 452 views
+- [Nominations for two open Council of Elders seats (Oct 10 through Oct 20, 2023)](council-of-elders/nominations-for-two-open-council-of-elders-seats-oct-10-through-oct-20-2023.md) — 2023-10-19 | 16 replies | 1,288 views
+- [Around the World with Numerati: Project Maple Leaf](council-of-elders/around-the-world-with-numerati-project-maple-leaf.md) — 2023-10-19 | 3 replies | 828 views
+- [[Proposal] Numerai Earnings Dashboard: funding for maintenance](council-of-elders/proposal-numerai-earnings-dashboard-funding-for-maintenance.md) — 2023-09-17 | 12 replies | 1,087 views
+- [# Community Bounties for numer.ai participants](council-of-elders/community-bounties-for-numer-ai-participants.md) — 2023-09-17 | 0 replies | 536 views
+- [Council of Elders](council-of-elders/council-of-elders.md) — 2023-09-06 | 1 reply | 794 views
+- [San Francisco local Meetup -- Tuesdays](council-of-elders/san-francisco-local-meetup-tuesdays.md) — 2023-08-16 | 0 replies | 535 views
+- [[Proposal] Bounty for high quality data science posts](council-of-elders/proposal-bounty-for-high-quality-data-science-posts.md) — 2023-08-08 | 15 replies | 2,301 views
+- [Around the World with Numerati: Project Europa](council-of-elders/around-the-world-with-numerati-project-europa.md) — 2023-07-20 | 2 replies | 1,014 views
+- [Around the World with Numerati: Project Hanami (aka Tokyo meetup)](council-of-elders/around-the-world-with-numerati-project-hanami-aka-tokyo-meetup.md) — 2023-04-22 | 11 replies | 2,108 views
+- [Borrowing NMR after Sushi deprecation](council-of-elders/borrowing-nmr-after-sushi-deprecation.md) — 2022-12-23 | 0 replies | 712 views
+- [[Proposal] Numerai Community Compute](council-of-elders/proposal-numerai-community-compute.md) — 2022-08-02 | 5 replies | 987 views
+- [Should jrb step down from the CoE?](council-of-elders/should-jrb-step-down-from-the-coe.md) — 2022-07-02 | 2 replies | 1,067 views
+- [[Vote] Elder Voting (Election #3)](council-of-elders/vote-elder-voting-election-3.md) — 2022-06-30 | 3 replies | 815 views
+- [Nominations for open Council of Elders seat (June 21 through June 28, 2022)](council-of-elders/nominations-for-open-council-of-elders-seat-june-21-through-june-28-2022.md) — 2022-06-27 | 19 replies | 1,689 views
+- [[Review] Estimated NumerBay Impact](council-of-elders/review-estimated-numerbay-impact.md) — 2022-06-18 | 0 replies | 861 views
+- [COE Proposal: Daily NMR Borrow APY Report](council-of-elders/coe-proposal-daily-nmr-borrow-apy-report.md) — 2022-06-06 | 15 replies | 1,117 views
+- [[Proposal] RNumerai Rewrite](council-of-elders/proposal-rnumerai-rewrite.md) — 2022-06-04 | 7 replies | 1,043 views
+- [COE Proposal: COE “Monetary Policy”](council-of-elders/coe-proposal-coe-monetary-policy.md) — 2022-05-22 | 9 replies | 1,158 views
+- [[Vote] Location for Numerati Meetup](council-of-elders/vote-location-for-numerati-meetup.md) — 2022-05-14 | 10 replies | 1,261 views
+- [[Proposal] Numerai.cloud - Open source cloud workspace for the community](council-of-elders/proposal-numerai-cloud-open-source-cloud-workspace-for-the-community.md) — 2022-04-30 | 15 replies | 1,369 views
+- [[Announcement] New Uniswap v3 pool for DEX traders](council-of-elders/announcement-new-uniswap-v3-pool-for-dex-traders.md) — 2022-04-26 | 2 replies | 1,141 views
+- [[Proposal] Numerbay staking reward split](council-of-elders/proposal-numerbay-staking-reward-split.md) — 2022-04-26 | 5 replies | 1,048 views
+- [Council of Elders-The First Year in Review](council-of-elders/council-of-elders-the-first-year-in-review.md) — 2022-04-22 | 0 replies | 1,102 views
+- [[Discussion] NumerBay Direct Staking w/ Profit Sharing](council-of-elders/discussion-numerbay-direct-staking-w-profit-sharing.md) — 2022-03-25 | 15 replies | 1,505 views
+- [[Proposal] Numerai Youtube Tutorial Series](council-of-elders/proposal-numerai-youtube-tutorial-series.md) — 2022-03-15 | 16 replies | 2,530 views
+- [[Proposal update]: Incentivized submissions for a greater reach (on 1729.com)](council-of-elders/proposal-update-incentivized-submissions-for-a-greater-reach-on-1729-com.md) — 2022-03-08 | 14 replies | 1,435 views
+- [[Proposal]: Extreme Makeover /r/numerai Edition](council-of-elders/proposal-extreme-makeover-r-numerai-edition.md) — 2022-03-08 | 1 reply | 925 views
+- [[Proposal] : Ethereum Grant for on-chain Numerai-related projects](council-of-elders/proposal-ethereum-grant-for-on-chain-numerai-related-projects.md) — 2022-03-08 | 9 replies | 1,184 views
+- [[Proposal] Support my signals development on twitch](council-of-elders/proposal-support-my-signals-development-on-twitch.md) — 2022-03-08 | 42 replies | 3,124 views
+- [Does anyone think we are missing the boat on NFTs?[Discussion]](council-of-elders/does-anyone-think-we-are-missing-the-boat-on-nfts-discussion.md) — 2022-03-03 | 20 replies | 1,995 views
+- [[Proposal] Degerhan-5 need-based travel stipends-Community Vote](council-of-elders/proposal-degerhan-5-need-based-travel-stipends-community-vote.md) — 2022-02-24 | 12 replies | 1,262 views
+- [[Poll] NumerBay Theme Purchase](council-of-elders/poll-numerbay-theme-purchase.md) — 2022-02-19 | 4 replies | 1,033 views
+- [[Discussion] NumerBay Theme Alternatives](council-of-elders/discussion-numerbay-theme-alternatives.md) — 2022-02-09 | 1 reply | 1,155 views
+- [[Proposal] Cloud model training and validation](council-of-elders/proposal-cloud-model-training-and-validation.md) — 2022-01-09 | 4 replies | 739 views
+- [Automated tool to setup aws ec2 spots instances for ml training](council-of-elders/automated-tool-to-setup-aws-ec2-spots-instances-for-ml-training.md) — 2022-01-07 | 7 replies | 1,143 views
+- [Nominations for open Council of Elders seat (Dec 9 through Dec 16, 2021)](council-of-elders/nominations-for-open-council-of-elders-seat-dec-9-through-dec-16-2021.md) — 2021-12-14 | 19 replies | 1,444 views
+- [[Closed] Proposal Idea Contest](council-of-elders/closed-proposal-idea-contest.md) — 2021-11-08 | 7 replies | 1,151 views
+- [[New Feature] NumerBay Multi-option Pricing](council-of-elders/new-feature-numerbay-multi-option-pricing.md) — 2021-10-30 | 0 replies | 757 views
+- [[RFC] NumerBay Future Features Brainstorming](council-of-elders/rfc-numerbay-future-features-brainstorming.md) — 2021-10-25 | 12 replies | 893 views
+- [[Proposal] Writing Medium Article(or guest writing for the Newseltter) A Numerbay Walkthrough and How To Guide for buyers](council-of-elders/proposal-writing-medium-article-or-guest-writing-for-the-newseltter-a-numerbay-walkthrough-and-how-to-guide-for-buyers.md) — 2021-10-18 | 2 replies | 703 views
+- [[Withdrawn] Degerhan EodHistorical Retroactive Bounty](council-of-elders/withdrawn-degerhan-eodhistorical-retroactive-bounty.md) — 2021-10-14 | 2 replies | 788 views
+- [[Milestone] NumerBay Stake Mode Beta](council-of-elders/milestone-numerbay-stake-mode-beta.md) — 2021-10-13 | 1 reply | 1,052 views
+- [[Milestone] NumerBay On-Platform Sales Beta](council-of-elders/milestone-numerbay-on-platform-sales-beta.md) — 2021-09-21 | 0 replies | 726 views
+- [[Governance Proposal] Abridged community review for small retroactive bounties](council-of-elders/governance-proposal-abridged-community-review-for-small-retroactive-bounties.md) — 2021-09-15 | 1 reply | 748 views
+- [[Closed] CoE Monthly Budget](council-of-elders/closed-coe-monthly-budget.md) — 2021-09-10 | 2 replies | 1,057 views
+- [Proposal: Signals Python Example Using Open Sattelite Data](council-of-elders/proposal-signals-python-example-using-open-sattelite-data.md) — 2021-09-08 | 12 replies | 1,431 views
+- [[Closed] Project Bonus Pay](council-of-elders/closed-project-bonus-pay.md) — 2021-09-05 | 5 replies | 1,001 views
+- [[Amendment] NumerBay Funding Rate Equalization](council-of-elders/amendment-numerbay-funding-rate-equalization.md) — 2021-09-05 | 10 replies | 1,046 views
+- [[Closed] Salaried Facilitator, Chief of Staff Position](council-of-elders/closed-salaried-facilitator-chief-of-staff-position.md) — 2021-08-31 | 22 replies | 1,267 views
+- [[Closed] Current Project Management Topics](council-of-elders/closed-current-project-management-topics.md) — 2021-08-30 | 3 replies | 587 views
+- [[Milestone & Vote] NumerBay.ai Release and Future Features](council-of-elders/milestone-vote-numerbay-ai-release-and-future-features.md) — 2021-08-30 | 16 replies | 1,686 views
+- [[Discussion] CoE Facilitator](council-of-elders/discussion-coe-facilitator.md) — 2021-08-29 | 7 replies | 631 views
+- [Suggestion: COE flair?](council-of-elders/suggestion-coe-flair.md) — 2021-08-28 | 3 replies | 550 views
+- [[Community Input] CoE Number of Members v.2](council-of-elders/community-input-coe-number-of-members-v-2.md) — 2021-08-26 | 3 replies | 733 views
+- [[PROPOSAL] Sponsor OHwA and DSC](council-of-elders/proposal-sponsor-ohwa-and-dsc.md) — 2021-08-25 | 62 replies | 3,765 views
+- [Community Marketplace-Current "Off Platform" Prediction Sales-Links to models for sale(Gumroad Etc)](council-of-elders/community-marketplace-current-off-platform-prediction-sales-links-to-models-for-sale-gumroad-etc.md) — 2021-08-16 | 5 replies | 1,574 views
+- [[Proposal] Numerai Community Marketplace](council-of-elders/proposal-numerai-community-marketplace.md) — 2021-08-04 | 38 replies | 3,584 views
+- [[Proposal] OpenSignals Development](council-of-elders/proposal-opensignals-development.md) — 2021-08-03 | 4 replies | 1,273 views
+- [[Community Input Results] July 30th, 2021](council-of-elders/community-input-results-july-30th-2021.md) — 2021-07-30 | 0 replies | 549 views
+- [[Community Input] CoE Salary](council-of-elders/community-input-coe-salary.md) — 2021-07-28 | 11 replies | 1,304 views
+- [[Community Input] CoE Term Limit](council-of-elders/community-input-coe-term-limit.md) — 2021-07-28 | 5 replies | 761 views
+- [[Community Input] CoE Term Length](council-of-elders/community-input-coe-term-length.md) — 2021-07-28 | 6 replies | 1,025 views
+- [[Community Input] Proposal Thinktank](council-of-elders/community-input-proposal-thinktank.md) — 2021-07-27 | 2 replies | 717 views
+- [[Request for Comment] Council of Elders Governance](council-of-elders/request-for-comment-council-of-elders-governance.md) — 2021-07-26 | 9 replies | 1,231 views
+- [[Proposal] Provide NMR lending liquidity on Kashi](council-of-elders/proposal-provide-nmr-lending-liquidity-on-kashi.md) — 2021-07-24 | 27 replies | 2,934 views
+- [[Proposal] Withdrawn](council-of-elders/proposal-withdrawn.md) — 2021-07-22 | 6 replies | 755 views
+- [[Vote] Domain Name for Marketplace Because Why Not](council-of-elders/vote-domain-name-for-marketplace-because-why-not.md) — 2021-07-18 | 13 replies | 1,052 views
+- [[Request for Proposal] One of you writes a Kashi Lending/Borrowing Tutorial for up to 5 NMR](council-of-elders/request-for-proposal-one-of-you-writes-a-kashi-lending-borrowing-tutorial-for-up-to-5-nmr.md) — 2021-07-15 | 14 replies | 1,548 views
+- [[Proposal] Allocate 1.123 ETH to reimburse multi-sig setup and prepay gas costs for each Elder](council-of-elders/proposal-allocate-1-123-eth-to-reimburse-multi-sig-setup-and-prepay-gas-costs-for-each-elder.md) — 2021-05-24 | 8 replies | 826 views
+- [Council of Elders Proposals](council-of-elders/council-of-elders-proposals.md) — 2021-05-22 | 3 replies | 982 views
+- [[Proposal]: Incentivized submissions for a greater reach (on 1729.com)](council-of-elders/proposal-incentivized-submissions-for-a-greater-reach-on-1729-com.md) — 2021-05-21 | 27 replies | 1,643 views
+- [How to write a CoE proposal](council-of-elders/how-to-write-a-coe-proposal.md) — 2021-05-13 | 1 reply | 1,175 views
+- [Break this poll please for testing](council-of-elders/break-this-poll-please-for-testing.md) — 2021-04-29 | 1 reply | 901 views
+- [Elder Voting (Election #1)](council-of-elders/elder-voting-election-1.md) — 2021-04-29 | 4 replies | 1,501 views
+- [Elder Candidates Introductions](council-of-elders/elder-candidates-introductions.md) — 2021-04-25 | 8 replies | 1,769 views
+- [Elder Nominations and Nomination Accepting](council-of-elders/elder-nominations-and-nomination-accepting.md) — 2021-04-23 | 36 replies | 2,144 views
+- [Questions about the Council of Elders](council-of-elders/questions-about-the-council-of-elders.md) — 2021-04-22 | 1 reply | 883 views
