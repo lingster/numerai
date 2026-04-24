@@ -9,32 +9,116 @@ const TOURNAMENT = z
 	.default(8)
 	.describe("Tournament ID — 8=Classic, 11=Signals, 12=Crypto");
 
-function authToken(env: Env): string | undefined {
-	if (env.NUMERAI_PUBLIC_ID && env.NUMERAI_SECRET_KEY) {
-		return `${env.NUMERAI_PUBLIC_ID}$${env.NUMERAI_SECRET_KEY}`;
-	}
-	return undefined;
+export interface AuthCallbacks {
+	/** Returns "PUBLIC_ID$SECRET_KEY" from session storage, falling back to env vars. */
+	getToken(): Promise<string | undefined>;
+	/** Persists credentials to this session's Durable Object storage. */
+	setCredentials(publicId: string, secretKey: string): Promise<void>;
+	/** Removes credentials from this session's Durable Object storage. */
+	clearCredentials(): Promise<void>;
+	/** Returns the stored public ID so auth_status can show it without exposing the secret. */
+	getStoredPublicId(): Promise<string | undefined>;
+	/** True when NUMERAI_PUBLIC_ID + NUMERAI_SECRET_KEY are set as Worker secrets. */
+	hasEnvFallback: boolean;
 }
 
-export function registerTools(server: McpServer, env: Env) {
+export function registerTools(server: McpServer, auth: AuthCallbacks) {
+	// ── Authentication ─────────────────────────────────────────────────────────
+
+	server.registerTool(
+		"authenticate",
+		{
+			description:
+				"Store your Numerai API credentials for this session. Credentials are saved in this session's isolated Durable Object storage — they are never shared with other users or sessions. Obtain your credentials at https://numer.ai/account (Settings → API Keys).",
+			inputSchema: {
+				public_id: z.string().describe("Your Numerai API public ID"),
+				secret_key: z.string().describe("Your Numerai API secret key"),
+			},
+		},
+		({ public_id, secret_key }) =>
+			toolResult(async () => {
+				const token = `${public_id}$${secret_key}`;
+				// Verify before storing — fail fast rather than silently saving bad creds.
+				const result = await gql<{ account: { username: string } | null }>(
+					`{ account { username } }`,
+					undefined,
+					token,
+				);
+				if (!result.account) {
+					throw new Error("Credentials rejected by Numerai API.");
+				}
+				await auth.setCredentials(public_id, secret_key);
+				return {
+					authenticated: true,
+					username: result.account.username,
+					message: `Authenticated as ${result.account.username}. Credentials stored for this session only.`,
+				};
+			}),
+	);
+
+	server.registerTool(
+		"sign_out",
+		{
+			description: "Remove your stored Numerai credentials from this session.",
+			inputSchema: {},
+		},
+		() =>
+			toolResult(async () => {
+				await auth.clearCredentials();
+				return { signed_out: true, message: "Session credentials cleared." };
+			}),
+	);
+
+	server.registerTool(
+		"auth_status",
+		{
+			description:
+				"Check whether this session has stored Numerai credentials and which account they belong to.",
+			inputSchema: {},
+		},
+		() =>
+			toolResult(async () => {
+				const token = await auth.getToken();
+				if (!token) {
+					return { authenticated: false, message: "No credentials. Call authenticate first." };
+				}
+				const storedId = await auth.getStoredPublicId();
+				const source = storedId ? "session" : "server environment";
+				const result = await gql<{ account: { username: string; status: string } | null }>(
+					`{ account { username status } }`,
+					undefined,
+					token,
+				);
+				if (!result.account) {
+					return { authenticated: false, message: "Credentials present but API returned no account." };
+				}
+				return {
+					authenticated: true,
+					username: result.account.username,
+					status: result.account.status,
+					credential_source: source,
+				};
+			}),
+	);
+
 	// ── Arbitrary query ────────────────────────────────────────────────────────
 
 	server.registerTool(
 		"graphql_query",
 		{
 			description:
-				"Run an arbitrary GraphQL query against the Numerai API. Use this as an escape hatch when other tools don't cover your use case. Returns raw JSON.",
+				"Run an arbitrary GraphQL query against the Numerai API. Escape hatch for queries not covered by other tools. Session credentials are used automatically if present.",
 			inputSchema: {
 				query: z.string().describe("GraphQL query string"),
 				variables_json: z
 					.string()
 					.optional()
-					.describe("JSON object of query variables, e.g. {\"id\": \"abc123\"}"),
+					.describe('JSON object of query variables, e.g. {"id": "abc123"}'),
 				use_auth: z
 					.boolean()
 					.optional()
 					.default(true)
-					.describe("Include API credentials if configured on the server"),
+					.describe("Attach session credentials to the request (default: true)"),
 			},
 		},
 		({ query, variables_json, use_auth }) =>
@@ -47,7 +131,8 @@ export function registerTools(server: McpServer, env: Env) {
 						throw new Error(`Invalid variables JSON: ${variables_json}`);
 					}
 				}
-				return gql(query, variables, use_auth ? authToken(env) : undefined);
+				const token = use_auth ? await auth.getToken() : undefined;
+				return gql(query, variables, token);
 			}),
 	);
 
@@ -59,10 +144,7 @@ export function registerTools(server: McpServer, env: Env) {
 			description: "List all active Numerai tournaments with their IDs and names.",
 			inputSchema: {},
 		},
-		() =>
-			toolResult(() =>
-				gql<unknown>(`{ tournaments { id tournament name active } }`),
-			),
+		() => toolResult(() => gql<unknown>(`{ tournaments { id tournament name active } }`)),
 	);
 
 	// ── Rounds ─────────────────────────────────────────────────────────────────
@@ -133,7 +215,7 @@ export function registerTools(server: McpServer, env: Env) {
 		"get_account",
 		{
 			description:
-				"Fetch the authenticated Numerai account details including NMR balance, models, and staking info. Requires NUMERAI_PUBLIC_ID and NUMERAI_SECRET_KEY to be set on the server.",
+				"Fetch your Numerai account details: NMR balance, models, staking, and pending transactions. Requires authentication — call authenticate first.",
 			inputSchema: {
 				show_archived: z
 					.boolean()
@@ -143,11 +225,11 @@ export function registerTools(server: McpServer, env: Env) {
 			},
 		},
 		({ show_archived }) =>
-			toolResult(() => {
-				const token = authToken(env);
+			toolResult(async () => {
+				const token = await auth.getToken();
 				if (!token) {
 					throw new Error(
-						"No credentials configured. Set NUMERAI_PUBLIC_ID and NUMERAI_SECRET_KEY as Worker secrets.",
+						"Not authenticated. Call the authenticate tool with your Numerai public_id and secret_key first.",
 					);
 				}
 				return gql<unknown>(
@@ -176,7 +258,7 @@ export function registerTools(server: McpServer, env: Env) {
 		"get_account_profile",
 		{
 			description:
-				"Fetch a public Numerai account profile by username. Includes model list with IDs — use model IDs from here in get_model_performances.",
+				"Fetch a public Numerai account profile by username. Returns model list with UUIDs — use those UUIDs in get_model_performances.",
 			inputSchema: {
 				username: z.string().describe("Numerai username"),
 				tournament: TOURNAMENT,
@@ -207,28 +289,17 @@ export function registerTools(server: McpServer, env: Env) {
 		"get_leaderboard",
 		{
 			description:
-				"Fetch the Numerai account leaderboard for Classic (tournament=8) or Signals (tournament=11). Supports sorting by any score metric.",
+				"Fetch the Numerai account leaderboard for Classic (8) or Signals (11). Sortable by any score metric.",
 			inputSchema: {
 				tournament: TOURNAMENT,
-				limit: z
-					.number()
-					.int()
-					.optional()
-					.default(20)
-					.describe("Number of rows (max 100 recommended)"),
+				limit: z.number().int().optional().default(20).describe("Rows to return"),
 				offset: z.number().int().optional().default(0).describe("Pagination offset"),
 				order_by: z
 					.string()
 					.optional()
 					.default("rank")
-					.describe(
-						"Field to sort by, e.g. 'corr', 'mmc', 'tc', 'nmrStaked', 'return1y', 'rank'",
-					),
-				direction: z
-					.enum(["asc", "desc"])
-					.optional()
-					.default("asc")
-					.describe("Sort direction"),
+					.describe("Sort field: 'corr', 'mmc', 'tc', 'nmrStaked', 'return1y', 'rank', etc."),
+				direction: z.enum(["asc", "desc"]).optional().default("asc"),
 				filter_by: z.string().optional().describe("Optional filter expression"),
 			},
 		},
@@ -244,14 +315,7 @@ export function registerTools(server: McpServer, env: Env) {
               rankChange1d rankChange3m rankChange1y
             }
           }`,
-					{
-						t: tournament,
-						l: limit,
-						o: offset,
-						ob: order_by,
-						d: direction,
-						f: filter_by ?? null,
-					},
+					{ t: tournament, l: limit, o: offset, ob: order_by, d: direction, f: filter_by ?? null },
 				),
 			),
 	);
@@ -262,26 +326,24 @@ export function registerTools(server: McpServer, env: Env) {
 		"get_model",
 		{
 			description:
-				"Fetch model metadata by model UUID. Use get_account_profile first to resolve a model UUID from a username.",
+				"Fetch model metadata by UUID. Use get_account_profile first to look up a model UUID from a username.",
 			inputSchema: {
 				model_id: z.string().describe("Model UUID (from get_account_profile)"),
 			},
 		},
 		({ model_id }) =>
-			toolResult(() =>
+			toolResult(async () =>
 				gql<unknown>(
 					`query($id: ID) {
             model(modelId: $id) {
               id name tournament archived computeEnabled
               v2Stake { stakeValue latestValue status pendingV2ChangeStakeRequest { amount type dueDate } }
-              latestSubmissions(latestNRounds: 5) {
-                roundNumber status roundOpen roundClose
-              }
+              latestSubmissions(latestNRounds: 5) { roundNumber status roundOpen roundClose }
               returns { oneDay threeMonths oneYear allTime }
             }
           }`,
 					{ id: model_id },
-					authToken(env),
+					await auth.getToken(),
 				),
 			),
 	);
@@ -292,26 +354,17 @@ export function registerTools(server: McpServer, env: Env) {
 		"get_model_performances",
 		{
 			description:
-				"Fetch per-round score history for a model. Returns corr, mmc, tc, fnc, and payout for each round.",
+				"Fetch per-round score history for a model: corr, mmc, tc, fnc, and payout per round.",
 			inputSchema: {
 				model_id: z.string().describe("Model UUID (from get_account_profile)"),
 				tournament: TOURNAMENT,
-				last_n_rounds: z
-					.number()
-					.int()
-					.optional()
-					.default(20)
-					.describe("Number of most recent rounds"),
+				last_n_rounds: z.number().int().optional().default(20).describe("Most recent N rounds"),
 				round_number: z
 					.number()
 					.int()
 					.optional()
-					.describe("Fetch a specific round only (overrides last_n_rounds)"),
-				resolved_only: z
-					.boolean()
-					.optional()
-					.default(false)
-					.describe("Only return fully resolved rounds"),
+					.describe("Specific round (overrides last_n_rounds)"),
+				resolved_only: z.boolean().optional().default(false).describe("Only resolved rounds"),
 				include_intra_round: z
 					.boolean()
 					.optional()
@@ -328,8 +381,7 @@ export function registerTools(server: McpServer, env: Env) {
               lastNRounds: $n, roundNumberEq: $rn, resolvedOnly: $res
             ) {
               roundNumber roundOpenTime roundResolveTime roundResolved roundPayoutFactor roundTarget
-              corrMultiplier mmcMultiplier tcMultiplier
-              atRisk payout
+              corrMultiplier mmcMultiplier tcMultiplier atRisk payout
               submissionScores { displayName value percentile day date payoutPending payoutSettled }
               ${include_intra_round ? "intraRoundSubmissionScores { displayName value percentile day date }" : ""}
             }
@@ -351,7 +403,7 @@ export function registerTools(server: McpServer, env: Env) {
 		"get_model_profile",
 		{
 			description:
-				"Fetch the public profile for a model by its display name. Includes reputation scores, ranks, returns, and stake info.",
+				"Fetch the public profile for a model by display name: ranks, reputation scores, returns, and stake info.",
 			inputSchema: {
 				model_name: z.string().describe("Model display name (not UUID)"),
 				tournament: TOURNAMENT,
@@ -381,7 +433,7 @@ export function registerTools(server: McpServer, env: Env) {
 		"get_round_details",
 		{
 			description:
-				"Fetch full details for a specific round including aggregate stats, payout totals, and all model scores.",
+				"Fetch full details for a specific round: aggregate stats, payout totals, and optionally all model scores.",
 			inputSchema: {
 				round_number: z.number().int().describe("Round number"),
 				tournament: TOURNAMENT,
@@ -389,9 +441,7 @@ export function registerTools(server: McpServer, env: Env) {
 					.boolean()
 					.optional()
 					.default(false)
-					.describe(
-						"Include per-model score breakdown (can be large — omit for summary only)",
-					),
+					.describe("Include per-model score breakdown (can be large)"),
 			},
 		},
 		({ round_number, tournament, include_all_models }) =>
@@ -421,22 +471,18 @@ export function registerTools(server: McpServer, env: Env) {
 	server.registerTool(
 		"list_datasets",
 		{
-			description: "List dataset files available for a tournament and optionally a specific round.",
+			description: "List dataset filenames available for a tournament round.",
 			inputSchema: {
 				tournament: TOURNAMENT,
-				round_number: z
-					.number()
-					.int()
-					.optional()
-					.describe("Round number (omit for current round)"),
+				round_number: z.number().int().optional().describe("Round number (omit for current)"),
 			},
 		},
 		({ tournament, round_number }) =>
 			toolResult(() =>
-				gql<unknown>(
-					`query($t: Int, $r: Int) { listDatasets(tournament: $t, round: $r) }`,
-					{ t: tournament, r: round_number ?? null },
-				),
+				gql<unknown>(`query($t: Int, $r: Int) { listDatasets(tournament: $t, round: $r) }`, {
+					t: tournament,
+					r: round_number ?? null,
+				}),
 			),
 	);
 
@@ -444,17 +490,13 @@ export function registerTools(server: McpServer, env: Env) {
 		"get_dataset_url",
 		{
 			description:
-				"Get a presigned download URL for a specific Numerai dataset file. URL expires after a short time.",
+				"Get a presigned download URL for a specific Numerai dataset file. URL expires shortly after generation.",
 			inputSchema: {
 				filename: z
 					.string()
-					.describe("Dataset filename, e.g. 'v5/live.parquet' (from list_datasets)"),
+					.describe("Dataset filename, e.g. 'v5/live.parquet' (use list_datasets first)"),
 				tournament: TOURNAMENT,
-				round_number: z
-					.number()
-					.int()
-					.optional()
-					.describe("Round number (omit for current round)"),
+				round_number: z.number().int().optional().describe("Round number (omit for current)"),
 			},
 		},
 		({ filename, tournament, round_number }) =>
@@ -473,16 +515,8 @@ export function registerTools(server: McpServer, env: Env) {
 		{
 			description: "Get the latest exchange rate for a currency pair. Defaults to NMR/USD.",
 			inputSchema: {
-				base_symbol: z
-					.string()
-					.optional()
-					.default("NMR")
-					.describe("Source currency symbol, e.g. 'NMR', 'ETH'"),
-				target_symbol: z
-					.string()
-					.optional()
-					.default("USD")
-					.describe("Target currency symbol, e.g. 'USD', 'EUR'"),
+				base_symbol: z.string().optional().default("NMR").describe("e.g. 'NMR', 'ETH'"),
+				target_symbol: z.string().optional().default("USD").describe("e.g. 'USD', 'EUR'"),
 			},
 		},
 		({ base_symbol, target_symbol }) =>
