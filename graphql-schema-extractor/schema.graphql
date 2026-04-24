@@ -1,0 +1,2425 @@
+schema {
+  query: RootQueryType
+  mutation: RootMutationType
+}
+
+"""The `Boolean` scalar type represents `true` or `false`."""
+scalar Boolean
+
+"""
+The `Date` scalar type represents a date. The Date appears in a JSON
+response as an ISO8601 formatted string, without a time component.
+"""
+scalar Date
+
+"""
+The `Float` scalar type represents signed double-precision fractional
+values as specified by
+[IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).
+"""
+scalar Float
+
+"""
+The `ID` scalar type represents a unique identifier, often used to
+refetch an object or as key for a cache. The ID type appears in a JSON
+response as a String; however, it is not intended to be human-readable.
+When expected as an input type, any string (such as `"4"`) or integer
+(such as `4`) input value will be accepted as an ID.
+"""
+scalar ID
+
+"""
+The `Int` scalar type represents non-fractional signed whole numeric values.
+Int can represent values between `-(2^53 - 1)` and `2^53 - 1` since it is
+represented in JSON as double-precision floating point numbers specified
+by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).
+"""
+scalar Int
+
+"""Formatted NMR strings"""
+scalar Nmr
+
+"""
+The `String` scalar type represents textual data, represented as UTF-8
+character sequences. The String type is most often used by GraphQL to
+represent free-form human-readable text.
+"""
+scalar String
+
+"""ISOz time"""
+scalar Time
+
+"""Formatted USD strings"""
+scalar Usd
+
+enum AccountStatusEnum {
+  CREATED
+  DELETED
+  FLAGGED
+  UNVERIFIED
+  VERIFIED
+}
+
+enum DefaultCurrencyEnum {
+  AUD
+  CAD
+  CNY
+  EUR
+  GBP
+  JPY
+  MXN
+  USD
+  ZAR
+}
+
+enum RoundStatus {
+  OPEN
+  RESOLVED
+  RESOLVING
+  UPCOMING
+}
+
+"""Federal Tax Classification"""
+enum TaxClassEnum {
+  """C Corporation"""
+  C_CORP
+  """LLC - C Corporation"""
+  LLC_C_CORP
+  """LLC - Partnership"""
+  LLC_PARTNERSHIP
+  """LLC - S Corporation"""
+  LLC_S_CORP
+  """Other"""
+  OTHER
+  """Partnership"""
+  PARTNERSHIP
+  """S Corporation"""
+  S_CORP
+  """Individual/sole proprieter or single-member LLC"""
+  SOLE_PROPRIETOR
+  """Trust/estate"""
+  TRUST_ESTATE
+}
+
+input KaggleProfileDataInput {
+  accountCreated: String
+  bio: String
+  displayName: String
+  profileId: String
+  tier: String
+}
+
+type Account {
+  acceptedTos: Boolean
+  """List of title achievements"""
+  achievements(tournament: Int): [Achievement]
+  aiManagerExperience: Boolean
+  apiTokens: [ApiToken]
+  availableNmr: Nmr
+  availableStakeCredit: Nmr
+  bannerUrl: String
+  bio: String
+  defaultCurrency: String
+  defaultCurrencySymbol: String
+  discordLinkToken: String
+  discordUsername: String
+  displayName: String
+  email: String
+  emailPreferences: EmailPreferences
+  github: String
+  heldForFusionStakes: Nmr
+  heldForPendingWithdrawals: Nmr
+  heldForScheduledStakeIncreases: Nmr
+  hideOnboardingTutorials: Boolean
+  id: ID
+  insertedAt: Time
+  isBeta: Boolean
+  isTestPilot: Boolean
+  kaggle: String
+  kaggleVerified: Boolean
+  linkedin: String
+  location: String
+  """Maximum model slots allowed for your achievements"""
+  maxModelSlots(tournament: Int): Int
+  mfaEnabled: Boolean
+  models(showArchived: Boolean = false): [Model]
+  nmrReturns(tournament: Int): NmrReturnStats @deprecated(reason: "Use Account.returns")
+  occupation: String
+  onChainWalletBalance: Nmr
+  organization: String
+  pendingTxns: [WalletTxn]
+  profileUrl: String
+  reports: [Reports]
+  """Average stake weighted returns for all account models per tournament"""
+  returns(tournament: Int): SwReturns
+  """Time series average stake weighted returns for all account models per tournament"""
+  returnsValues(tournament: Int): [SwReturnsValue]
+  scheduledStakeTxns: [ScheduledStakeTxn]
+  status: AccountStatusEnum
+  """The highest earned title"""
+  title(tournament: Int): String
+  totalStakeValue(
+    range: String
+    tournament: Int
+  ): [StakeValue] @deprecated(reason: "Use totalStakeValues")
+  totalStakeValues(tournament: Int): [StakeValue]
+  tutorials: AccountTutorials
+  twitter: String
+  updatedAt: Time
+  username: String
+  w9Info: W9Info
+  walletAddress: String
+  walletTxns: [WalletTxn]
+  website: String
+}
+
+type AccountLeaderboardEntry {
+  alpha: Float
+  bio: String
+  bmc: Float
+  corJ60: Float
+  corr: Float
+  corr60: Float
+  corrV4: Float
+  cort20: Float
+  displayName: String
+  fncV3: Float
+  fncV4: Float
+  icV2: Float
+  id: ID
+  mmc: Float
+  mmc60: Float
+  mpc: Float
+  nmrStaked: Nmr
+  profileUrl: String
+  rank: Int
+  rankChange1d: Int
+  rankChange1y: Int
+  rankChange3m: Int
+  return1y: Float
+  return1yNmr: Nmr
+  return3m: Float
+  return3mNmr: Nmr
+  returnAllTime: Float
+  returnAllTimeNmr: Nmr
+  ric: Float
+  storedRank: Int
+  tc: Float
+  team: Boolean
+  title: String
+  username: String
+  v2Corr20: Float
+}
+
+type AccountProfile {
+  acceptedTos: Boolean
+  """List of title achievements"""
+  achievements: [Achievement]
+  bannerUrl: String
+  bio: String
+  discord: DiscordInfo
+  displayName: String
+  github: String
+  id: ID
+  isActive: Boolean
+  kaggle: String
+  """Kaggle tier from verification (novice, contributor, expert, master, grandmaster)"""
+  kaggleTier: String
+  kaggleVerified: Boolean
+  linkedin: String
+  location: String
+  models: [ModelProfile]
+  occupation: String
+  organization: String
+  profileUrl: String
+  """Average stake weighted returns for all account models per tournament"""
+  returns: SwReturns
+  """Time series average stake weighted returns for all account models per tournament"""
+  returnsTs(interval: String = "ltm"): [SwReturnsValue]
+  scores: AccountScores
+  scoresTs(interval: String = "ltm"): [AccountScores]
+  startDate: Time
+  team: Boolean
+  """The highest earned title"""
+  title: String
+  totalStake: Nmr
+  totalStakeTs(interval: String = "ltm"): [AccountStakeValue]
+  tournament: Int
+  twitter: String
+  username: String
+  website: String
+}
+
+type AccountScores {
+  alpha: Float
+  alphaLtm: Float
+  alphaLtmRank: Int
+  corr: Float
+  corr60: Float
+  corr60Ltm: Float
+  corr60LtmRank: Int
+  corrLtm: Float
+  corrLtmRank: Int
+  date: Date
+  fncV4: Float
+  fncV4Ltm: Float
+  fncV4LtmRank: Int
+  mmc: Float
+  mmc60: Float
+  mmc60Ltm: Float
+  mmc60LtmRank: Int
+  mmcLtm: Float
+  mmcLtmRank: Int
+  mpc: Float
+  mpcLtm: Float
+  mpcLtmRank: Int
+  seasonRank: Int
+  tc: Float
+  tcLtm: Float
+  tcLtmRank: Int
+  v2Corr20: Float
+  v2Corr20Ltm: Float
+  v2Corr20LtmRank: Int
+}
+
+type AccountStakeValue {
+  date: Date
+  delta: Nmr
+  time: Time
+  value: Nmr
+}
+
+type AccountTutorials {
+  numerai: NumeraiTutorials
+  signals: SignalsTutorials
+}
+
+type Achievement {
+  date: Date
+  rank: Int
+  score: Float
+  season: String
+  tier: String
+  tournament: Int
+  type: String
+}
+
+type ActivityFeedEntry {
+  accountId: ID
+  activityType: String
+  avatar: String
+  description: String
+  eventAt: String
+  id: ID
+  insertedAt: String
+  tournamentId: ID
+  username: String
+}
+
+type ApiToken {
+  name: String
+  publicId: String
+  scopes: [String]
+}
+
+type ApiTokenInfo {
+  accountUsername: String
+  name: String
+  publicId: String
+  scopes: [String]
+}
+
+type ApiTokenWithSecret {
+  name: String
+  publicId: String
+  scopes: [String]
+  secretKey: String
+}
+
+type Banner {
+  expirationDate: String
+  type: String
+}
+
+type ComputePickleDataVersion {
+  default: Boolean
+  deprecated: Boolean
+  experimental: Boolean
+  id: ID
+  name: String
+  type: String
+  version: String
+}
+
+type ComputePickleDockerImage {
+  default: Boolean
+  deprecated: Boolean
+  experimental: Boolean
+  id: ID
+  image: String
+  insertedAt: Time
+  name: String
+  tag: String
+}
+
+type ComputePickleTrigger {
+  computePickleUploadId: ID
+  id: ID
+  insertedAt: Time
+  roundId: ID
+  status: String
+  statuses: [ComputePickleTriggerStatus]
+  submissionId: ID
+  type: String
+  updatedAt: Time
+}
+
+type ComputePickleTriggerStatus {
+  computePickleTriggerId: ID
+  description: String
+  id: ID
+  insertedAt: Time
+  status: String
+  updatedAt: Time
+}
+
+type ComputePickleUpload {
+  """List of model_id's assigned to use this pickle model for submissions"""
+  assignedModelSlots: [ID]
+  """The data version of the pickle upload"""
+  dataVersion: String
+  dataVersionId: ID
+  """The diagnostics ID of the pickle upload"""
+  diagnosticsId: String
+  """The diagnostics status of the pickle upload"""
+  diagnosticsStatus: String
+  """The diagnostics status description of the pickle upload"""
+  diagnosticsStatusDescription: String
+  """The docker image of the pickle upload"""
+  dockerImage: String
+  dockerImageId: ID
+  """The name of the docker image for the pickle upload"""
+  dockerImageName: String
+  filename: String
+  id: ID
+  insertedAt: Time
+  """The label of the pickle upload"""
+  label: String
+  """The parent model of this pickle"""
+  modelId: String
+  """The runtime of the pickle upload"""
+  runtime: String
+  """The model's most recent trigger status"""
+  triggerStatus: String
+  """List of submissions triggers for this pickle upload"""
+  triggers: [ComputePickleTrigger]
+  updatedAt: Time
+  """The model's validation status"""
+  validationStatus: String
+  version: Int
+}
+
+type CryptosignalsLeaderboardEntry {
+  canonCorrLtm: Float
+  canonCorrRankLtm: Int
+  canonMmcLtm: Float
+  canonMmcRankLtm: Int
+  canonTcLtm: Float
+  computeEnabled: Boolean
+  control: Float
+  corrRank: Int
+  corrRep: Float
+  id: ID
+  isActive: Boolean
+  latestUserScores: [UserScore]
+  mmcRank: Int
+  mmcRep: Float
+  nmrStaked: Nmr
+  profileUrl: String
+  rank: Int
+  rankChange1d: Int
+  rankChange1y: Int
+  rankChange3m: Int
+  return13Weeks: Float
+  return1Day: Float
+  return52Weeks: Float
+  storedRank: Int
+  team: Boolean
+  username: String
+}
+
+type CryptosignalsOverview {
+  """Average Stake Weighted Returns"""
+  returns: SwReturns
+  """Time series of average stake weighted returns"""
+  returnsValues: [SwReturnsValue]
+  """Time series count of distinct accounts with a staked submission in a currently unresolved round"""
+  stakedAccounts: [StakedAccountsCount]
+  """Count of distinct accounts with a staked submission in the last 12 months"""
+  stakedAccountsLtm: Int
+  """Time series count of distinct models with a staked submission in a currently unresolved round"""
+  stakedModels: [StakedModelsCount]
+  stakedSubmissions: Int @deprecated(reason: "Use stakedModels time series")
+  """Total number of accounts currently on the leaderboard"""
+  totalAccounts: Int
+  totalAtStake: Nmr
+  """Time series of total NMR staked"""
+  totalAtStakeValues: [StakeValue]
+  totalStakes: Int
+}
+
+type CurrencyCode {
+  code: String
+  symbol: String
+}
+
+type DailyModelPerformance {
+  alphaRank: Int
+  alphaRep: Float
+  apy: Float
+  corr60Rank: Int
+  corr60Rep: Float
+  corrRank: Int
+  corrRep: Float
+  corrV4Rank: Int
+  corrV4Rep: Float
+  date: Time
+  fncRank: Int
+  fncRep: Float
+  fncV3Rank: Int
+  fncV3Rep: Float
+  fncV4Rank: Int
+  fncV4Rep: Float
+  icRank: Int
+  icRep: Float
+  icV2Rank: Int
+  icV2Rep: Float
+  mmcRank: Int
+  mmcRep: Float
+  mpcRank: Int
+  mpcRep: Float
+  return13Weeks: Float
+  return52Weeks: Float
+  tcRank: Int
+  tcRep: Float
+}
+
+type DiscordInfo {
+  userId: String
+  username: String
+}
+
+type EarnQuestsProgress {
+  firstDiagnostics: Boolean
+  firstStake: Boolean
+  firstSubmission: Boolean
+  madeFiveModels: Boolean
+  stakeSubmittedFourWeeks: QuestProgress
+}
+
+type EmailPreferences {
+  compute: Boolean
+  cryptoRoundOpen: Boolean
+  cryptoRoundSummary: Boolean
+  cryptoSubmission: Boolean
+  deposit: Boolean
+  diagnostics: Boolean
+  modelUploadReceipt: Boolean
+  pickleRoundOpen: Boolean
+  pickleRoundStatus: Boolean
+  roundOpen: Boolean
+  roundSummary: Boolean
+  signalsRoundOpen: Boolean
+  signalsRoundSummary: Boolean
+  signalsSubmission: Boolean
+  stakeChange: Boolean
+  submission: Boolean
+  submissionSuccess: Boolean
+  submissionsStatus: Boolean
+  withdrawal: Boolean
+}
+
+type EthPrice {
+  lastUpdated: String
+  priceUsd: String
+  volume: String
+}
+
+type FeatureFlag {
+  enabled: Boolean
+  key: String
+  value: Float
+}
+
+type FileUploadAuth {
+  accelerated: Boolean
+  countryCode: String
+  filename: String
+  url: String
+}
+
+type GeoIp {
+  code: String
+  ip: String
+  location: String
+}
+
+"""A blog post from the Ghost CMS"""
+type GhostBlogPost {
+  """Post excerpt/summary"""
+  excerpt: String
+  """URL of the featured image"""
+  featureImage: String
+  """Internal Ghost post ID"""
+  id: String
+  """ISO 8601 timestamp when the post was published"""
+  publishedAt: String
+  """URL slug for the post"""
+  slug: String
+  """Title of the blog post"""
+  title: String
+  """Full URL to the blog post"""
+  url: String
+  """UUID of the post"""
+  uuid: String
+}
+
+type GrandmasterTierConfig {
+  maxModelSlots: Int
+  minimumStakeSubs: Int
+  seasonId: ID
+  tierName: String
+  tierNumber: Int
+  topXPct: Float
+  topXRank: Int
+  tournament: Tournament
+  year: Int
+}
+
+type HistogramData {
+  bins: [Float]
+  counts: [Int]
+}
+
+type InvocationLog {
+  message: String
+  timestamp: Int
+}
+
+type KaggleVerificationResult {
+  success: Boolean
+}
+
+type KaggleVerificationTokenResult {
+  token: String
+}
+
+type LatestSubmission {
+  filename: String
+  id: ID
+  roundClose: Date
+  roundCloseStaking: Date
+  roundNumber: Int
+  roundOpen: Date
+  status: String
+  timestamp: Time
+}
+
+type LeaderboardEntry {
+  accountCorr: Float
+  accountCorrRank: Int
+  accountDisplayName: String
+  accountSeasonScore: Float
+  accountSeasonScoreRank: Float
+  accountTc: Float
+  accountTcRank: Int
+  accountTitle: String @deprecated(reason: "Use other title fields instead.")
+  accountUsername: String
+  cryptosignalsTitle: String
+  excludeFromSeason: Boolean
+  numeraiTitle: String
+  profileUrl: String
+  signalsTitle: String
+}
+
+type MedalCounts {
+  bronze: Int
+  gold: Int
+  silver: Int
+}
+
+type MetaModelHolding {
+  latestPrice: Nmr
+  logo: String
+  mmRank: Int
+  symbol: String
+  value: Float
+}
+
+type MetaModelPage {
+  lastUpdated: Time
+  tableData: [MetaModelHolding]
+  totalAtStake: Nmr
+  totalStakes: Int
+  tournament: Int
+}
+
+type Model {
+  accountId: ID @deprecated(reason: "This field always returns null")
+  archived: Boolean
+  archivedAt: Time
+  computeEnabled: Boolean
+  computeLiteEnabled: Boolean @deprecated(reason: "Use compute_enabled instead")
+  computePickleUpload: ComputePickleUpload
+  currentPayoutSelection: PayoutSelection
+  description: String
+  earliestReleaseDate: Time
+  hidden: Boolean
+  id: ID
+  insertedAt: Time
+  isComputeWeekdayEnabled: Boolean @deprecated(reason: "Always returns true; weekday compute is always enabled")
+  latestSignalsSubmission: [V2Submission] @deprecated(reason: "Use latest_submissions instead")
+  latestSignalsSubmissionV2: V2Submission @deprecated(reason: "Use latest_submissions instead")
+  latestSubmission: [V2Submission] @deprecated(reason: "Use latest_submissions instead")
+  latestSubmissionV2: V2Submission @deprecated(reason: "Use latest_submissions instead")
+  latestSubmissions(latestNRounds: Int = 20): [LatestSubmission]
+  latestUserScores: [UserScore]
+  name: String
+  nmrReturns: NmrReturnStats @deprecated(reason: "Use Model.returns")
+  profileUrl: String
+  """Percentage & NMR returns for model"""
+  returns: Returns
+  """Percentage & NMR returns for model"""
+  returnsValues: [ReturnsValue]
+  signalsStake: V2Stake
+  signalsSubmissions: [V2Submission] @deprecated(reason: "Use submissions instead")
+  submissionWebhook: String
+  submissions: [V2Submission] @deprecated(reason: "Use submissions instead")
+  tournament: Int
+  username: String
+  v2Stake: V2Stake
+}
+
+type ModelData {
+  alpha: Float
+  alphaPercentile: Float
+  apcwnm: Float
+  apcwnmPercentile: Float
+  apcwsm: Float
+  apcwsmPercentile: Float
+  bmc: Float
+  bmcPercentile: Float
+  computeEnabled: Boolean
+  corj60: Float
+  corj60Percentile: Float
+  corr: Float
+  corr20: Float
+  corr20Percentile: Float
+  corr60: Float
+  corr60Percentile: Float
+  corrMedal: String
+  corrPercentile: Float
+  corrV4: Float
+  corrV4Percentile: Float
+  corrWMetaModel: Float
+  corrWMetaModelPercentile: Float
+  cort20: Float
+  cort20Percentile: Float
+  cwmm: Float
+  cwmmPercentile: Float
+  cwsnmm: Float
+  cwsnmmPercentile: Float
+  fnc: Float
+  fncPercentile: Float
+  fncV3: Float
+  fncV3Percentile: Float
+  fncV4: Float
+  fncV4Percentile: Float
+  icV2: Float
+  icV2Percentile: Float
+  id: ID
+  mcwnm: Float
+  mcwnmPercentile: Float
+  mcwsm: Float
+  mcwsmPercentile: Float
+  mmc: Float
+  mmc60: Float
+  mmcMedal: String
+  mmcPercentile: Float
+  modelName: String
+  mpc: Float
+  mpcPercentile: Float
+  payoutPending: Nmr
+  payoutSettled: Nmr
+  profileUrl: String
+  ric: Float
+  ricPercentile: Float
+  roundId: ID
+  selectedStakeValue: Nmr
+  tc: Float
+  tcMedal: String
+  tcPercentile: Float
+  team: Boolean
+  v2Corr20: Float
+  v2Corr20Percentile: Float
+}
+
+type ModelProfile {
+  accountId: ID
+  alphaRep: Float
+  corj60Rep: Float
+  corr20V2Rep: Float
+  corr60Rep: Float
+  corrRep: Float
+  corrV4Rep: Float
+  displayName: String
+  fncV3Rep: Float
+  fncV4Rep: Float
+  icV2Rep: Float
+  id: ID
+  mmc60Rep: Float
+  mmcRep: Float
+  mpcRep: Float
+  profileUrl: String
+  return1y: Float
+  ricRep: Float
+  stake: Nmr
+  startDate: Time
+  tcRep: Float
+  tournament: Int
+  username: String
+}
+
+type Nftee {
+  tokenId: Int
+}
+
+type NfteeContract {
+  address: String
+  network: String
+}
+
+type NfteeVoucher {
+  secret: String
+  signature: String
+  tokenIds: [Int]
+}
+
+type Nftees {
+  nftees: [Nftee]
+  voucher: NfteeVoucher
+}
+
+type NmrPrice {
+  lastUpdated: String
+  priceUsd: String
+}
+
+"""Legacy returns stats. Use Account.returns"""
+type NmrReturnStats {
+  sw1dReturn: Float
+  sw1yReturn: Float
+  sw3mReturn: Float
+}
+
+type Notification {
+  bodyText: String
+  ctaButtonLink: String
+  ctaButtonText: String
+  data: String
+  id: ID
+  titleText: String
+}
+
+type NumeraiTutorials {
+  discordConnected: Boolean
+  featureNeutralization: Boolean
+  helloNumerai: Boolean
+  kaggleConnected: Boolean
+  targetEnsemble: Boolean
+}
+
+type Overview {
+  averageThreeMonthsReturns: Float @deprecated(reason: "Use v2TournamentOverview.sw_returns")
+  """Average stake weighted returns"""
+  returns: SwReturns
+  """Time series of average stake weighted returns"""
+  returnsValues: [SwReturnsValue]
+  stakeWeightedAverageThreeMonthsReturns: Float @deprecated(reason: "Use v2TournamentOverview.sw_returns")
+  """Time series count of distinct accounts with a staked submission in a currently unresolved round"""
+  stakedAccounts: [StakedAccountsCount]
+  """Count of distinct accounts with a staked submission in the last 12 months"""
+  stakedAccountsLtm: Int
+  """Time series count of distinct models with a staked submission in a currently unresolved round"""
+  stakedModels: [StakedModelsCount]
+  stakedSubmissions: Int @deprecated(reason: "Use stakedModels time series")
+  """Count of distinct accounts with a submission in the last 12 months"""
+  totalAccounts: Int
+  totalAtStake: Nmr
+  """Time series of total NMR staked"""
+  totalAtStakeValues: [StakeValue]
+  totalNetEarnings: Nmr @deprecated(reason: "This field always returns null. Use TournamentOverview.returns")
+  totalStakes: Int
+}
+
+type Payout {
+  currencySymbol: String
+  modelDisplayName: String
+  modelId: ID
+  modelName: String
+  payoutNmr: Nmr
+  payoutValue: Usd
+  roundId: ID
+  roundNumber: Int
+  roundResolveTime: Date
+}
+
+type PayoutSelection {
+  corrMultiplier: Float
+  insertedAt: Time
+  mmcMultiplier: Float
+  payoutSelection: String
+  takeProfit: Boolean
+  tcMultiplier: Float
+  updatedAt: Time
+  userId: ID
+}
+
+type PipelineStatus {
+  dataP90Eta: Time
+  dataP99Eta: Time
+  dataReadyAt: Time
+  isScoringDay: Boolean
+  nextStartP90Eta: Time
+  resolveP90Eta: Time
+  resolveP99Eta: Time
+  resolvedAt: Time
+  scoreP90Eta: Time
+  scoreP99Eta: Time
+  scoredAt: Time
+  startP90Eta: Time
+  startedAt: Time
+  tournament: Time
+}
+
+type QrBoject {
+  image: String
+  recovery: [String]
+  secret: String
+}
+
+type QuestProgress {
+  complete: Boolean
+  status: String
+}
+
+type Ranks {
+  alpha: Int
+  bmc: Int
+  corj60: Int
+  corr: Int
+  corr20V2: Int
+  corr20d: Int
+  corr60: Int
+  corrV4: Int
+  cort20: Int
+  fnc: Int
+  fncV3: Int
+  fncV4: Int
+  ic: Int
+  icV2: Int
+  mmc: Int
+  mmc20d: Int
+  mmc60: Int
+  mpc: Int
+  ric: Int
+  tc: Int
+}
+
+type Reports {
+  id: ID
+  insertedAt: Time
+  key: String
+  name: String
+  updatedAt: Time
+}
+
+type Reps {
+  alpha: Float
+  bmc: Float
+  corj60: Float
+  corr: Float
+  corr20V2: Float
+  corr20d: Float
+  corr60: Float
+  corrV4: Float
+  cort20: Float
+  fnc: Float
+  fncV3: Float
+  fncV4: Float
+  ic: Float
+  icV2: Float
+  mmc: Float
+  mmc20d: Float
+  mmc60: Float
+  mpc: Float
+  ric: Float
+  tc: Float
+}
+
+"""Percentage Returns"""
+type Returns {
+  allTime: Float
+  allTimeNmr: Nmr
+  oneDay: Float
+  oneDayNmr: Nmr
+  oneYear: Float
+  oneYearNmr: Nmr
+  threeMonths: Float
+  threeMonthsNmr: Nmr
+}
+
+"""Percentage Returns"""
+type ReturnsValue {
+  allTime: Float
+  allTimeNmr: Nmr
+  date: Date
+  oneDay: Float
+  oneDayNmr: Nmr
+  oneYear: Float
+  oneYearNmr: Nmr
+  threeMonths: Float
+  threeMonthsNmr: Nmr
+}
+
+type RootMutationType {
+  """Merge another account into the current one using a token"""
+  absorbAccount(token: String!): String
+  """Mark the authenticated account as having accepted the Terms of Service"""
+  acceptTos(accepted: Boolean = true): Boolean
+  """Create a new model in a tournament"""
+  addModel(
+    name: String!
+    tournament: Int!
+  ): Model
+  """Archive a model to hide it from public view and exclude from model limits"""
+  archiveModel(modelId: ID!): Model
+  """Assign an uploaded pickle to a model"""
+  assignPickleToModel(
+    modelId: String
+    pickleId: ID
+  ): String
+  """Cancel a pending stake release"""
+  cancelPendingStakeRelease(modelId: ID!): V2ChangeStakeRequest
+  """Change the account email (password check required)"""
+  changeEmail(
+    code: String
+    newEmail: String!
+    password: String!
+  ): Boolean
+  """Change password for the authenticated account"""
+  changePassword(
+    code: String
+    newPassword: String!
+    password: String!
+  ): Session
+  """Confirm account creation with a token and start session"""
+  confirmCreateUser(token: String!): Session
+  """Create a new API token with scopes"""
+  createApiToken(
+    code: String
+    name: String!
+    password: String!
+    scopes: [String]!
+  ): ApiTokenWithSecret
+  """Create a compute pickle upload record and presigned URL"""
+  createComputePickleUpload(
+    dataVersionId: ID
+    dockerImageId: ID
+    filename: String!
+    modelId: ID
+    source: String
+    tournament: Int!
+  ): ComputePickleUpload
+  """Register a diagnostics upload"""
+  createDiagnostics(
+    filename: String!
+    modelId: ID
+    tournament: Int!
+  ): V2Diagnostics
+  """Register a Signals submission upload"""
+  createSignalsSubmission(
+    dataDatestamp: Int
+    filename: String!
+    modelId: ID
+    source: String
+    tournament: Int = 11
+    triggerId: ID
+    version: Int
+  ): V2Submission
+  """Register a Numerai submission upload"""
+  createSubmission(
+    dataDatestamp: Int
+    filename: String!
+    modelId: ID
+    source: String
+    tournament: Int!
+    triggerId: ID
+    version: Int
+  ): V2Submission
+  """Create a new Numerai/Signals account"""
+  createUser(
+    acceptedTos: Boolean = false
+    campaignId: String
+    captcha: String!
+    email: String!
+    isSignals: Boolean
+    password: String!
+    source: String
+    tournament: Int = 8
+    username: String!
+  ): Account
+  """Delete the authenticated account"""
+  deleteAccount(
+    code: String
+    password: String!
+  ): String
+  """Delete diagnostics jobs/runs"""
+  deleteDiagnostics(v2DiagnosticsIds: [String]!): String
+  """Dismiss a notification for the user"""
+  dismissNotification(notificationId: String!): String
+  """Generate a Kaggle verification token for linking accounts"""
+  generateKaggleVerificationToken(kaggleUsername: String!): KaggleVerificationTokenResult
+  """Increase stake for a model"""
+  increaseStake(
+    amount: String!
+    modelId: ID!
+  ): V2ChangeStakeRequest
+  """Authenticate and start a session"""
+  login(
+    code: String
+    email: String!
+    password: String!
+  ): Session
+  """Invalidate the current session"""
+  logout: Boolean
+  """Mark a banner notification as read"""
+  markBannerAsRead(type: String!): String
+  """Disable MFA for the account"""
+  mfaDisable(
+    code: String!
+    password: String!
+  ): Boolean
+  """Enable MFA for the account"""
+  mfaEnable(
+    code: String!
+    password: String!
+  ): Session
+  """Generate MFA QR and recovery codes"""
+  mfaQr: QrBoject
+  """Begin releasing stake for a model"""
+  releaseStake(
+    amount: String!
+    drain: Boolean = false
+    modelId: ID!
+  ): V2ChangeStakeRequest
+  """Unlink the connected Discord account"""
+  removeDiscordAccount: String
+  """Rename the authenticated account"""
+  renameAccount(name: String!): Account
+  """Rename an existing model"""
+  renameModel(
+    modelId: ID!
+    name: String!
+  ): Model
+  """Resend email verification to an address"""
+  resendEmailVerification(email: String!): Boolean
+  """Cancel a pending email change via token"""
+  resetEmailChange(token: String!): Boolean
+  """Send a password reset email"""
+  resetPassword(email: String!): Boolean
+  """Reset password using a reset token"""
+  resetPasswordFromToken(
+    newPassword: String!
+    token: String!
+  ): Boolean
+  """Revoke an API token by public id"""
+  revokeApiToken(publicId: String!): ApiToken
+  """Update account-level metadata like display name and links"""
+  setAccountMeta(
+    bio: String
+    displayName: String
+    github: String
+    kaggle: String
+    linkedin: String
+    location: String
+    occupation: String
+    organization: String
+    twitter: String
+    website: String
+  ): Boolean
+  """Toggle AI manager experience for the account"""
+  setAiManagerExperience(enabled: Boolean!): Boolean
+  """Toggle weekday compute scheduling for a model (deprecated; always true)"""
+  setComputeWeekdayEnabled(
+    computeWeekdayEnabled: Boolean
+    modelId: String
+  ): Boolean @deprecated(reason: "No-op; weekday compute scheduling is always enabled")
+  """Set the default currency for the account"""
+  setDefaultCurrency(currency: DefaultCurrencyEnum!): Account
+  """Toggle onboarding tutorials visibility for the account"""
+  setHideOnboardingTutorials(enabled: Boolean!): Boolean
+  """Toggle beta flag for the account"""
+  setIsBeta(enabled: Boolean!): Boolean
+  """Set or update the submission webhook for a model"""
+  setSubmissionWebhook(
+    modelId: String
+    newSubmissionWebhook: String
+  ): String
+  """Set the public bio for a model"""
+  setUserBio(
+    modelId: ID
+    value: String!
+  ): Boolean
+  """Set the external link for a model"""
+  setUserLink(
+    linkText: String
+    linkUrl: String!
+    modelId: ID
+  ): Boolean
+  """Submit a Kaggle account for verification"""
+  submitKaggleVerification(
+    kaggleProfileData: KaggleProfileDataInput
+    kaggleUsername: String!
+  ): KaggleVerificationResult
+  """Submit a W-9 form for tax compliance"""
+  submitW9(
+    address: String!
+    businessName: String
+    city: String!
+    exemptions: String
+    fullName: String!
+    otherTaxClassDetail: String
+    signature: String!
+    state: String!
+    taxClass: TaxClassEnum!
+    taxYear: String! = "2021"
+    taxpayerIdentificationNumber: String!
+    zipCode: String!
+  ): Boolean
+  """Subscribe to the Crypto market-making mailing list"""
+  subscribeToCryptoMmMailingList(email: String!): Boolean
+  """Subscribe an email to a mailing list"""
+  subscribeToMailingList(
+    email: String!
+    list: String
+  ): Boolean
+  """Deprecated test submission webhook placeholder"""
+  testSubmissionWebhook: String @deprecated(reason: "No longer supported")
+  """Trigger a compute pickle upload/job for an existing pickle"""
+  triggerComputePickleUpload(
+    modelId: ID
+    pickleId: ID
+    triggerValidation: Boolean = false
+  ): ComputePickleUpload
+  """Manually trigger the submission webhook for a model"""
+  triggerModelWebhook(modelId: String!): String
+  """Unarchive a model to make it visible and active again"""
+  unarchiveModel(modelId: ID!): Model
+  """Unsubscribe from a mailing list using a token"""
+  unsubscribeFromMailingList(
+    list: String!
+    unsubscribeToken: String!
+  ): Boolean
+  """Update email notification preferences for the authenticated account"""
+  updateEmailPreferences(
+    compute: Boolean
+    cryptoRoundOpen: Boolean
+    cryptoRoundSummary: Boolean
+    cryptoSubmission: Boolean
+    deposit: Boolean
+    diagnostics: Boolean
+    modelUploadReceipt: Boolean
+    pickleRoundOpen: Boolean
+    pickleRoundStatus: Boolean
+    roundOpen: Boolean
+    roundSummary: Boolean
+    signalsRoundOpen: Boolean
+    signalsRoundSummary: Boolean
+    signalsSubmission: Boolean
+    stakeChange: Boolean
+    submission: Boolean
+    submissionSuccess: Boolean
+    submissionsStatus: Boolean
+    withdrawal: Boolean
+  ): Boolean
+  """Update email preferences using a token (no auth)"""
+  updateEmailPreferencesWithToken(
+    announcement: Boolean
+    compute: Boolean
+    cryptoRoundOpen: Boolean
+    cryptoRoundSummary: Boolean
+    cryptoSubmission: Boolean
+    deposit: Boolean
+    diagnostics: Boolean
+    modelUploadReceipt: Boolean
+    pickleRoundOpen: Boolean
+    pickleRoundStatus: Boolean
+    roundOpen: Boolean
+    roundSummary: Boolean
+    signalsRoundOpen: Boolean
+    signalsRoundSummary: Boolean
+    signalsSubmission: Boolean
+    stakeChange: Boolean
+    submission: Boolean
+    submissionSuccess: Boolean
+    submissionsStatus: Boolean
+    updateToken: String
+    withdrawal: Boolean
+  ): Boolean
+  """Update the label on a compute pickle upload"""
+  updatePickleLabel(
+    label: String
+    pickleId: ID!
+  ): ComputePickleUpload
+  """Deprecated payout selection mutation; use v3ChangePayoutSelection"""
+  v2ChangePayoutSelection(
+    corrMultiplier: Float
+    mmcMultiplier: Float
+    modelId: ID
+    selection: String
+    signals: Boolean = false
+    takeProfit: Boolean
+    tcMultiplier: Float
+    tournamentNumber: Int
+  ): String @deprecated(reason: "Use v3_change_payout_selection instead. This will be removed in a future release.")
+  """Change stake value/type for a model"""
+  v2ChangeStake(
+    modelId: ID
+    tournamentNumber: Int!
+    type: String!
+    value: String!
+  ): V2ChangeStakeRequest
+  """Withdraw NMR to an external address"""
+  v2WithdrawNmr(
+    code: String
+    nmrAmount: String!
+    password: String!
+    toAddress: String!
+  ): V2NmrTransfer
+  """Set payout selection for a model (current API)"""
+  v3ChangePayoutSelection(
+    modelId: ID!
+    takeProfit: Boolean!
+    tournamentNumber: Int!
+  ): String
+  """Verify an email address using a verification token"""
+  verifyEmail(token: String!): Boolean
+  """Verify a login attempt from a new IP"""
+  verifyLoginIp(token: String!): Session
+}
+
+type RootQueryType {
+  """Fetch the authenticated account"""
+  account: Account
+  """Account-level leaderboard for the specified tournament"""
+  accountLeaderboard(
+    direction: String
+    filterBy: String
+    limit: Int
+    offset: Int
+    orderBy: String
+    tournament: Int = 8
+  ): [AccountLeaderboardEntry]
+  """Check if an account username is available"""
+  accountNameAvailable(name: String!): Boolean
+  """Public account profile by username"""
+  accountProfile(
+    tournament: Int = 8
+    username: String!
+  ): AccountProfile
+  """Presigned upload URL for account avatars"""
+  accountProfileImageUploadAuth(filename: String!): FileUploadAuth
+  """Latest public activity feed entries"""
+  activityFeed(
+    cursor: ID
+    limit: Int = 20
+    tournament: Int = 8
+  ): [ActivityFeedEntry]
+  """Get information about the current API token being used"""
+  apiTokenInfo: ApiTokenInfo
+  """List available OAuth scopes for API tokens"""
+  apiTokenScopes: [Scope]
+  """List compute data versions that can be targeted by uploads"""
+  computePickleDataVersions(deprecated: Boolean! = false): [ComputePickleDataVersion]
+  """List compute docker images available for scheduled compute"""
+  computePickleDockerImages(deprecated: Boolean = false): [ComputePickleDockerImage]
+  """Presigned download URL for compute pickle (requires download scope)"""
+  computePickleDownloadAuth(
+    modelId: ID!
+    pickleId: ID
+  ): FileUploadAuth
+  """Presigned upload URL for compute pickle (requires upload scope)"""
+  computePickleUploadAuth(
+    filename: String = "model.pkl"
+    modelId: ID
+  ): FileUploadAuth
+  """List compute pickle uploads for a model or account"""
+  computePickles(
+    id: ID
+    modelId: ID
+    unassigned: Boolean! = false
+  ): [ComputePickleUpload]
+  """Country code inferred from request metadata"""
+  countryCode: String
+  """CryptoSignals leaderboard with paging/sorting"""
+  cryptosignalsLeaderboard(
+    direction: String
+    filterBy: String
+    limit: Int
+    offset: Int
+    orderBy: String
+  ): [CryptosignalsLeaderboardEntry]
+  """Aggregated metrics for the CryptoSignals tournament"""
+  cryptosignalsLeaderboardOverview: CryptosignalsOverview
+  """CryptoSignals meta model info for the marketing page"""
+  cryptosignalsMetaModelPage: MetaModelPage
+  """List supported currency codes and symbols"""
+  currencyCodes: [CurrencyCode]
+  """Return a single dataset download location by filename"""
+  dataset(
+    filename: String!
+    round: Int
+    tournament: Int
+  ): String
+  """Return or lazily create the default API token for the account"""
+  defaultApiToken: ApiTokenWithSecret
+  """List diagnostics runs for a model or account"""
+  diagnostics(
+    id: ID
+    modelId: ID
+  ): [V2Diagnostics]
+  """Invocation logs for diagnostics triggers"""
+  diagnosticsTriggerLogs(pickleId: ID!): [InvocationLog]
+  """Presigned upload URL for diagnostics payloads"""
+  diagnosticsUploadAuth(
+    filename: String!
+    modelId: ID
+    tournament: Int!
+  ): FileUploadAuth
+  """Progress for the Earn quests for an account"""
+  earnQuestsProgress(tournament: Int!): EarnQuestsProgress
+  """Fetch email preferences via update token"""
+  emailPreferences(updateToken: String!): EmailPreferences
+  """Lookup a single feature flag by key"""
+  featureFlag(key: String!): FeatureFlag
+  """GeoIP lookup for an IP address"""
+  geoIp(ip: String): GeoIp
+  """Published blog posts from the Ghost CMS (blog.numer.ai)"""
+  ghostBlogPosts(limit: Int = 10): [GhostBlogPost]
+  """Grandmaster tier configuration for a tournament"""
+  grandmasterTierConfigs(tournament: Int!): [GrandmasterTierConfig]
+  """Get FX conversion for a currency pair"""
+  latestCurrencyPrice(
+    baseSymbol: String!
+    targetSymbol: String!
+  ): SymbolPriceConversion
+  """Fetch the latest ETH price in USD"""
+  latestEthPrice: EthPrice
+  """Fetch the latest NMR price in USD"""
+  latestNmrPrice: NmrPrice
+  """List dataset files available for a round/tournament"""
+  listDatasets(
+    round: Int
+    tournament: Int
+  ): [String]
+  """Retrieve MFA recovery codes (password check required)"""
+  mfaRecovery(
+    code: String
+    password: String!
+  ): [String]
+  """Fetch a model the authenticated user can access"""
+  model(modelId: ID): Model
+  """Check if a model name is available in a tournament"""
+  modelNameAvailable(
+    name: String!
+    tournament: Int!
+  ): Boolean
+  """NFTee data for the authenticated user"""
+  nftee(network: String!): Nftees
+  """NFTee contract metadata for a network"""
+  nfteeContract(network: String!): NfteeContract
+  """Voucher information for minting an NFTee"""
+  nfteeVoucher(
+    contractNetwork: String! = "rinkeby"
+    minterAddress: String!
+    secret: String!
+  ): NfteeVoucher
+  """NFTee data fetched by wallet address"""
+  nfteeWithAddress(
+    network: String!
+    walletAddress: String!
+  ): Nftees
+  """NFTee data fetched by secret code"""
+  nfteeWithSecret(
+    network: String!
+    secret: String!
+  ): Nftees
+  """Pending payout amounts for the authenticated user's models"""
+  pendingModelPayouts(tournament: Int!): UserPayouts
+  """Latest pipeline status (deprecated date arg kept for compatibility)"""
+  pipelineStatus(
+    date: String
+    tournament: String = "classic"
+  ): PipelineStatus
+  """Presigned upload URL for model/profile images"""
+  profileImageUploadAuth(
+    filename: String!
+    modelId: ID
+  ): FileUploadAuth
+  """Signed report download link"""
+  reportLink(id: String!): String
+  """Round-level details including payouts and timelines"""
+  roundDetails(
+    roundNumber: Int!
+    tournament: Int!
+  ): RoundDetails
+  """List rounds with optional filters by tournament, status, target, or number"""
+  rounds(
+    limit: Int
+    number: Int
+    status: RoundStatus
+    target: String
+    tournament: Int
+  ): [Round]
+  """Season account summaries for a tournament"""
+  seasonAccountSummary(tournament: Int!): [SeasonAccountSummary]
+  """Season leaderboard standings for a tournament season"""
+  seasonLeaderboard(
+    seasonYear: Int!
+    tierNumberLte: Int
+    tournament: Int!
+  ): [SeasonLeaderboardEntry]
+  """Signals leaderboard with paging/sorting"""
+  signalsLeaderboard(
+    direction: String
+    filterBy: String
+    limit: Int
+    offset: Int
+    orderBy: String
+  ): [SignalsLeaderboardEntry]
+  """Aggregated metrics for the Signals tournament"""
+  signalsLeaderboardOverview: SignalsOverview
+  """Validate SSO payload and return SSO details"""
+  sso(
+    payload: String!
+    signature: String!
+  ): Sso
+  """List stake transactions for one or more models"""
+  stakeTransactions(
+    modelId: ID
+    modelIds: [ID]
+    type: String
+  ): [StakeTxn]
+  """Presigned download URL for a submission artifact"""
+  submissionDownloadAuth(id: ID!): FileUploadAuth
+  """Submission score history for a model"""
+  submissionScores(
+    day: Int
+    displayName: String
+    distinctOnRound: Boolean
+    lastNRounds: Int
+    modelId: ID!
+    resolved: Boolean
+    tournament: Int
+    version: String
+  ): [SubmissionScore]
+  """Presigned upload URL for Numerai tournament submissions"""
+  submissionUploadAuth(
+    filename: String!
+    modelId: ID
+    tournament: Int!
+  ): FileUploadAuth
+  """Presigned upload URL for Signals submissions"""
+  submissionUploadSignalsAuth(
+    filename: String!
+    modelId: ID
+    tournament: Int = 11
+  ): FileUploadAuth
+  """List submissions for a model/account"""
+  submissions(
+    id: ID
+    modelId: ID
+  ): [V2Submission]
+  """Overview of all tournaments (current status, rounds, payouts)"""
+  tournamentOverview: Overview
+  """List all active tournaments and their metadata"""
+  tournaments: [Tournament]
+  """Invocation logs for compute pickle triggers"""
+  triggerLogs(triggerId: ID!): [InvocationLog]
+  """List unread announcement banners for the user"""
+  unreadBanners: [Banner]
+  """List unread earned-title notifications for the user"""
+  unreadEarnedTitleNotifications: [Notification]
+  """List unread notifications for the user"""
+  unreadNotifications: [Notification]
+  """Score history for a model"""
+  userScores(modelId: ID!): [UserScore]
+  """Numerai main leaderboard with paging/sorting"""
+  v2Leaderboard(
+    direction: String
+    filterBy: String
+    limit: Int
+    offset: Int
+    orderBy: String
+  ): [V2LeaderboardEntry]
+  """Per-round performance for a model with flexible filtering"""
+  v2RoundModelPerformances(
+    distinctOnRound: Boolean
+    lastNRounds: Int
+    modelId: ID!
+    resolvedOnly: Boolean
+    resolvedWithinLastNDays: Int
+    roundDataDatestampGte: Int
+    roundNumberEq: Int
+    roundNumberGte: Int
+    roundNumberLte: Int
+    scoredWithinLastNDays: Int
+    submittedOnly: Boolean
+    tournament: Int = 8
+  ): [V2RoundModelPerformance]
+  """Public Signals-flavored profile for a model name"""
+  v2SignalsProfile(
+    modelName: String!
+    tournament: Int = 11
+  ): V3UserProfile
+  """Detailed Numerai tournament overview for a given tournament number"""
+  v2TournamentOverview(tournament: Int!): V2Overview
+  """Issue a staging/dev staking-v3 authorization for a selected submission"""
+  v3StakeAuth(
+    maxAmount: String!
+    staker: String!
+    submissionId: ID!
+  ): V3StakeAuthorization
+  """Staging/dev staking-v3 claim proof for an authenticated model and staker"""
+  v3StakeClaim(
+    modelId: ID!
+    roundId: String!
+    staker: String!
+  ): V3StakeClaim
+  """Staging/dev staking-v3 contract configuration"""
+  v3StakeConfig: V3StakeConfig
+  """Staging/dev staking-v3 round status by round id"""
+  v3StakeRound(roundId: String!): V3StakeRound
+  """Staging/dev staking-v3 service wallet balance and allowance"""
+  v3StakeServiceWallet: V3StakeWallet
+  """Public Numerai model profile"""
+  v3UserProfile(
+    modelName: String!
+    tournament: Int = 8
+  ): V3UserProfile
+}
+
+type Round {
+  closeStakingTime: Time
+  closeTime: Time
+  dataDatestamp: Int
+  defaultCorrMultiplier: Float
+  defaultMmcMultiplier: Float
+  defaultTcMultiplier: Float
+  id: ID
+  isDaily: Boolean
+  maxCorrMultiplier: Float
+  maxMmcMultiplier: Float
+  maxTcMultiplier: Float
+  minCorrMultiplier: Float
+  minMmcMultiplier: Float
+  minTcMultiplier: Float
+  numTickers: Int
+  numValidationEras: Int
+  numValidationTickers: Int
+  number: Int
+  openTime: Time
+  payoutFactor: String
+  resolveTime: Time
+  resolvedGeneral: Boolean
+  resolvedStaking: Boolean
+  scoreTime: Time
+  stakeThreshold: Float
+  target: String
+  tournament: Int
+}
+
+type RoundDetails {
+  allHistogramData: HistogramData
+  closeStakingTime: Time
+  closeTime: Time
+  isDaily: Boolean
+  models: [ModelData]
+  openTime: Time
+  payoutFactor: String
+  payoutMultipliers: [RoundPayoutMultiplier]
+  roundId: ID
+  roundNumber: Int
+  roundResolveTime: Time
+  roundResolved: Boolean
+  roundTarget: String
+  scoreTime: Time
+  scoresUpdatedTime: Time
+  stakedHistogramData: HistogramData
+  status: String
+  totalAtStake: Float
+  totalBurned: Float
+  totalEarned: Float
+  totalPayout: Float
+  totalStakes: Int
+  totalSubmitted: Int
+  tournament: Int
+}
+
+type RoundModelPerformance {
+  apcwnm: Float
+  apcwnmPercentile: Float
+  apcwsm: Float
+  apcwsmPercentile: Float
+  corr: Float
+  corr20V2: Float
+  corr20V2Percentile: Float
+  corr20d: Float
+  corr20dPercentile: Float
+  corr60: Float
+  corr60Percentile: Float
+  corrMultiplier: Float
+  corrPercentile: Float
+  corrV4: Float
+  corrV4Percentile: Float
+  corrWMetamodel: Float
+  cwmm: Float
+  cwmmPercentile: Float
+  cwsnmmr: Float
+  cwsnmmrPercentile: Float
+  fnc: Float
+  fncPercentile: Float
+  fncV3: Float
+  fncV3Percentile: Float
+  fncV4: Float
+  fncV4Percentile: Float
+  ic: Float
+  icPercentile: Float
+  icV2: Float
+  icV2Percentile: Float
+  mcwnm: Float
+  mcwnmPercentile: Float
+  mcwsm: Float
+  mcwsmPercentile: Float
+  mmc: Float
+  mmc20d: Float
+  mmc20dPercentile: Float
+  mmcMultiplier: Float
+  mmcPercentile: Float
+  payout: Nmr
+  ric: Float
+  ricPercentile: Float
+  roundNumber: Int
+  roundOpenTime: Time
+  roundPayoutFactor: String
+  roundResolveTime: Time
+  roundResolved: Boolean
+  roundScoreTime: Time
+  roundTarget: String
+  selectedStakeValue: Nmr
+  tc: Float
+  tcMultiplier: Float
+  tcPercentile: Float
+}
+
+type RoundPayoutMultiplier {
+  displayName: String
+  multiplier: Float
+}
+
+type ScheduledStakeTxn {
+  amount: Nmr
+  drain: Boolean
+  dueDate: Time
+  model: String
+  status: String
+  time: Time
+  tournament: Int
+  type: String
+}
+
+type Scope {
+  description: String
+  name: String
+}
+
+type SeasonAccountPerformance {
+  rank: Int
+  scoreName: String
+}
+
+type SeasonAccountSummary {
+  closeStakingEnd: Date
+  daysUntilNextSeasonOpen: Int
+  firstScoreDate: Date
+  hasScores: Boolean
+  hasStakedOneNmr: Boolean
+  id: ID
+  maxScoreDate: Date
+  minQualifyingSubmissions: Int
+  numQualifyingSubmissions: Int
+  openDate: Date
+  participants: Int
+  resolveDate: Date
+  roundNumberEnd: Int
+  roundNumberStart: Int
+  roundsLeft: Int
+  seasonAccountPerformance: [SeasonAccountPerformance]
+  status: String
+  titleInfo: TitleInfo
+  tournament: Int
+  year: Int
+}
+
+type SeasonLeaderboardEntry {
+  seasonYear: Int
+  tiers: [TierLeaderboard]
+}
+
+type Session {
+  token: String
+  username: String
+}
+
+type SignalsLeaderboardEntry {
+  alphaRank: Int
+  alphaRep: Float
+  apy: Float
+  canonAlphaLtm: Float
+  canonAlphaRankLtm: Int
+  canonCorrLtm: Float
+  canonCorrRankLtm: Int
+  canonMmcLtm: Float
+  canonMmcRankLtm: Int
+  canonMpcLtm: Float
+  canonMpcRankLtm: Int
+  computeEnabled: Boolean
+  control: Float
+  corr20Rank: Int
+  corr20Rep: Float
+  corr20V2Rank: Int
+  corr20V2Rep: Float
+  corr20dRank: Int
+  corr20dRep: Float
+  corr60Rank: Int
+  corr60Rep: Float
+  corrRank: Int
+  corrV4Rank: Int
+  corrV4Rep: Float
+  fncV4Rank: Int
+  fncV4Rep: Float
+  icRank: Int
+  icRep: Float
+  icV2Rank: Int
+  icV2Rep: Float
+  id: ID
+  isActive: Boolean
+  latestUserScores: [UserScore]
+  mmc: Float
+  mmc20dRank: Int
+  mmc20dRep: Float
+  mmcRank: Int
+  mmcRep: Float
+  mpcRank: Int
+  mpcRep: Float
+  nmrStaked: Nmr
+  nmrStakedRank: Int
+  prevAlphaRank: Int
+  prevCorr20V2Rank: Int
+  prevCorr20dRank: Int
+  prevCorr60Rank: Int
+  prevCorrRank: Int
+  prevCorrV4Rank: Int
+  prevFncV4Rank: Int
+  prevIcRank: Int
+  prevIcV2Rank: Int
+  prevMmc20dRank: Int
+  prevMmcRank: Int
+  prevMpcRank: Int
+  prevRank: Int
+  prevRicRank: Int
+  prevTcRank: Int
+  profileUrl: String
+  rank: Int
+  rankChange1d: Int
+  rankChange1y: Int
+  rankChange3m: Int
+  reputation: Float
+  return13Weeks: Float
+  return13WeeksRank: Int
+  return1Day: Float
+  return1DayRank: Int
+  return52Weeks: Float
+  return52WeeksRank: Int
+  ricRank: Int
+  ricRep: Float
+  sharpe: Float
+  storedRank: Int
+  tcRank: Int
+  tcRep: Float
+  team: Boolean
+  today: Float
+  username: String
+}
+
+type SignalsOverview {
+  averageThreeMonthsReturns: Float @deprecated(reason: "Use v2TournamentOverview.sw_returns")
+  """Average Stake Weighted Returns"""
+  returns: SwReturns
+  """Time series of average stake weighted returns"""
+  returnsValues: [SwReturnsValue]
+  stakeWeightedAverageThreeMonthsReturns: Float @deprecated(reason: "Use v2TournamentOverview.sw_returns")
+  """Time series count of distinct accounts with a staked submission in a currently unresolved round"""
+  stakedAccounts: [StakedAccountsCount]
+  """Count of distinct accounts with a staked submission in the last 12 months"""
+  stakedAccountsLtm: Int
+  """Time series count of distinct models with a staked submission in a currently unresolved round"""
+  stakedModels: [StakedModelsCount]
+  stakedSubmissions: Int @deprecated(reason: "Use stakedModels time series")
+  """Total number of accounts currently on the leaderboard"""
+  totalAccounts: Int
+  totalAtStake: Nmr
+  """Time series of total NMR staked"""
+  totalAtStakeValues: [StakeValue]
+  totalStakes: Int
+}
+
+type SignalsTutorials {
+  helloSignals: Boolean
+}
+
+type Sso {
+  payload: String
+  signature: String
+  url: String
+}
+
+type StakeTxn {
+  amount: Nmr
+  model: String
+  modelId: ID
+  nmrPrice: Nmr @deprecated(reason: "This value always returns null")
+  nmrPriceLastUpdated: Time @deprecated(reason: "This value always returns null")
+  note: String
+  round: Int
+  timestamp: Time
+  tournament: Int
+  type: String
+  value: Nmr
+}
+
+type StakeValue {
+  delta: Nmr
+  time: Time
+  value: Nmr
+}
+
+type StakedAccountsCount {
+  count: Int
+  date: Date
+}
+
+type StakedModelsCount {
+  count: Int
+  date: Date
+}
+
+type SubmissionScore {
+  date: Time
+  day: Int
+  displayName: String
+  payoutPending: Nmr
+  payoutSettled: Nmr
+  percentile: Float
+  resolveDate: Time
+  resolved: Boolean
+  roundCloseStakingTime: Time
+  roundId: ID
+  roundNumber: Int
+  roundResolveTime: Time
+  roundScoreTime: Time
+  submissionId: ID
+  value: Float
+  version: String
+}
+
+"""Average Stake Weighted Returns"""
+type SwReturns {
+  allTime: Float
+  allTimeNmr: Nmr
+  oneDay: Float
+  oneDayNmr: Nmr
+  oneYear: Float
+  oneYearNmr: Nmr
+  threeMonths: Float
+  threeMonthsNmr: Nmr
+}
+
+"""Average Stake Weighted Returns"""
+type SwReturnsValue {
+  allTime: Float
+  allTimeNmr: Nmr
+  date: Date
+  oneYear: Float
+  oneYearNmr: Nmr
+  threeMonths: Float
+  threeMonthsNmr: Nmr
+}
+
+type SymbolPriceConversion {
+  baseSymbol: String
+  lastUpdated: String
+  price: String
+  targetSymbol: String
+}
+
+type TierLeaderboard {
+  leaderboard: [LeaderboardEntry]
+  tierDescription: String
+  tierName: String
+  tierNumber: Int
+}
+
+type TitleInfo {
+  title: String
+  titleDescription: String
+}
+
+type Tournament {
+  active: Boolean
+  id: ID
+  name: String
+  rounds: [Round]
+  tournament: Int
+}
+
+type TypedMedalCounts {
+  counts: MedalCounts
+  type: String
+}
+
+type UserPayouts {
+  actual: [Payout]
+  pending: [Payout]
+}
+
+type UserScore {
+  date: Time
+  displayName: String
+  rank: Int
+  reputation: Float
+  stakedRank: Int
+}
+
+type V2ChangeStakeRequest {
+  drain: Boolean
+  dueDate: Time
+  id: String
+  requestedAmount: String
+  status: String
+  type: String
+}
+
+type V2Diagnostics {
+  computePickleUploadId: String
+  erasAcceptedCount: Int
+  erasMissing: [String]
+  examplePredsCorrMean: Float
+  filename: String
+  id: String
+  insertedAt: Time
+  message: String
+  parentId: String
+  perEraDiagnostics: [V2DiagnosticsEras]
+  processSecs: Float
+  status: String
+  tb200Diagnostics: V2Diagnostics
+  tickersAcceptedCount: Int
+  tickersSubmittedCount: Int
+  topBottom: Int
+  tournament: Int
+  trainedOnVal: Boolean
+  updatedAt: Time
+  validationAdjustedSharpe: Float
+  validationAlphaCorrWExamplePreds: Float
+  validationAlphaMaxDrawdown: Float
+  validationAlphaMean: Float
+  validationAlphaSharpe: Float
+  validationAlphaStd: Float
+  validationApy: Float
+  validationAutocorr: Float
+  validationBmcMean: Float
+  validationChurnMax: Float
+  validationChurnMean: Float
+  validationChurnStd: Float
+  validationCorrCorrWExamplePreds: Float
+  validationCorrMaxDrawdown: Float
+  validationCorrMean: Float
+  validationCorrMeanRating: Float
+  validationCorrPlusMmcMean: Float
+  validationCorrPlusMmcMeanRating: Float
+  validationCorrPlusMmcSharpe: Float
+  validationCorrPlusMmcSharpeDiff: Float
+  validationCorrPlusMmcSharpeDiffRating: Float
+  validationCorrPlusMmcSharpeRating: Float
+  validationCorrPlusMmcStd: Float
+  validationCorrPlusMmcStdRating: Float
+  validationCorrSharpe: Float
+  validationCorrSharpeRating: Float
+  validationCorrStd: Float
+  validationCorrStdRating: Float
+  validationCorrV4CorrWExamplePreds: Float
+  validationCorrV4MaxDrawdown: Float
+  validationCorrV4Mean: Float
+  validationCorrV4Sharpe: Float
+  validationCorrV4Std: Float
+  validationFeatureCorrMax: Float
+  validationFeatureCorrMaxRating: Float
+  validationFeatureNeutralCorrMean: Float
+  validationFeatureNeutralCorrMeanRating: Float
+  validationFeatureNeutralCorrV3Mean: Float
+  validationFeatureNeutralCorrV3MeanRating: Float
+  validationFncV4CorrWExamplePreds: Float
+  validationFncV4MaxDrawdown: Float
+  validationFncV4Mean: Float
+  validationFncV4Sharpe: Float
+  validationFncV4Std: Float
+  validationIcV2CorrWExamplePreds: Float
+  validationIcV2MaxDrawdown: Float
+  validationIcV2Mean: Float
+  validationIcV2Sharpe: Float
+  validationIcV2Std: Float
+  validationMaxDrawdown: Float
+  validationMaxDrawdownRating: Float
+  validationMmcMean: Float
+  validationMmcMeanRating: Float
+  validationMmcSharpe: Float
+  validationMmcSharpeRating: Float
+  validationMmcStd: Float
+  validationMmcStdRating: Float
+  validationRicCorrWExamplePreds: Float
+  validationRicMaxDrawdown: Float
+  validationRicMean: Float
+  validationRicSharpe: Float
+  validationRicStd: Float
+  validationTurnoverMax: Float
+  validationTurnoverMean: Float
+  validationTurnoverStd: Float
+}
+
+type V2DiagnosticsEras {
+  era: String
+  examplePredsCorr: Float
+  validationAlpha: Float
+  validationBmc: Float
+  validationChurn: Float
+  validationCorr: Float
+  validationCorrV4: Float
+  validationFeatureCorrMax: Float
+  validationFeatureNeutralCorr: Float
+  validationFeatureNeutralCorrV3: Float
+  validationFncV4: Float
+  validationIcV2: Float
+  validationMmc: Float
+  validationRic: Float
+  validationTurnover: Float
+}
+
+type V2LeaderboardEntry {
+  bmcRep: Float
+  canonCorrLtm: Float
+  canonCorrRankLtm: Int
+  canonMmcLtm: Float
+  canonMmcRankLtm: Int
+  corj60Rep: Float
+  corr20Rep: Float
+  corr20V2Rep: Float
+  corr60Rep: Float
+  cort20Rep: Float
+  fncRep: Float
+  fncV3Rep: Float
+  id: ID
+  isActive: Boolean
+  latestUserScores: [UserScore]
+  mmc60Rep: Float
+  mmcRep: Float
+  nmrStaked: Nmr
+  nmrStakedRank: Int
+  profileUrl: String
+  rank: Int
+  rankChange1d: Int
+  rankChange1y: Int
+  rankChange3m: Int
+  return13Weeks: Float
+  return13WeeksRank: Int
+  return1Day: Float
+  return1DayRank: Int
+  return52Weeks: Float
+  return52WeeksRank: Int
+  storedRank: Int
+  tcRep: Float
+  team: Boolean
+  username: String
+}
+
+type V2NmrTransfer {
+  blockTimestamp: Time
+  fromAddress: String
+  logIndex: Int
+  status: String
+  toAddress: String
+  txHash: String
+  value: String
+}
+
+type V2Overview {
+  """Average stake weighted returns"""
+  returns: SwReturns
+  """Time series count of distinct accounts with a staked submission in a currently unresolved round"""
+  stakedAccounts: [StakedAccountsCount]
+  """Time series count of distinct models with a staked submission in a currently unresolved round"""
+  stakedModels: [StakedModelsCount]
+  stakedSubmissions: Int @deprecated(reason: "Use stakedModels time series")
+  """Count of distinct accounts with a submission in the last 12 months"""
+  totalAccounts: Int
+  totalAtRisk: Nmr
+  totalAtStake: Nmr
+  totalStakes: Int
+  tournament: Int
+}
+
+type V2RoundModelPerformance {
+  """All submission scores for the round (includes all versions of all scores)"""
+  allSubmissionScores: [SubmissionScore]
+  atRisk: Nmr
+  churnThreshold: Float
+  corrMultiplier: Float
+  """Daily official submission scores for the round"""
+  intraRoundSubmissionScores: [SubmissionScore]
+  mmcMultiplier: Float
+  prevWeekChurnMax: Float
+  prevWeekTurnoverMax: Float
+  roundCloseStakingTime: Time
+  roundDataDatestamp: Int
+  roundId: ID
+  roundNumber: Int
+  roundOpenTime: Time
+  roundPayoutFactor: String
+  roundResolveTime: Time
+  roundResolved: Boolean
+  roundScoreTime: Time
+  roundTarget: String
+  submissionId: ID
+  """Latest official submission scores for the round"""
+  submissionScores: [SubmissionScore]
+  tcMultiplier: Float
+  tickersAcceptedCount: Int
+  tickersSubmittedCount: Int
+  turnoverThreshold: Float
+}
+
+type V2Stake {
+  latestValue: Nmr
+  latestValueSettled: Nmr
+  pendingV2ChangeStakeRequest: V2ChangeStakeRequest
+  stakeValue: Nmr
+  status: String
+  tournamentNumber: Int
+  txHash: String
+}
+
+type V2Submission {
+  corrWithExamplePreds: Float @deprecated(reason: "Always nil")
+  dataDatestamp: Int
+  diagnosticStatus: String @deprecated(reason: "Always nil")
+  errorInfo: String @deprecated(reason: "Always nil")
+  filename: String
+  filteredCount: Int @deprecated(reason: "Always nil")
+  firstEffectiveDate: Time @deprecated(reason: "Always nil")
+  hasDiagnostics: Boolean @deprecated(reason: "Always nil")
+  hasHistoric: Boolean @deprecated(reason: "Always nil")
+  historicMaxDrawdown: Float @deprecated(reason: "Always nil")
+  historicMean: Float @deprecated(reason: "Always nil")
+  historicSharpe: Float @deprecated(reason: "Always nil")
+  historicStd: Float @deprecated(reason: "Always nil")
+  id: ID
+  insertedAt: Time
+  invalidTickers: String @deprecated(reason: "Always nil")
+  notes: String
+  prevWeekChurnMax: Float
+  prevWeekTurnoverMax: Float
+  round: Round
+  selected: Boolean
+  sourceIp: String
+  sourcePlatform: String
+  status: String @deprecated(reason: "Always nil")
+  submissionIp: String @deprecated(reason: "Always nil")
+  submittedCount: Int @deprecated(reason: "Always nil")
+  tickersAcceptedCount: Int
+  tickersSubmittedCount: Int
+  trainedOnVal: Boolean @deprecated(reason: "Always nil")
+  triggerId: String
+  validationApy: Float @deprecated(reason: "Always nil")
+  validationCorrPlusMmcMean: Float @deprecated(reason: "Always nil")
+  validationCorrPlusMmcMeanRating: Int @deprecated(reason: "Always nil")
+  validationCorrPlusMmcSharpe: Float @deprecated(reason: "Always nil")
+  validationCorrPlusMmcSharpeDiff: Float @deprecated(reason: "Always nil")
+  validationCorrPlusMmcSharpeDiffRating: Int @deprecated(reason: "Always nil")
+  validationCorrPlusMmcSharpeRating: Int @deprecated(reason: "Always nil")
+  validationCorrelation: Float @deprecated(reason: "Always nil")
+  validationCorrelationRating: Int @deprecated(reason: "Always nil")
+  validationErasAccepted: Int @deprecated(reason: "Always nil")
+  validationErasSubmitted: Int @deprecated(reason: "Always nil")
+  validationFeatureExposure: Float @deprecated(reason: "Always nil")
+  validationFeatureNeutralMean: Float @deprecated(reason: "Always nil")
+  validationFeatureNeutralMeanRating: Int @deprecated(reason: "Always nil")
+  validationMaxDrawdown: Float @deprecated(reason: "Always nil")
+  validationMaxDrawdownRating: Int @deprecated(reason: "Always nil")
+  validationMaxFeatureExposure: Float @deprecated(reason: "Always nil")
+  validationMaxFeatureExposureRating: Int @deprecated(reason: "Always nil")
+  validationMmcMean: Float @deprecated(reason: "Always nil")
+  validationMmcMeanRating: Int @deprecated(reason: "Always nil")
+  validationSharpe: Float @deprecated(reason: "Always nil")
+  validationSharpeRating: Int @deprecated(reason: "Always nil")
+  validationStd: Float @deprecated(reason: "Always nil")
+  validationStdRating: Int @deprecated(reason: "Always nil")
+  validationTickersAccepted: Int @deprecated(reason: "Always nil")
+  validationTickersSubmitted: Int @deprecated(reason: "Always nil")
+}
+
+type V3StakeAuthorization {
+  authorizationDigest: String
+  authorizationSigner: String
+  chainId: String
+  deadline: String
+  maxAmount: String
+  modelId: String
+  nmrAddress: String
+  nonce: String
+  roundId: String
+  signature: String
+  staker: String
+  stakingAddress: String
+  submissionHash: String
+  submissionId: String
+  tournamentId: String
+}
+
+type V3StakeClaim {
+  apiModelId: ID
+  burnAmountWei: String
+  merkleRoot: String
+  modelId: String
+  payoutAmountWei: String
+  proof: [String]
+  roundId: String
+  staker: String
+  submissionId: ID
+  tournamentId: String
+}
+
+type V3StakeConfig {
+  address: String
+  authorizationSigner: String
+  nmrAddress: String
+  owner: String
+  paused: Boolean
+  pendingOwner: String
+  serviceWallet: String
+}
+
+type V3StakeRound {
+  closeTime: String
+  merkleRoot: String
+  openTime: String
+  payoutFactor: String
+  remainingBurn: String
+  remainingPayout: String
+  resolveTime: String
+  resolved: Boolean
+  roundId: String
+  stakeCap: String
+  stakeThreshold: String
+  state: String
+  totalPayout: String
+  totalStaked: String
+  tournamentId: String
+}
+
+type V3StakeWallet {
+  nmrAddress: String
+  serviceWallet: String
+  stakingAddress: String
+  stakingAllowance: String
+  walletBalance: String
+}
+
+type V3UserProfile {
+  accountName: String
+  bio: String
+  computeEnabled: Boolean
+  computeLiteEnabled: Boolean
+  control: Float
+  dailyModelPerformances: [DailyModelPerformance]
+  id: ID
+  isActive: Boolean
+  latestRanks: Ranks
+  latestReps: Reps
+  latestReturns: Returns
+  latestSubmissionScores: [SubmissionScore]
+  latestUserScores: [UserScore]
+  linkText: String
+  linkUrl: String
+  nmrStaked: Nmr @deprecated(reason: "Use stakeValue")
+  profileUrl: String
+  returns: [ReturnsValue]
+  roundModelPerformances: [RoundModelPerformance]
+  stakeInfo: PayoutSelection
+  stakeValue: Nmr
+  stakeValues: [StakeValue]
+  startDate: Time
+  team: Boolean
+  tournament: Int
+  typedMedals: [TypedMedalCounts]
+  username: String
+}
+
+type W9Info {
+  address: String
+  businessName: String
+  city: String
+  exemptions: String
+  fullName: String
+  insertedAt: Time
+  otherTaxClassDetail: String
+  signature: String
+  state: String
+  taxClass: TaxClassEnum
+  taxYear: String
+  taxpayerIdentificationNumber: String
+  updatedAt: Time
+  zipCode: String
+}
+
+type WalletTxn {
+  amount: Nmr
+  from: String
+  status: String
+  time: Time
+  to: String
+  tournament: Int
+  txHash: String
+  type: String
+}
+
