@@ -1,0 +1,22 @@
+{
+	"name": "numerai-mcp-cloudflare",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"deploy": "wrangler deploy",
+		"type-check": "tsc --noEmit",
+		"cf-typegen": "wrangler types"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.13.0",
+		"agents": "^0.9.0",
+		"zod": "^4.0.0"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20250422.0",
+		"typescript": "^5.8.3",
+		"wrangler": "^4.0.0"
+	}
+}
