@@ -2,6 +2,10 @@
 
 The Numerai Tournament API provides a comprehensive GraphQL endpoint for accessing tournament data, model information, performance metrics, and more.
 
+> **Full schema reference (auto-generated):** [`docs/numerai_graphql_schema.md`](docs/numerai_graphql_schema.md) — every query, mutation, object type, enum and scalar with arg signatures and field tables. Regenerate with `python numerai-mcp/scripts/codegen.py` after the upstream schema changes.
+>
+> This hand-written document is the curated user guide — it covers the workflows callers actually use. The auto-generated reference is the authoritative type/field listing.
+
 ## Endpoint
 - **URL**: `https://api-tournament.numer.ai/`
 - **Method**: POST
