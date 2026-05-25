@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "numerai-graphql": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "${CLAUDE_PLUGIN_ROOT}",
+        "run",
+        "python",
+        "numerai_mcp.py"
+      ],
+      "env": {}
+    }
+  }
+}

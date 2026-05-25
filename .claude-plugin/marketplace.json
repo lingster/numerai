@@ -1,0 +1,44 @@
+{
+  "name": "numerai",
+  "owner": {
+    "name": "Ling",
+    "url": "https://github.com/lingster/numerai"
+  },
+  "metadata": {
+    "description": "Plugins for querying and interacting with the Numerai Tournament platform.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "numerai-ql",
+      "source": "./numerai-ql",
+      "description": "Skill that teaches Claude to query the Numerai Tournament GraphQL API (model performance, leaderboards, rounds, intra-round daily scores, NMR price, datasets).",
+      "version": "1.0.0",
+      "category": "data",
+      "keywords": [
+        "numerai",
+        "graphql",
+        "tournament",
+        "leaderboard",
+        "predictions",
+        "nmr"
+      ],
+      "strict": false
+    },
+    {
+      "name": "numerai-mcp",
+      "source": "./numerai-mcp",
+      "description": "MCP server exposing common Numerai GraphQL queries as tools (tournaments, rounds, account, leaderboard, model, submissions, datasets, NMR price, round details, raw GraphQL).",
+      "version": "0.1.0",
+      "category": "mcp",
+      "keywords": [
+        "numerai",
+        "mcp",
+        "graphql",
+        "tournament",
+        "nmr"
+      ],
+      "strict": false
+    }
+  ]
+}

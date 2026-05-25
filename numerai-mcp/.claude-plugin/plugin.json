@@ -1,0 +1,19 @@
+{
+  "name": "numerai-mcp",
+  "version": "0.1.0",
+  "description": "MCP server exposing common Numerai GraphQL queries as tools.",
+  "author": {
+    "name": "Ling",
+    "url": "https://github.com/lingster/numerai"
+  },
+  "homepage": "https://github.com/lingster/numerai",
+  "repository": "https://github.com/lingster/numerai",
+  "license": "MIT",
+  "keywords": [
+    "numerai",
+    "mcp",
+    "graphql",
+    "tournament",
+    "nmr"
+  ]
+}
