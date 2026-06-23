@@ -1,0 +1,28 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "numerai-mcp-cloudflare",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-10",
+	"compatibility_flags": ["nodejs_compat"],
+
+	// NumeraiMCP extends McpAgent which is a Durable Object.
+	// Durable Objects persist session state across requests.
+	"migrations": [
+		{
+			"new_sqlite_classes": ["NumeraiMCP"],
+			"tag": "v1"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"class_name": "NumeraiMCP",
+				"name": "MCP_OBJECT"
+			}
+		]
+	},
+
+	"observability": {
+		"enabled": true
+	}
+}
